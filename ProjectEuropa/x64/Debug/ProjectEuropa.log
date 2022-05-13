@@ -1,0 +1,41 @@
+﻿  AllTheThingsThatImTooLazyToMakeFilesFor.cpp
+  Animation.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Animation.cpp(15,15): warning C4244: '=': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Decision.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Decision.cpp(27,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Decision.cpp(49,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Designer.cpp
+  Game.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(23,71): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(23,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(57,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(57,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(92,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(92,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(93,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(93,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.cpp(7,50): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  MyRenderWindow.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(23,71): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(23,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(57,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(57,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(92,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(92,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(93,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(93,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\MyRenderWindow.cpp(11,45): warning C4244: 'argument': conversion from 'const float' to 'const int', possible loss of data
+  Source.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(23,71): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(23,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(57,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(57,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(92,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(92,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(93,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(93,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(7,9): warning C4068: unknown pragma 'setLocale'
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(124,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(130,12): warning C4305: '+=': truncation from 'double' to 'float'
+  Generating Code...
+  ProjectEuropa.vcxproj -> C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\x64\Debug\ProjectEuropa.exe
