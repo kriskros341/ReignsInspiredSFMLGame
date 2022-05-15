@@ -3,7 +3,6 @@
 #include "./Decision.h"
 #include "./Game.h"
 #include "./Animation.h"
-#include "./Designer.h"
 
 class Game;
 class Resource;
@@ -20,6 +19,4 @@ public:
 	void draw(Resource r);
 	void draw(FadeIn f);
 	void draw(sf::Shape& f);
-	void draw(TextField& f);
-	void draw(DecisionBox& db);
 };

@@ -25,19 +25,3 @@ void MyRenderWindow::draw(FadeIn f) {
 void MyRenderWindow::draw(sf::Shape& f) {
 	sf::RenderWindow::draw(f);
 }
-void MyRenderWindow::draw(TextField& f) {
-	sf::RenderWindow::draw(f);
-	sf::RenderWindow::draw(f.text);
-}
-void MyRenderWindow::draw(DecisionBox& db) {
-	sf::RenderWindow::draw(db);
-	sf::RenderWindow::draw(db.yesFrom);
-	sf::RenderWindow::draw(db.noFrom);
-	sf::RenderWindow::draw(db.socket);
-	if (db.yesFrom.getConnected()) {
-		sf::RenderWindow::draw(db.yesFrom.line);
-	}
-	if (db.noFrom.getConnected()) {
-		sf::RenderWindow::draw(db.noFrom.line);
-	}
-};

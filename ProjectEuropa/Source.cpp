@@ -13,71 +13,6 @@ enum class IsIn {
 	game
 };
 
-/*
-	How do I select one of the node connectors and connect it with another:
-		I pick a connector
-			I check if click is on connector
-*/
-void editor(MyRenderWindow& window, IsIn& state) {
-
-	sf::RectangleShape start({ 100, 100 });
-	start.setFillColor(sf::Color::Red);
-	DecisionConnector* selectedConnector = 0;
-	DecisionBox db;
-	DecisionBox db2({600, 400});
-	
-
-	while (window.isOpen()) {
-		sf::Event event;
-		sf::Vector2i position = sf::Mouse::getPosition(window);
-		while (window.pollEvent(event)) {
-			sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-			switch (event.type) {
-			case sf::Event::Closed: {
-				window.close();
-				break;
-			}
-			case sf::Event::KeyPressed: {
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-					state = IsIn::menu;
-				}
-			}
-			case sf::Event::MouseButtonReleased: {
-				if (event.key.code == sf::Mouse::Left) {
-					if (start.getLocalBounds().contains(sf::Vector2f(mousePosition)))
-					{
-						state = IsIn::menu;
-					}
-
-					if (db.yesFrom.getGlobalBounds().contains(sf::Vector2f(mousePosition))) {
-						db.yesFrom.setSelected(true);
-						if (!selectedConnector) {
-							selectedConnector = &db.yesFrom;
-						}
-					}
-					else {
-						db.yesFrom.setSelected(false);
-					}
-					if (db2.socket.getGlobalBounds().contains(sf::Vector2f(mousePosition))) {
-						if (selectedConnector) {
-							selectedConnector->setConnection(db2);
-						}
-					}
-
-				}
-			}
-			}
-		}
-		if (state != IsIn::editor)
-			break;
-		window.clear();
-		window.draw(start);
-		window.draw(db);
-		window.draw(db2);
-		window.display();
-	}
-}
-
 void game(MyRenderWindow& window) {
 
 	Game game;
@@ -184,7 +119,7 @@ int main() {
 	settings.antialiasingLevel = 8;
 	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "g", settings);
 	window.setFramerateLimit(60);
-	IsIn state = IsIn::editor;
+	IsIn state = IsIn::menu;
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -202,9 +137,6 @@ int main() {
 		case IsIn::menu: {
 			menu(window, state);
 		};
-		case IsIn::editor: {
-			editor(window,  state);
-		}
 		}
 
 	}
