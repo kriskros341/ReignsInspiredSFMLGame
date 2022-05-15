@@ -179,7 +179,7 @@ void menu(MyRenderWindow& window, IsIn& state) {
 
 
 int main() {
-	systemFont.loadFromFile("C:/Users/TrybSkupienia/Desktop/theGame/ProjectEuropa/ProjectEuropa/x64/Debug/Arial.ttf");
+	systemFont.loadFromFile("../Arial.ttf");
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "g", settings);
