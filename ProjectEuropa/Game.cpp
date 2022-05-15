@@ -1,5 +1,7 @@
 #include "Game.h"
+#include "Logic.h"
 #define PI std::acos(-1);
+
 
 
 float getAngleBetween(sf::Vector2f origin, sf::Vector2f theOther) {
@@ -42,6 +44,9 @@ void Game::restartDrag() {
 }
 bool Game::getDragging() {
 	return area.card.getDragging();
+}
+Decision Game::getCurrentDecision() {
+	return currentDecision;
 }
 void Game::dragCard(sf::Vector2f position) {
 	area.card.dragHorizontally(position);

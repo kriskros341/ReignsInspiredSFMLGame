@@ -1,6 +1,6 @@
 #pragma once
 #include "sfml/Graphics.hpp"
-#include "./Decision.h"
+#include "./Logic.h"
 #include "./Game.h"
 #include "./Animation.h"
 

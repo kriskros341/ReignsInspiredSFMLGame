@@ -1,11 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "./Decision.h"
+#include "Logic.h"
 #include "./MyRenderWindow.h"
 #include "./Game.h"
 #include "./Animation.h"
 #pragma setLocale("utf-8")
-#define papiez 2137;
+#define papiez 2137420;
 
 extern sf::Vector2f screenSize;
 enum class IsIn {
@@ -150,12 +150,11 @@ void menu(MyRenderWindow& window, IsIn& state) {
 }
 
 
-
-int main() {
+void working() {
 	systemFont.loadFromFile("../Arial.ttf");
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
-	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "g", settings);
+	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "Space Explorers : The Game", settings);
 	window.setFramerateLimit(60);
 	IsIn state = IsIn::menu;
 
@@ -178,5 +177,32 @@ int main() {
 		}
 
 	}
+}
+
+void makeDecision(Decision*& currentDecision, bool switcher) {
+	if (switcher == true)
+		currentDecision = currentDecision->getYesDecision()->getNextDecision();
+	else {
+		currentDecision = currentDecision->getNoDecision()->getNextDecision();
+	}
+
+}
+
+int main() {
+	Decision* currentDecision;
+	Decision d("JDJDJDJ");
+	Decision g("ggggg");
+	const int changeD[4] = { 4, 1, 0, 1 };
+	Decision n = Decision("neneenenennene");
+	d.setYes("te", changeD, &g);
+	d.setNo("sus", changeD, &n);
+	std::cout << "oryginalna" <<  d.getText()<< std::endl;
+	currentDecision = &d;
+	makeDecision(currentDecision,false);
+	std::cout << "Zmieniona decyzja" << (currentDecision->getText()) << std::endl;
+	/*if (currentDecision->getYesDecision() != nullptr) {
+		std::cout << currentDecision->getYesDecision()->getConnectorText() << std::endl;
+	std::cout << currentDecision->getNoDecision()->getConnectorText() << "\n";}*/
+	
 	return 1;
 }

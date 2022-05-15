@@ -18,7 +18,7 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Decision.cpp">
+    <ClCompile Include="Logic.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="MyRenderWindow.cpp">
@@ -35,7 +35,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Decision.h">
+    <ClInclude Include="Logic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyRenderWindow.h">

@@ -4,6 +4,6 @@
 #define GLOBALS
 sf::Font systemFont;
 sf::Vector2f screenSize = {800, 800};
-
+//in the arms of the angel
 #endif
 

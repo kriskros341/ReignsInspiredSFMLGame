@@ -112,11 +112,13 @@ class GameState {
 };
 
 class Game {
+	Decision currentDecision;
 	GameState state;
 	PlayableArea area;
 	friend class MyRenderWindow;
 public:
 	Game() : area(400, 150) {};
+	Decision getCurrentDecision();
 	bool doesIntersectWithMainCard(sf::FloatRect position);
 	bool doesIntersectWithMainCard(sf::Vector2f position);
 	void setDragging(bool n);
