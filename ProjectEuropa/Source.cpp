@@ -5,6 +5,7 @@
 #include "./Game.h"
 #include "./Animation.h"
 #pragma setLocale("utf-8")
+#define papiez 2137;
 
 extern sf::Vector2f screenSize;
 enum class IsIn {
@@ -67,11 +68,44 @@ void game(MyRenderWindow& window) {
 }
 
 void menu(MyRenderWindow& window, IsIn& state) {
+	sf::Vector2f centerPoint(window.getSize().x / 2.0, window.getSize().y / 2.0);
+	sf::RectangleShape start({ 200, 100 });
+	sf::RectangleShape options({ 200, 100 });
+	sf::RectangleShape exit({ 200,100 });
+	start.setPosition(centerPoint.x-(start.getSize().x/2.0), 200.0);
+	options.setPosition(centerPoint.x-(options.getSize().x/2.0), 300.0);
+	exit.setFillColor(sf::Color::Red);
+	exit.setPosition(centerPoint.x-(exit.getSize().x/2.0), 400.0);
+	options.setFillColor(sf::Color::Blue);
+	sf::Text startText;
+	sf::Text optionsText;
+	sf::Text exitText;
+
+
+	startText.setString("Start");
+	sf::FloatRect startRect = startText.getLocalBounds();
+	startText.setFont(systemFont);
+
+	startText.setPosition(
+		start.getPosition().x + start.getSize().x/2.0 - startText.getLocalBounds().width / 2.f, 
+		start.getPosition().y + start.getSize().y/2.0 - startText.getLocalBounds().height / 2.f
+	);
+	startText.setFillColor(sf::Color::Black);
+
 	
-	sf::RectangleShape start({ 400, 200 });
-	sf::RectangleShape editor({ 400, 200 });
-	editor.setFillColor(sf::Color::Red);
-	editor.setPosition({ 0, 200 });
+	optionsText.setString("Options");
+	optionsText.setFont(systemFont);
+	optionsText.setPosition(options.getPosition().x+(options.getSize().x/2.0)-optionsText.getLocalBounds().width / 2.f,options.getPosition().y+(options.getSize().y/2.0)-optionsText.getLocalBounds().height / 2.f);
+	optionsText.setFillColor(sf::Color::Black);
+	exitText.setString("Exit");
+	exitText.setFont(systemFont);
+	exitText.setPosition(exit.getPosition().x+(exit.getSize().x/2.0)-exitText.getLocalBounds().width / 2.f,exit.getPosition().y+(exit.getSize().y/2.0)-exitText.getLocalBounds().height / 2.f);
+		/*start.getLocalBounds().left + start.getLocalBounds().width / 2) */
+		;
+	exitText.setFillColor(sf::Color::Black);
+	
+	
+	
 	while (window.isOpen()) {
 		sf::Event event;
 		sf::Vector2i position = sf::Mouse::getPosition(window);
@@ -94,7 +128,7 @@ void menu(MyRenderWindow& window, IsIn& state) {
 					{
 						state = IsIn::game;
 					}
-					if (editor.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
+					if (options.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
 						state = IsIn::editor;
 					}
@@ -106,7 +140,11 @@ void menu(MyRenderWindow& window, IsIn& state) {
 			break;
 		window.clear();
 		window.draw(start);
-		window.draw(editor);
+		window.draw(options);
+		window.draw(exit);
+		window.draw(startText);
+		window.draw(optionsText);
+		window.draw(exitText);
 		window.display();
 	}
 }

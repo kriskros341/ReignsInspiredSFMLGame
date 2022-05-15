@@ -19,4 +19,5 @@ public:
 	void draw(Resource r);
 	void draw(FadeIn f);
 	void draw(sf::Shape& f);
+	void draw(sf::Text& t);
 };

@@ -25,3 +25,6 @@ void MyRenderWindow::draw(FadeIn f) {
 void MyRenderWindow::draw(sf::Shape& f) {
 	sf::RenderWindow::draw(f);
 }
+void MyRenderWindow::draw(sf::Text& t) {
+	sf::RenderWindow::draw(t);
+};
