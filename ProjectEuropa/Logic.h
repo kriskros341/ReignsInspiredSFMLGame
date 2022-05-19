@@ -11,6 +11,9 @@ public:
 	std::string getConnectorText();
 	int getChangeParameter(int a);
 	Decision* getNextDecision();
+	void setConnectorText(std::string s);
+	void setChangeParameter(int index, int number); 
+	void setNextDecision(Decision* nex);
 };
 
 class Decision {
@@ -20,22 +23,16 @@ private:
 	DecisionConnector* yes = nullptr;
 	DecisionConnector* no = nullptr;
 public:
-	
 	Decision(std::string t="defau");
-	/*void setYes(Decision* other);
-	void setNo(Decision* other);*/
+	Decision(std::string s, DecisionConnector* y, DecisionConnector* n);
+	void setID();
+	void setText(std::string s);
 	void setYes(std::string t, const int c[4], Decision* d );
 	void setNo(std::string t, const int c[4], Decision* d );
-
-
 	int getID();
 	std::string getText();
 	DecisionConnector* getYesDecision();
 	DecisionConnector* getNoDecision();
-
-	~Decision() {
-		delete yes;
-		delete no;
-	}
+	~Decision();
 };
 

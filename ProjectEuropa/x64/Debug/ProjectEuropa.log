@@ -7,26 +7,28 @@ C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(92,
 C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(92,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
 C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(93,53): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
 C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(93,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(7,9): warning C4068: nieznana pragma „setLocale”
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(60,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(66,12): warning C4305: "+=": obcięcie z "double" do "float"
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(71,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(9,9): warning C4068: nieznana pragma „setLocale”
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(62,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(68,12): warning C4305: "+=": obcięcie z "double" do "float"
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(73,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
           with
           [
               T=float
           ]
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(71,46): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(73,46): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
           with
           [
               T=float
           ]
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(75,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(76,35): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(78,32): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(91,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(90,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(98,166): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(98,75): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(102,148): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(102,66): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(77,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(78,35): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(80,32): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(93,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(92,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(100,166): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(100,75): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(104,148): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(104,66): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(195,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(226,13): warning C4101: "currentDecision": lokalna zmienna, do której nie istnieje odwołanie
   ProjectEuropa.vcxproj -> C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\x64\Debug\ProjectEuropa.exe

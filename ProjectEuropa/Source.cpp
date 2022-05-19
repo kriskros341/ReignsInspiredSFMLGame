@@ -1,10 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <vector>
 #include "Logic.h"
 #include "./MyRenderWindow.h"
-#include "./Game.h"
-#include "./Animation.h"
-#pragma setLocale("utf-8")
+#include "Game.h"
+#include "Animation.h"
+
+#pragma setLocale("utf-8");
 #define papiez 2137420;
 
 extern sf::Vector2f screenSize;
@@ -179,30 +181,96 @@ void working() {
 	}
 }
 
-void makeDecision(Decision*& currentDecision, bool switcher) {
+void makeDecision(Decision* currentDecision, bool switcher) {
 	if (switcher == true)
-		currentDecision = currentDecision->getYesDecision()->getNextDecision();
+		currentDecision=currentDecision->getYesDecision()->getNextDecision();
 	else {
-		currentDecision = currentDecision->getNoDecision()->getNextDecision();
+		currentDecision=currentDecision->getNoDecision()->getNextDecision();
 	}
 
 }
+void prototype(Decision* starterCard, std::vector<Decision> rands) {
+	bool gameOn = true;
+	Decision* currentCard = starterCard;
+	srand(time(NULL));
+	while (gameOn) {
+		std::cout << "Current card: " << currentCard->getText() << std::endl;
+		std::cout << "Yes: " << currentCard->getYesDecision()->getConnectorText() << std::endl;
+		std::cout << "No: " << currentCard->getNoDecision()->getConnectorText() << "\n(1 for true, anything else for false)";
+		int a;
+		std::cin >> a;
+		if (a == 1) {
+			if (currentCard->getYesDecision()->getNextDecision() == nullptr) {
+				currentCard = &(rands[rand() % rands.size()]);
+			}
+			currentCard = currentCard->getYesDecision()->getNextDecision();
+		}
+		else {
+			if (currentCard->getNoDecision()->getNextDecision() == nullptr) {
+				currentCard = &(rands[rand() % rands.size()]);
+			}
+			currentCard = currentCard->getNoDecision()->getNextDecision();
+		}
 
+
+	}
+};
 int main() {
-	Decision* currentDecision;
-	Decision d("JDJDJDJ");
-	Decision g("ggggg");
-	const int changeD[4] = { 4, 1, 0, 1 };
-	Decision n = Decision("neneenenennene");
-	d.setYes("te", changeD, &g);
-	d.setNo("sus", changeD, &n);
-	std::cout << "oryginalna" <<  d.getText()<< std::endl;
-	currentDecision = &d;
-	makeDecision(currentDecision,false);
-	std::cout << "Zmieniona decyzja" << (currentDecision->getText()) << std::endl;
-	/*if (currentDecision->getYesDecision() != nullptr) {
-		std::cout << currentDecision->getYesDecision()->getConnectorText() << std::endl;
-	std::cout << currentDecision->getNoDecision()->getConnectorText() << "\n";}*/
-	
+	std::cout << "Sprawdzamy gre? 1/cokolwiek innego" << std::endl;
+	int in;
+	std::cin >> in;
+	if (in == 1) {
+		working();
+	}
+	else {
+		Decision* currentDecision;
+		int change[4] = { 0,0,0,0 };
+		Decision d0("Tutorial");
+		Decision d1("Base Decision");
+		Decision d2("Yes of Base");
+		Decision d3("No of Base");
+		Decision d4("Yes of First Yes");
+		Decision d5("No of First Yes");
+		Decision d6("Yes of First No");
+		Decision d7("No of First No");
+		Decision d8("Random Roll 1");
+		Decision d9("Random Roll 2");
+		std::vector<Decision> randomDecisions = { d1,d8,d9 };
+		d0.setYes("Use this option to agree", change, &d1);
+		d0.setNo("Use this option to disagree", change, &d1);
+		d1.setYes("Go to base of Yes", change, &d2);
+		d1.setNo("Go to base of No", change, &d3);
+		d2.setYes("Go to Yes of first Yes", change, &d4);
+		d2.setNo("Go to No of first Yes", change, &d5);
+		d3.setYes("Go to Yes of first No", change, &d6);
+		d3.setNo("Go to No of first No", change, &d7);
+		d4.setYes("Route taken:Yes->Yes", change, nullptr);
+		d4.setNo("Route taken:Yes->Yes", change, nullptr);
+		d5.setYes("Route taken:Yes->No", change, nullptr);
+		d5.setNo("Route taken:Yes->No", change, nullptr);
+		d6.setYes("Route taken:No->Yes", change, nullptr);
+		d6.setNo("Route taken:No->Yes", change, nullptr);
+		d7.setYes("Route taken:No->No", change, nullptr);
+		d7.setNo("Route taken:No->No", change, nullptr);
+		d8.setYes("Go to base of Yes", change, &d2);
+		d8.setNo("Go to base of No", change, &d3);
+		d9.setYes("Go to base of Yes", change, &d2);
+		d9.setNo("Go to base of No", change, &d3);
+		prototype(&d0, randomDecisions);
+		/*Decision d("JDJDJDJ"); \\test 1
+		Decision y("ggggg");
+		const int changeD[4] = { 4, 1, 0, 1 };
+		Decision n = Decision("neneenenennene");
+		d.setYes("te", changeD, &y);
+		d.setNo("sus", changeD, &n);
+		std::cout << "oryginalna " << d.getText() << std::endl;
+		currentDecision = &d;
+		makeDecision(currentDecision, false);
+		std::cout << "Zmieniona decyzja " << (currentDecision->getText()) << std::endl;*/
+		/*if (currentDecision->getYesDecision() != nullptr) {
+			std::cout << currentDecision->getYesDecision()->getConnectorText() << std::endl;
+		std::cout << currentDecision->getNoDecision()->getConnectorText() << "\n";}*/
+		/*}*/
+	}
 	return 1;
 }

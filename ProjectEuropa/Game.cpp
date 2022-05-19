@@ -45,9 +45,7 @@ void Game::restartDrag() {
 bool Game::getDragging() {
 	return area.card.getDragging();
 }
-Decision Game::getCurrentDecision() {
-	return currentDecision;
-}
+
 void Game::dragCard(sf::Vector2f position) {
 	area.card.dragHorizontally(position);
 }
