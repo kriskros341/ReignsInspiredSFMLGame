@@ -18,6 +18,7 @@ int DecisionConnector::getChangeParameter(int a) {
 	else std::cout << "Error 1: wrong index choice while getting change values in DecisionConnector" << std::endl;
 };
 Decision* DecisionConnector::getNextDecision() {
+	
 	return next;
 };
 void DecisionConnector::setConnectorText(std::string s) {

@@ -189,32 +189,36 @@ void makeDecision(Decision* currentDecision, bool switcher) {
 	}
 
 }
-void prototype(Decision* starterCard, std::vector<Decision> rands) {
+void prototype(Decision* starterCard, std::vector<Decision*> rands) {
 	bool gameOn = true;
 	Decision* currentCard = starterCard;
 	srand(time(NULL));
 	while (gameOn) {
 		std::cout << "Current card: " << currentCard->getText() << std::endl;
-		std::cout << "Yes: " << currentCard->getYesDecision()->getConnectorText() << std::endl;
-		std::cout << "No: " << currentCard->getNoDecision()->getConnectorText() << "\n(1 for true, anything else for false)";
+//		std::cout << "Yes: " << currentCard->getYesDecision()->getConnectorText() << std::endl;
+//		std::cout << "No: " << currentCard->getNoDecision()->getConnectorText() << "\n(1 for true, anything else for false)";
 		int a;
 		std::cin >> a;
+		std::cin.clear();
+		if (currentCard == nullptr) {
+			break;
+		}
 		if (a == 1) {
-			if (currentCard->getYesDecision()->getNextDecision() == nullptr) {
-				currentCard = &(rands[rand() % rands.size()]);
-			}
 			currentCard = currentCard->getYesDecision()->getNextDecision();
 		}
 		else {
-			if (currentCard->getNoDecision()->getNextDecision() == nullptr) {
-				currentCard = &(rands[rand() % rands.size()]);
-			}
 			currentCard = currentCard->getNoDecision()->getNextDecision();
 		}
-
-
+		if (currentCard == nullptr) {
+			currentCard = rands[rand() % rands.size()];
+		}
 	}
 };
+
+/*
+decisionFactory()
+*/
+
 int main() {
 	std::cout << "Sprawdzamy gre? 1/cokolwiek innego" << std::endl;
 	int in;
@@ -235,7 +239,7 @@ int main() {
 		Decision d7("No of First No");
 		Decision d8("Random Roll 1");
 		Decision d9("Random Roll 2");
-		std::vector<Decision> randomDecisions = { d1,d8,d9 };
+		std::vector<Decision*> randomDecisions = { &d1,&d8,&d9 };
 		d0.setYes("Use this option to agree", change, &d1);
 		d0.setNo("Use this option to disagree", change, &d1);
 		d1.setYes("Go to base of Yes", change, &d2);
