@@ -29,6 +29,5 @@ C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa
 C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(100,75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(104,148): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(104,66): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(195,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(225,13): warning C4101: 'currentDecision': unreferenced local variable
-LINK : fatal error LNK1168: cannot open C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\x64\Debug\ProjectEuropa.exe for writing
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(200,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  ProjectEuropa.vcxproj -> C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\x64\Debug\ProjectEuropa.exe

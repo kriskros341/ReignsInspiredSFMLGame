@@ -180,23 +180,28 @@ void working() {
 
 	}
 }
+/*
 
-void makeDecision(Decision* currentDecision, bool switcher) {
+*/
+
+void makeDecision(std::shared_ptr<Decision> currentDecision, bool switcher) {
 	if (switcher == true)
-		currentDecision=currentDecision->getYesDecision()->getNextDecision();
+	{
+		currentDecision = std::move(currentDecision->getYesDecision()->getNextDecision());
+	}
 	else {
-		currentDecision=currentDecision->getNoDecision()->getNextDecision();
+		currentDecision = std::move(currentDecision->getNoDecision()->getNextDecision());
 	}
 
 }
-void prototype(Decision* starterCard, std::vector<Decision*> rands) {
+void prototype(std::shared_ptr<Decision> starterCard, std::vector<std::shared_ptr<Decision>> rands) {
 	bool gameOn = true;
-	Decision* currentCard = starterCard;
+	std::shared_ptr<Decision> currentCard = starterCard;
 	srand(time(NULL));
 	while (gameOn) {
 		std::cout << "Current card: " << currentCard->getText() << std::endl;
-//		std::cout << "Yes: " << currentCard->getYesDecision()->getConnectorText() << std::endl;
-//		std::cout << "No: " << currentCard->getNoDecision()->getConnectorText() << "\n(1 for true, anything else for false)";
+		std::cout << "Yes: " << currentCard->getYesDecision()->getConnectorText() << std::endl;
+		std::cout << "No: " << currentCard->getNoDecision()->getConnectorText() << "\n(1 for true, anything else for false)";
 		int a;
 		std::cin >> a;
 		std::cin.clear();
@@ -213,11 +218,10 @@ void prototype(Decision* starterCard, std::vector<Decision*> rands) {
 			currentCard = rands[rand() % rands.size()];
 		}
 	}
-};
+}
+;
 
-/*
-decisionFactory()
-*/
+
 
 int main() {
 	std::cout << "Sprawdzamy gre? 1/cokolwiek innego" << std::endl;
@@ -227,6 +231,47 @@ int main() {
 		working();
 	}
 	else {
+		/*
+		chcê mieæ
+			Decision* d0 = DF(
+				"Text", 
+				CF("text", change, DF() | null), 
+				CF("text", change, DF() | null)
+			)
+		4 godziny póŸniej ^^
+		*/
+		std::shared_ptr<Decision> current = decisionFactory(
+			"Tutorial 1",
+			connectionFactory("Tutorial L", {0, 0, 0, 0}, nullptr),
+			connectionFactory("Tutorial R", {0, 0, 0, 0}, nullptr)
+		);
+		std::shared_ptr<Decision> u1 = decisionFactory(
+			"Drzewo1", 
+			connectionFactory(
+				"Drzewo1 L", {4, 4, 4, 4},
+				decisionFactory(
+					"Drzewo1 go L", 
+					connectionFactory("Drzewo1 L go L", {4, 4, 4, 4}, nullptr),
+					connectionFactory("Drzewo1 L go R", {4, 4, 4, 4}, nullptr)
+					)),
+			connectionFactory("Drzewo1 go R", {4, 4, 4, 4}, nullptr)
+		);
+
+		std::shared_ptr<Decision> u2 = decisionFactory(
+			"Drzewo2", 
+			connectionFactory(
+				"Drzewo2 go L", {4, 4, 4, 4},
+				decisionFactory(
+					"Drzewo2 L", 
+					connectionFactory("Drzewo2 L go L", {4, 4, 4, 4}, nullptr),
+					connectionFactory("Drzewo2 L go R", {4, 4, 4, 4}, nullptr)
+					)),
+			connectionFactory("Drzewo2 R", {4, 4, 4, 4}, nullptr)
+		);
+
+		std::vector<std::shared_ptr<Decision>> rands = {u1, u2};
+		prototype(current, rands);
+/*
 		Decision* currentDecision;
 		int change[4] = { 0,0,0,0 };
 		Decision d0("Tutorial");
@@ -261,6 +306,7 @@ int main() {
 		d9.setYes("Go to base of Yes", change, &d2);
 		d9.setNo("Go to base of No", change, &d3);
 		prototype(&d0, randomDecisions);
+*/
 		/*Decision d("JDJDJDJ"); \\test 1
 		Decision y("ggggg");
 		const int changeD[4] = { 4, 1, 0, 1 };
