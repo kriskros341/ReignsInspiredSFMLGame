@@ -52,10 +52,12 @@ void Game::dragCard(sf::Vector2f position) {
 void Game::makeChoice() {
 	if (doesIntersectWithMainCard(area.yesZone.getGlobalBounds()))
 	{
+		area.makeDecision(true);
 		std::cout << "YES" << std::endl;
 	}
 	if (doesIntersectWithMainCard(area.noZone.getGlobalBounds()))
 	{
+		area.makeDecision(false);
 		std::cout << "NO" << std::endl;
 	}
 	setDragging(false);

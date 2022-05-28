@@ -61,10 +61,13 @@ void game(MyRenderWindow& window) {
 	std::shared_ptr<Decision> current = decisionFactory(
 		"Tutorial 1",
 		connectionFactory("Tutorial L", {0, 0, 0, 0}, nullptr),
-		connectionFactory("Tutorial R", {0, 0, 0, 0}, nullptr)
+		connectionFactory("Tutorial R", {10, 6, 4, 1}, nullptr)
 	);
 	std::vector<std::shared_ptr<Decision>> decisions = allTheDecisions();
 	Game game;
+
+	game.setStartingDecision(current);
+	game.setDecisionPool(decisions);
 	
 
 	/*
