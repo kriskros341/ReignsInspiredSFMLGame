@@ -49,14 +49,15 @@ public:
 
 float getAngleBetween(sf::Vector2f origin, sf::Vector2f theOther);
 
-class MainCard : public sf::RectangleShape {
+class MainCard : public sf::Sprite {
 	bool isDragging = false;
 	sf::FloatRect rect;
 	sf::FloatRect starting;
+	sf::Texture texture;
 public:
 
 	// width, height, left, top
-	MainCard(sf::FloatRect s) : sf::RectangleShape({ s.width, s.height }) {
+	MainCard(sf::FloatRect s) : sf::Sprite() {
 		setOrigin(s.width / 2.0, s.height / 2.0);
 		starting = s;
 		setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
@@ -67,9 +68,9 @@ public:
 	void setDragging(bool n);
 };
 
-class NextCard : public sf::RectangleShape {
+class NextCard : public sf::Sprite {
 public:
-	NextCard() : sf::RectangleShape({ 250, 250 }) {
+	NextCard() : sf::Sprite() {
 		setOrigin(250.0 / 2.0, 250.0 / 2.0);
 	}
 };
@@ -82,6 +83,8 @@ class PlayableArea : public sf::RectangleShape {
 	sf::RectangleShape yesZone, noZone;
 	friend class Game;
 	friend class MyRenderWindow;
+	sf::Texture texture;
+	sf::Texture personTexture;
 public:
 	//PlayableArea(sf::FloatRect rect) :
 	PlayableArea(float width, float guiOffset) :
@@ -94,7 +97,13 @@ public:
 		gui.setPosition(rect.left, 0);
 	
 		next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
-		next.setFillColor(sf::Color::Magenta);
+		//next.setFillColor(sf::Color::Magenta);
+		
+		texture.loadFromFile("./assets/backCard250x250.png");
+		personTexture.loadFromFile("./assets/CaptainRed.png");
+		next.setTexture(texture);
+		card.setTexture(personTexture);
+
 		//CENTER
 		setPosition(rect.left, guiOffset);
 

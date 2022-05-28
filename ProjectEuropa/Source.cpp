@@ -120,37 +120,40 @@ void game(MyRenderWindow& window) {
 
 void menu(MyRenderWindow& window, IsIn& state) {
 	sf::Vector2f centerPoint(window.getSize().x / 2.0, window.getSize().y / 2.0);
-	sf::RectangleShape start({ 200, 100 });
-	sf::RectangleShape options({ 200, 100 });
-	sf::RectangleShape exit({ 200,100 });
-	start.setPosition(centerPoint.x-(start.getSize().x/2.0), 200.0);
+	sf::RectangleShape start({ 200, 60 });
+	sf::RectangleShape options({ 200, 60 });
+	sf::RectangleShape exit({ 200, 60 });
+
+	start.setPosition(centerPoint.x-(start.getSize().x/2.0), 220.0);
 	options.setPosition(centerPoint.x-(options.getSize().x/2.0), 300.0);
-	exit.setFillColor(sf::Color::Red);
-	exit.setPosition(centerPoint.x-(exit.getSize().x/2.0), 400.0);
-	options.setFillColor(sf::Color::Blue);
+	/*exit.setFillColor(sf::Color::Blue);*/
+	exit.setPosition(centerPoint.x-(exit.getSize().x/2.0), 380.0);
+	/*options.setFillColor(sf::Color::Blue);*/
+
 	sf::Text startText;
 	sf::Text optionsText;
 	sf::Text exitText;
 
 
-	startText.setString("Start");
+	startText.setString("Continue");
 	sf::FloatRect startRect = startText.getLocalBounds();
 	startText.setFont(systemFont);
 
 	startText.setPosition(
 		start.getPosition().x + start.getSize().x/2.0 - startText.getLocalBounds().width / 2.f, 
-		start.getPosition().y + start.getSize().y/2.0 - startText.getLocalBounds().height / 2.f
+		start.getPosition().y + start.getSize().y/2.0 - startText.getLocalBounds().height / 1.f
 	);
 	startText.setFillColor(sf::Color::Black);
 
 	
-	optionsText.setString("Options");
+	optionsText.setString("Start a new");
 	optionsText.setFont(systemFont);
-	optionsText.setPosition(options.getPosition().x+(options.getSize().x/2.0)-optionsText.getLocalBounds().width / 2.f,options.getPosition().y+(options.getSize().y/2.0)-optionsText.getLocalBounds().height / 2.f);
+	optionsText.setPosition(options.getPosition().x+(options.getSize().x/2.0)-optionsText.getLocalBounds().width / 2.f,options.getPosition().y+(options.getSize().y/2.0)-optionsText.getLocalBounds().height / 1.f);
 	optionsText.setFillColor(sf::Color::Black);
+
 	exitText.setString("Exit");
 	exitText.setFont(systemFont);
-	exitText.setPosition(exit.getPosition().x+(exit.getSize().x/2.0)-exitText.getLocalBounds().width / 2.f,exit.getPosition().y+(exit.getSize().y/2.0)-exitText.getLocalBounds().height / 2.f);
+	exitText.setPosition(exit.getPosition().x+(exit.getSize().x/2.0)-exitText.getLocalBounds().width / 2.f,exit.getPosition().y+(exit.getSize().y/2.0)-exitText.getLocalBounds().height / 1.f);
 		/*start.getLocalBounds().left + start.getLocalBounds().width / 2) */
 		;
 	exitText.setFillColor(sf::Color::Black);
