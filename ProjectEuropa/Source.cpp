@@ -16,10 +16,58 @@ enum class IsIn {
 	game
 };
 
+std::vector<std::shared_ptr<Decision>> allTheDecisions() {
+	std::vector<std::shared_ptr<Decision>> decisions;
+	
+	// Pojedyncza decyzja (losowana) ze wskaŸnikiem nullptr:
+	std::shared_ptr<Decision> przykladowaPojedyncaDecyzja = decisionFactory(
+		"drzewo",
+		connectionFactory("wybor1", { 0, 0, 0, 0 }, nullptr), // najpierw tak
+		connectionFactory("wybor2", { -50, -50, -50, -50 }, nullptr) // potem nie
+	);
+	decisions.push_back(przykladowaPojedyncaDecyzja);
+
+	// Drzewo decyzji (event):
+	std::shared_ptr<Decision> u1 = decisionFactory(
+		"Drzewo1", 
+		connectionFactory(
+			"Drzewo1 L", {4, 4, 4, 4},
+			decisionFactory(
+				"Drzewo1 go L", 
+				connectionFactory("Drzewo1 L go L", {4, 4, 4, 4}, nullptr),
+				connectionFactory("Drzewo1 L go R", {4, 4, 4, 4}, nullptr)
+				)),
+		connectionFactory("Drzewo1 go R", {4, 4, 4, 4}, nullptr)
+	);
+	decisions.push_back(u1);
+
+
+	std::shared_ptr<Decision> u2 = decisionFactory(
+		"Drzewo2", 
+		connectionFactory(
+			"Drzewo2 go L", {4, 4, 4, 4},
+			decisionFactory(
+				"Drzewo2 L", 
+				connectionFactory("Drzewo2 L go L", {4, 4, 4, 4}, nullptr),
+				connectionFactory("Drzewo2 L go R", {4, 4, 4, 4}, nullptr)
+				)),
+		connectionFactory("Drzewo2 R", {4, 4, 4, 4}, nullptr)
+	);
+	decisions.push_back(u2);
+	return decisions;
+}
+
 void game(MyRenderWindow& window) {
-
+	std::shared_ptr<Decision> current = decisionFactory(
+		"Tutorial 1",
+		connectionFactory("Tutorial L", {0, 0, 0, 0}, nullptr),
+		connectionFactory("Tutorial R", {0, 0, 0, 0}, nullptr)
+	);
+	std::vector<std::shared_ptr<Decision>> decisions = allTheDecisions();
 	Game game;
+	
 
+	/*
 	sf::CircleShape toCompare(4, 40);
 	toCompare.setPosition(400, 400);
 	sf::CircleShape* animationTest = new sf::CircleShape(4, 40);
@@ -27,6 +75,7 @@ void game(MyRenderWindow& window) {
 	animationTest->setFillColor(sf::Color::Black);
 	float fadeRange[2] = { 0, 10 };
 	FadeIn fade(animationTest, 0, fadeRange);
+	*/
 
 	float t{};
 	while (window.isOpen()) {
@@ -59,11 +108,11 @@ void game(MyRenderWindow& window) {
 			}
 		}
 
-		fade.animate((fadeRange[1] / 2.0) + (fadeRange[1] / 2.0) * std::sin(t));
+		//fade.animate((fadeRange[1] / 2.0) + (fadeRange[1] / 2.0) * std::sin(t));
 		window.clear();
 		window.draw(game);
-		window.draw(toCompare);
-		window.draw(fade);
+		//window.draw(toCompare);
+		//window.draw(fade);
 		window.display();
 		t += 0.05;
 	}
@@ -180,9 +229,7 @@ void working() {
 
 	}
 }
-/*
 
-*/
 
 void makeDecision(std::shared_ptr<Decision> currentDecision, bool switcher) {
 	if (switcher == true)
@@ -238,39 +285,7 @@ int main() {
 				CF("text", change, DF() | null), 
 				CF("text", change, DF() | null)
 			)
-		4 godziny póŸniej ^^
 		*/
-		std::shared_ptr<Decision> current = decisionFactory(
-			"Tutorial 1",
-			connectionFactory("Tutorial L", {0, 0, 0, 0}, nullptr),
-			connectionFactory("Tutorial R", {0, 0, 0, 0}, nullptr)
-		);
-		std::shared_ptr<Decision> u1 = decisionFactory(
-			"Drzewo1", 
-			connectionFactory(
-				"Drzewo1 L", {4, 4, 4, 4},
-				decisionFactory(
-					"Drzewo1 go L", 
-					connectionFactory("Drzewo1 L go L", {4, 4, 4, 4}, nullptr),
-					connectionFactory("Drzewo1 L go R", {4, 4, 4, 4}, nullptr)
-					)),
-			connectionFactory("Drzewo1 go R", {4, 4, 4, 4}, nullptr)
-		);
-
-		std::shared_ptr<Decision> u2 = decisionFactory(
-			"Drzewo2", 
-			connectionFactory(
-				"Drzewo2 go L", {4, 4, 4, 4},
-				decisionFactory(
-					"Drzewo2 L", 
-					connectionFactory("Drzewo2 L go L", {4, 4, 4, 4}, nullptr),
-					connectionFactory("Drzewo2 L go R", {4, 4, 4, 4}, nullptr)
-					)),
-			connectionFactory("Drzewo2 R", {4, 4, 4, 4}, nullptr)
-		);
-
-		std::vector<std::shared_ptr<Decision>> rands = {u1, u2};
-		prototype(current, rands);
 /*
 		Decision* currentDecision;
 		int change[4] = { 0,0,0,0 };

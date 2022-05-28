@@ -20,7 +20,7 @@ void MainCard::dragHorizontally(sf::Vector2f position) {
 }
 void MainCard::restartDrag() {
 	setRotation(0);
-	setPosition({ rect.top, rect.left });
+	setPosition({ starting.top-100.0f, starting.left+100.0f });
 }
 void MainCard::setDragging(bool n) {
 	isDragging = n;

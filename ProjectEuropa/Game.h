@@ -52,16 +52,19 @@ float getAngleBetween(sf::Vector2f origin, sf::Vector2f theOther);
 class MainCard : public sf::RectangleShape {
 	bool isDragging = false;
 	sf::FloatRect rect;
+	sf::FloatRect starting;
 public:
+
+	// width, height, left, top
 	MainCard(sf::FloatRect s) : sf::RectangleShape({ s.width, s.height }) {
 		setOrigin(s.width / 2.0, s.height / 2.0);
-		rect = s;
+		starting = s;
+		setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
 	}
 	bool getDragging();
 	void dragHorizontally(sf::Vector2f position);
 	void restartDrag();
 	void setDragging(bool n);
-		
 };
 
 class NextCard : public sf::RectangleShape {
@@ -84,13 +87,13 @@ public:
 	PlayableArea(float width, float guiOffset) :
 		sf::RectangleShape({ width, screenSize.y - guiOffset }),
 		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }),
-		card({ screenSize.x / 2.0f, screenSize.y / 2.0f, 250, 250 })
+		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 250, 250 })
 	{
 		sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
 		sf::Vector2f size = getSize();
 		gui.setPosition(rect.left, 0);
-		card.setPosition(screenSize.x / 2.0, screenSize.y / 2.0);
-		next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0);
+	
+		next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
 		next.setFillColor(sf::Color::Magenta);
 		//CENTER
 		setPosition(rect.left, guiOffset);
@@ -107,14 +110,18 @@ public:
 
 };
 
-class GameState {
+// Wszystkie decyzje
+class AllDecisions {
+	std::shared_ptr<Decision> current;
+	
 	
 };
 
 class Game {
-	GameState state;
+	AllDecisions decision;
 	PlayableArea area;
 	friend class MyRenderWindow;
+	DecisionStats statystyki{100, 100, 100, 100};
 public:
 	Game() : area(400, 150) {};
 	
