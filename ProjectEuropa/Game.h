@@ -33,7 +33,17 @@ public:
 		return value;
 	};
 };
-
+class ResourceCover : public sf::Sprite {
+	sf::Texture texture;
+	friend class MyRenderWindow;
+public:
+	ResourceCover();
+	ResourceCover(std::string texturePath, float nthChild) : sf::Sprite() {
+		texture.loadFromFile(texturePath);
+		setTexture(texture);
+		setPosition(75.0f*nthChild, 0.0);
+	}
+};
 
 float approx_linear(float input[2], float output[2], float value);
 
@@ -45,7 +55,6 @@ public:
 	GUI(sf::FloatRect rect, DecisionStats& stats) : sf::RectangleShape({rect.width, rect.height}) {
 		float width = rect.width, height = rect.height;
 		resources = new Resource[resourceCount];
-		
 		for (int i = 0; i < resourceCount; i++) {
 			resources[i] = Resource(
 				{ width / resourceCount, height }, 
@@ -56,6 +65,7 @@ public:
 			if(i % 2 == 0)
 				resources[i].setFillColor(sf::Color::Yellow);
 		}
+		
 	};
 	void updateBars(DecisionStats& s) {
 		for (int i{}; i < 4; i++) {
@@ -112,6 +122,7 @@ class PlayableArea : public sf::RectangleShape {
 	GUI gui;
 	MainCard card;
 	NextCard next;
+	ResourceCover flora;
 	float guiOffset = 150;
 	sf::RectangleShape yesZone, noZone;
 	friend class Game;
@@ -141,13 +152,14 @@ public:
 		sf::RectangleShape({ width, screenSize.y - guiOffset }),
 		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, stats),
 		next({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/backCard300x300.png"),
+		flora("./assets/flora.png", 1),
 		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/captainRed300x300.png")
 	{
 		sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
 		sf::Vector2f size = getSize();
 		gui.setPosition(rect.left, 0);
 	
-		next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0 + 100.0f);
+		//next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0 + 100.0f);
 		//next.setFillColor(sf::Color::Magenta);
 
 		//CENTER
