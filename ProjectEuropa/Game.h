@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string>
 #include "MyRenderWindow.h"
 
 extern sf::Font systemFont;
@@ -73,10 +74,12 @@ class MainCard : public sf::Sprite {
 public:
 
 	// width, height, left, top
-	MainCard(sf::FloatRect s) : sf::Sprite() {
+	MainCard(sf::FloatRect s, std::string texturePath) : sf::Sprite() {
 		setOrigin(s.width / 2.0, s.height / 2.0);
 		starting = s;
-		setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
+		setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f);
+		texture.loadFromFile(texturePath);
+		setTexture(texture);
 	}
 	bool getDragging();
 	void dragHorizontally(sf::Vector2f position);
@@ -85,9 +88,13 @@ public:
 };
 
 class NextCard : public sf::Sprite {
+	sf::Texture texture;
 public:
-	NextCard() : sf::Sprite() {
-		setOrigin(250.0 / 2.0, 250.0 / 2.0);
+	NextCard(sf::FloatRect s, std::string texturePath) : sf::Sprite() {
+		setOrigin(s.width / 2.0, s.height / 2.0);
+		setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f);
+		texture.loadFromFile(texturePath);
+		setTexture(texture);
 	}
 };
 
@@ -109,8 +116,6 @@ class PlayableArea : public sf::RectangleShape {
 	sf::RectangleShape yesZone, noZone;
 	friend class Game;
 	friend class MyRenderWindow;
-	sf::Texture texture;
-	sf::Texture personTexture;
 public:
 	std::shared_ptr<Decision> getCurrentDecision() {
 		return decision.currentDecision;
@@ -135,19 +140,15 @@ public:
 	PlayableArea(float width, float guiOffset) :
 		sf::RectangleShape({ width, screenSize.y - guiOffset }),
 		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, stats),
-		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 250, 250 })
+		next({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/backCard300x300.png"),
+		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/captainRed300x300.png")
 	{
 		sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
 		sf::Vector2f size = getSize();
 		gui.setPosition(rect.left, 0);
 	
-		next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
+		next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0 + 100.0f);
 		//next.setFillColor(sf::Color::Magenta);
-		
-		texture.loadFromFile("./assets/backCard250x250.png");
-		personTexture.loadFromFile("./assets/captainRed.png");
-		next.setTexture(texture);
-		card.setTexture(personTexture);
 
 		//CENTER
 		setPosition(rect.left, guiOffset);
