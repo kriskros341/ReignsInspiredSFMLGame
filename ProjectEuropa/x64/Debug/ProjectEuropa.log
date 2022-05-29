@@ -1,50 +1,89 @@
-<<<<<<< Updated upstream
-﻿  ProjectEuropa.vcxproj -> C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\x64\Debug\ProjectEuropa.exe
-=======
 ﻿  Game.cpp
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(38,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(38,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(97,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(97,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(114,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(114,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(52,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(49,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(61,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,54): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(123,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(124,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(125,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(9,50): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
   MyRenderWindow.cpp
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(38,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(38,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(97,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(97,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(114,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(114,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(52,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(49,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(61,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,54): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(123,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(124,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(125,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\MyRenderWindow.cpp(19,27): error C2039: „s”: nie jest składową elementu „Resource”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\MyRenderWindow.h(8): message : zobacz deklarację „Resource”
   Source.cpp
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(38,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(38,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(97,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(97,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(114,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(114,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(52,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(49,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(61,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,54): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(123,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(124,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(125,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(9,9): warning C4068: nieznana pragma „setLocale”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(120,12): warning C4305: "+=": obcięcie z "double" do "float"
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(125,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(117,12): warning C4305: "+=": obcięcie z "double" do "float"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(122,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
           with
           [
               T=float
           ]
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(125,46): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(122,46): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
           with
           [
               T=float
           ]
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(130,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(131,35): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(133,32): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(147,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(146,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(154,166): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(154,75): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(159,148): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(159,66): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(252,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(127,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(128,35): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(130,32): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(144,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(143,49): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(151,166): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(151,75): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(156,148): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(156,66): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(249,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
   Generowanie kodu...
-  ProjectEuropa.vcxproj -> C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\x64\Debug\ProjectEuropa.exe
->>>>>>> Stashed changes
