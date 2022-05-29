@@ -1,69 +1,147 @@
 ﻿  Game.cpp
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(52,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(49,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(61,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,54): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(123,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(25,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(25,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(50,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(54,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(62,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,30): error C2146: błąd składniowy: brakuje „)” przed identyfikatorem „s”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,20): error C2079: "sf::FloatRect" używa niezdefiniowanego class "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,31): error C2226: błąd składniowy: nieoczekiwany typ „sf::FloatRect”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,30): error C2146: błąd składniowy: brakuje „;” przed identyfikatorem „s”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,31): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C2226: błąd składniowy: nieoczekiwany typ „std::string”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,45): error C2146: błąd składniowy: brakuje „;” przed identyfikatorem „texturePath”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C2059: błąd składniowy: „)”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,71): error C2059: błąd składniowy: „)”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,73): error C2143: błąd składniowy: brakuje „;” przed „{”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,73): error C2447: "{": brak nagłówka funkcji (stary styl formalnej listy?)
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(93,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(93,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(112,11): error C2079: "PlayableArea::card" używa niezdefiniowanego class "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(124,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(128,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(125,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(129,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(131,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(9,50): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(143,7): error C2440: "inicjowanie": nie można konwertować z "initializer list" na "int"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(143,7): message : Inicjalizator zawiera zbyt wiele elementów
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,1): error C2439: „PlayableArea::card”: Nie można zainicjować składowej
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(112): message : zobacz deklarację „PlayableArea::card”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(152,3): error C2065: "texture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(153,3): error C2065: "personTexture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(154,19): error C2065: "texture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(155,19): error C2065: "personTexture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(7,50): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(10,16): error C2027: wykorzystanie niezdefiniowanego przez użytkownika typu "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69): message : zobacz deklarację „MainCard”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(11,9): error C2065: "isDragging": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(13,16): error C2027: wykorzystanie niezdefiniowanego przez użytkownika typu "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69): message : zobacz deklarację „MainCard”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(14,34): error C3861: "getPosition": identyfikatora nie odnaleziono
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(16,2): error C3861: "setRotation": identyfikatora nie odnaleziono
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(17,2): error C3861: "setPosition": identyfikatora nie odnaleziono
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(19,16): error C2027: wykorzystanie niezdefiniowanego przez użytkownika typu "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69): message : zobacz deklarację „MainCard”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(20,2): error C3861: "setRotation": identyfikatora nie odnaleziono
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(21,16): error C2065: "starting": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(21,39): error C2065: "starting": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(21,2): error C3861: "setPosition": identyfikatora nie odnaleziono
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(23,16): error C2027: wykorzystanie niezdefiniowanego przez użytkownika typu "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69): message : zobacz deklarację „MainCard”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.cpp(24,2): error C2065: "isDragging": niezadeklarowany identyfikator
   MyRenderWindow.cpp
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(52,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(49,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(61,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,54): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(123,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(25,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(25,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(50,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(54,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(62,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,30): error C2146: błąd składniowy: brakuje „)” przed identyfikatorem „s”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,20): error C2079: "sf::FloatRect" używa niezdefiniowanego class "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,31): error C2226: błąd składniowy: nieoczekiwany typ „sf::FloatRect”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,30): error C2146: błąd składniowy: brakuje „;” przed identyfikatorem „s”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,31): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C2226: błąd składniowy: nieoczekiwany typ „std::string”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,45): error C2146: błąd składniowy: brakuje „;” przed identyfikatorem „texturePath”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C2059: błąd składniowy: „)”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,71): error C2059: błąd składniowy: „)”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,73): error C2143: błąd składniowy: brakuje „;” przed „{”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,73): error C2447: "{": brak nagłówka funkcji (stary styl formalnej listy?)
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(93,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(93,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(112,11): error C2079: "PlayableArea::card" używa niezdefiniowanego class "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(124,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(128,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(125,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(129,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(131,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(143,7): error C2440: "inicjowanie": nie można konwertować z "initializer list" na "int"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(143,7): message : Inicjalizator zawiera zbyt wiele elementów
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,1): error C2439: „PlayableArea::card”: Nie można zainicjować składowej
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(112): message : zobacz deklarację „PlayableArea::card”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(152,3): error C2065: "texture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(153,3): error C2065: "personTexture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(154,19): error C2065: "texture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(155,19): error C2065: "personTexture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\MyRenderWindow.cpp(10,39): error C2664: „void sf::RenderTarget::draw(const sf::Drawable &,const sf::RenderStates &)”: nie można dokonać konwersji argumentu 1 z „int” do „const sf::Drawable &”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\MyRenderWindow.cpp(10,39): message : Przyczyna: nie można skonwertować z "int" na "const sf::Drawable"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\MyRenderWindow.cpp(10,39): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
+C:\SFML\SFML-2.5.1-windows-vc14-64-bit\SFML-2.5.1\include\SFML\Graphics\RenderTarget.hpp(237,10): message : zobacz deklarację „sf::RenderTarget::draw”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\MyRenderWindow.cpp(19,27): error C2039: „s”: nie jest składową elementu „Resource”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\MyRenderWindow.h(8): message : zobacz deklarację „Resource”
   Source.cpp
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(24,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(52,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(49,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(61,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(77,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,54): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(79,28): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(123,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(25,71): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(25,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(53,12): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(50,27): error C2440: "<function-style-cast>": nie można konwertować z "initializer list" na "Resource"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(54,1): message : Żaden konstruktor nie mógł przyjąć typu źródłowego lub rozpoznanie przeciążenia konstruktora było niejednoznaczne
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(62,29): error C2676: dwuargumentowy "[": "DecisionStats" nie definiuje tego operatora lub konwersji do typu akceptowalnego dla wstępnie zdefiniowanego operatora
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,30): error C2146: błąd składniowy: brakuje „)” przed identyfikatorem „s”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,20): error C2079: "sf::FloatRect" używa niezdefiniowanego class "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,31): error C2226: błąd składniowy: nieoczekiwany typ „sf::FloatRect”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,30): error C2146: błąd składniowy: brakuje „;” przed identyfikatorem „s”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,31): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C4430: brak specyfikatora typu - założono, że int. Uwaga: C++ nie obsługuje domyślnie typu int
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C2226: błąd składniowy: nieoczekiwany typ „std::string”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,45): error C2146: błąd składniowy: brakuje „;” przed identyfikatorem „texturePath”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,56): error C2059: błąd składniowy: „)”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,71): error C2059: błąd składniowy: „)”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,73): error C2143: błąd składniowy: brakuje „;” przed „{”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(69,73): error C2447: "{": brak nagłówka funkcji (stary styl formalnej listy?)
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(93,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(93,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(112,11): error C2079: "PlayableArea::card" używa niezdefiniowanego class "MainCard"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „apply”: nie jest składową elementu „DecisionStats”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(124,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(128,44): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(125,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(129,43): error C2039: „getChangeParameters”: nie jest składową elementu „DecisionConnector”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(30): message : zobacz deklarację „DecisionConnector”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(127,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(131,9): error C2039: „cout”: nie jest składową elementu „DecisionStats”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Logic.h(28): message : zobacz deklarację „DecisionStats”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(143,7): error C2440: "inicjowanie": nie można konwertować z "initializer list" na "int"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(143,7): message : Inicjalizator zawiera zbyt wiele elementów
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(144,1): error C2439: „PlayableArea::card”: Nie można zainicjować składowej
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(112): message : zobacz deklarację „PlayableArea::card”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,59): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(152,3): error C2065: "texture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(153,3): error C2065: "personTexture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(154,19): error C2065: "texture": niezadeklarowany identyfikator
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(155,19): error C2065: "personTexture": niezadeklarowany identyfikator
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(9,9): warning C4068: nieznana pragma „setLocale”
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(117,12): warning C4305: "+=": obcięcie z "double" do "float"
 C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(122,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
