@@ -26,8 +26,6 @@ public:
 
 		/*t.setFont(systemFont);
 		t.setString(std::to_string(v));
-
->>>>>>> Stashed changes
 		startingPosition = position;
 		setPosition(startingPosition);
 
@@ -44,13 +42,6 @@ public:
 		s.setOrigin(s.getLocalBounds().width / 2, s.getLocalBounds().height / 2);
 		s.setPosition(startingPosition.x + size.x / 2.0, startingPosition.y + size.y / 2.0);
 	}
-<<<<<<< Updated upstream
-=======
-	/*Resource(int v, int nthChild, std::string texturePath) : sf::Sprite(), value(v)
-	{
-		
-		s.setPosition(100.0f + 75 * nthChild, 0);
-	}*/
 	void setValue(int newval) {
 		value = newval;
 		t.setString(std::to_string(value));
@@ -69,26 +60,15 @@ class GUI : public sf::RectangleShape {
 	Resource* resources;
 	const float resourceCount = 4;
 public:
-<<<<<<< Updated upstream
-	GUI(sf::FloatRect rect) : sf::RectangleShape({rect.width, rect.height}) {
-=======
-	std::string resourceTexturePath[4] = { "./assets/flora.png",  "./assets/human.png",  "./assets/money.png",  "./assets/rocket.png", };
 	GUI(sf::FloatRect rect, DecisionStats& stats) : sf::RectangleShape({rect.width, rect.height}) {
 >>>>>>> Stashed changes
 		float width = rect.width, height = rect.height;
 		resources = new Resource[(int)resourceCount];
 		for (int i = 0; i < resourceCount; i++) {
 			resources[i] = Resource(
-<<<<<<< Updated upstream
 				{ width / resourceCount, height }, 
-				{ rect.left + i * width / resourceCount, rect.top }
-=======
-				/*{ width / resourceCount, height },*/
-				{75, 75},
 				{ rect.left + i * width / resourceCount, rect.top },
-				stats[i],
-				resourceTexturePath[i]
->>>>>>> Stashed changes
+				stats[i]
 			);
 
 			/*if(i % 2 == 0)
@@ -158,9 +138,7 @@ public:
 		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 250, 250 })
 =======
 		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, stats),
-		next({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/backCard300x300.png"),
-		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/captainRed300x300.png")
->>>>>>> Stashed changes
+		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 250, 250 })
 	{
 	sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
 	sf::Vector2f size = getSize();
@@ -178,13 +156,7 @@ public:
 	noZone.setFillColor(sf::Color{ 48, 42, 39 });
 	setFillColor(sf::Color{160, 148, 133});
 	}
-};
 
-// Wszystkie decyzje
-class AllDecisions {
-	std::shared_ptr<Decision> current;
-	
-	
 };
 
 class Game {
