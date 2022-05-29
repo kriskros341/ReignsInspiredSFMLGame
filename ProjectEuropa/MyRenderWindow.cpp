@@ -16,7 +16,7 @@ void MyRenderWindow::draw(Resource* r, const int c) {
 	};
 }
 void MyRenderWindow::draw(Resource r) {
-	sf::RenderWindow::draw(r);
+	sf::RenderWindow::draw(r.s);
 	sf::RenderWindow::draw(r.t);
 }
 void MyRenderWindow::draw(FadeIn f) {

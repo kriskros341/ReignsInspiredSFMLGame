@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string>
 #include "MyRenderWindow.h"
 
 extern sf::Font systemFont;
@@ -9,19 +10,55 @@ extern sf::Vector2f screenSize;
 class Resource : public sf::RectangleShape {
 	int* value = 0;
 	sf::Text t;
+	sf::Sprite s;
 	sf::Vector2f startingPosition;
+	sf::Texture resourceTexture;
 	friend class MyRenderWindow;
 public:
+<<<<<<< Updated upstream
 	Resource() {};
 	Resource(sf::Vector2f size, sf::Vector2f position) : sf::RectangleShape(size) {
 		t.setFont(systemFont);
 		t.setString(std::to_string(100));
+=======
+	Resource()  {};
+	Resource(sf::Vector2f size, sf::Vector2f position, int v, std::string texturePath) : sf::RectangleShape(size), value(v) {
+
+		/*t.setFont(systemFont);
+		t.setString(std::to_string(v));
+
+>>>>>>> Stashed changes
 		startingPosition = position;
 		setPosition(startingPosition);
+
 		t.setFillColor(sf::Color::Magenta);
+
 		t.setOrigin(t.getLocalBounds().width / 2, t.getLocalBounds().height / 2);
-		t.setPosition(startingPosition.x + size.x / 2.0, startingPosition.y + size.y / 2.0);
+		t.setPosition(startingPosition.x + size.x / 2.0, startingPosition.y + size.y / 2.0);*/
+		
+		/*resourceTexture.loadFromFile(texturePath);
+		s.setTexture(resourceTexture);*/
+		
+		startingPosition = position;
+		setPosition(startingPosition);
+		s.setOrigin(s.getLocalBounds().width / 2, s.getLocalBounds().height / 2);
+		s.setPosition(startingPosition.x + size.x / 2.0, startingPosition.y + size.y / 2.0);
 	}
+<<<<<<< Updated upstream
+=======
+	/*Resource(int v, int nthChild, std::string texturePath) : sf::Sprite(), value(v)
+	{
+		
+		s.setPosition(100.0f + 75 * nthChild, 0);
+	}*/
+	void setValue(int newval) {
+		value = newval;
+		t.setString(std::to_string(value));
+	};
+	int getValue() {
+		return value;
+	};
+>>>>>>> Stashed changes
 };
 
 
@@ -32,17 +69,30 @@ class GUI : public sf::RectangleShape {
 	Resource* resources;
 	const float resourceCount = 4;
 public:
+<<<<<<< Updated upstream
 	GUI(sf::FloatRect rect) : sf::RectangleShape({rect.width, rect.height}) {
+=======
+	std::string resourceTexturePath[4] = { "./assets/flora.png",  "./assets/human.png",  "./assets/money.png",  "./assets/rocket.png", };
+	GUI(sf::FloatRect rect, DecisionStats& stats) : sf::RectangleShape({rect.width, rect.height}) {
+>>>>>>> Stashed changes
 		float width = rect.width, height = rect.height;
 		resources = new Resource[(int)resourceCount];
 		for (int i = 0; i < resourceCount; i++) {
 			resources[i] = Resource(
+<<<<<<< Updated upstream
 				{ width / resourceCount, height }, 
 				{ rect.left + i * width / resourceCount, rect.top }
+=======
+				/*{ width / resourceCount, height },*/
+				{75, 75},
+				{ rect.left + i * width / resourceCount, rect.top },
+				stats[i],
+				resourceTexturePath[i]
+>>>>>>> Stashed changes
 			);
 
-			if(i % 2 == 0)
-				resources[i].setFillColor(sf::Color::Yellow);
+			/*if(i % 2 == 0)
+				resources[i].setFillColor(sf::Color::Yellow);*/
 		}
 	};
 };
@@ -55,12 +105,13 @@ class MainCard : public sf::Sprite {
 	sf::FloatRect starting;
 	sf::Texture texture;
 public:
-
 	// width, height, left, top
-	MainCard(sf::FloatRect s) : sf::Sprite() {
+	MainCard(sf::FloatRect s, std::string texturePath) : sf::Sprite() {
 		setOrigin(s.width / 2.0, s.height / 2.0);
 		starting = s;
-		setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
+		setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f);
+		texture.loadFromFile(texturePath);
+		setTexture(texture);
 	}
 	bool getDragging();
 	void dragHorizontally(sf::Vector2f position);
@@ -69,12 +120,27 @@ public:
 };
 
 class NextCard : public sf::Sprite {
+private:
+	sf::Texture texture;
 public:
-	NextCard() : sf::Sprite() {
-		setOrigin(250.0 / 2.0, 250.0 / 2.0);
+	NextCard(sf::FloatRect s, std::string texturePath) : sf::Sprite() {
+		setOrigin(s.width / 2.0, s.height / 2.0);
+		setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f);
+		texture.loadFromFile(texturePath);
+		setTexture(texture);
 	}
 };
 
+<<<<<<< Updated upstream
+=======
+// Wszystkie decyzje
+class AllDecisions {
+public:
+	std::shared_ptr<Decision> currentDecision;
+	std::vector<std::shared_ptr<Decision>> decisionPool;
+};
+
+>>>>>>> Stashed changes
 class PlayableArea : public sf::RectangleShape {
 	GUI gui;
 	MainCard card;
@@ -83,40 +149,35 @@ class PlayableArea : public sf::RectangleShape {
 	sf::RectangleShape yesZone, noZone;
 	friend class Game;
 	friend class MyRenderWindow;
-	sf::Texture texture;
-	sf::Texture personTexture;
 public:
 	//PlayableArea(sf::FloatRect rect) :
 	PlayableArea(float width, float guiOffset) :
 		sf::RectangleShape({ width, screenSize.y - guiOffset }),
+<<<<<<< Updated upstream
 		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }),
 		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 250, 250 })
+=======
+		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, stats),
+		next({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/backCard300x300.png"),
+		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/captainRed300x300.png")
+>>>>>>> Stashed changes
 	{
-		sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
-		sf::Vector2f size = getSize();
-		gui.setPosition(rect.left, 0);
-	
-		next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0+100.0f);
-		//next.setFillColor(sf::Color::Magenta);
-		
-		texture.loadFromFile("./assets/backCard250x250.png");
-		personTexture.loadFromFile("./assets/captainRed.png");
-		next.setTexture(texture);
-		card.setTexture(personTexture);
+	sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
+	sf::Vector2f size = getSize();
+	gui.setPosition(rect.left, 0);
 
-		//CENTER
-		setPosition(rect.left, guiOffset);
+	//CENTER
+	setPosition(rect.left, guiOffset);
 
-		yesZone.setSize({ 100, screenSize.y });
-		noZone.setSize({ 100, screenSize.y });
+	yesZone.setSize({ 100, screenSize.y });
+	noZone.setSize({ 100, screenSize.y });
 
-		yesZone.setPosition(rect.left + rect.width, 0);
-		noZone.setPosition(rect.left - 100, 0);
-		yesZone.setFillColor(sf::Color{ 48, 42, 39 });
-		noZone.setFillColor(sf::Color{ 48, 42, 39 });
-		setFillColor(sf::Color{160, 148, 133});
+	yesZone.setPosition(rect.left + rect.width, 0);
+	noZone.setPosition(rect.left - 100, 0);
+	yesZone.setFillColor(sf::Color{ 48, 42, 39 });
+	noZone.setFillColor(sf::Color{ 48, 42, 39 });
+	setFillColor(sf::Color{160, 148, 133});
 	}
-
 };
 
 // Wszystkie decyzje
