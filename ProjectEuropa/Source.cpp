@@ -158,8 +158,6 @@ void menu(MyRenderWindow& window, IsIn& state) {
 		;
 	exitText.setFillColor(sf::Color::Black);
 	
-	
-	
 	while (window.isOpen()) {
 		sf::Event event;
 		sf::Vector2i position = sf::Mouse::getPosition(window);
@@ -193,6 +191,7 @@ void menu(MyRenderWindow& window, IsIn& state) {
 		if (state != IsIn::menu)
 			break;
 		window.clear();
+		// bg color: sf::Color{ 48, 42, 39 }
 		window.draw(start);
 		window.draw(options);
 		window.draw(exit);

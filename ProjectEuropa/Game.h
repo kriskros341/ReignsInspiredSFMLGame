@@ -100,7 +100,7 @@ public:
 		//next.setFillColor(sf::Color::Magenta);
 		
 		texture.loadFromFile("./assets/backCard250x250.png");
-		personTexture.loadFromFile("./assets/CaptainRed.png");
+		personTexture.loadFromFile("./assets/captainRed.png");
 		next.setTexture(texture);
 		card.setTexture(personTexture);
 
@@ -112,9 +112,9 @@ public:
 
 		yesZone.setPosition(rect.left + rect.width, 0);
 		noZone.setPosition(rect.left - 100, 0);
-		yesZone.setFillColor(sf::Color::Green);
-		noZone.setFillColor(sf::Color::Red);
-		setFillColor(sf::Color::Cyan);
+		yesZone.setFillColor(sf::Color{ 48, 42, 39 });
+		noZone.setFillColor(sf::Color{ 48, 42, 39 });
+		setFillColor(sf::Color{160, 148, 133});
 	}
 
 };
