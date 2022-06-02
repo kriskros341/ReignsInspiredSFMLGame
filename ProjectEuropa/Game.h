@@ -41,7 +41,8 @@ public:
 	ResourceCover(std::string texturePath, float nthChild) : sf::Sprite() {
 		texture.loadFromFile(texturePath);
 		setTexture(texture);
-		setPosition(75.0f*nthChild, 0.0);
+		setPosition(212.5f+100.0f*(nthChild-1), 40.0);
+		
 	}
 };
 
@@ -122,9 +123,9 @@ class PlayableArea : public sf::RectangleShape {
 	GUI gui;
 	MainCard card;
 	NextCard next;
-	ResourceCover flora;
-	float guiOffset = 150;
-	sf::RectangleShape yesZone, noZone;
+	ResourceCover flora, human, money, rocket;
+	float guiOffset = 150, guiOffsetY = 800;
+	sf::RectangleShape yesZone, noZone, bottomTextZone;
 	friend class Game;
 	friend class MyRenderWindow;
 public:
@@ -153,9 +154,13 @@ public:
 		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, stats),
 		next({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/backCard300x300.png"),
 		flora("./assets/flora.png", 1),
+		human("./assets/human.png", 2),
+		money("./assets/money.png", 3),
+		rocket("./assets/rocket.png", 4),
 		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/captainRed300x300.png")
 	{
 		sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
+		gui.setFillColor(sf::Color{ 27, 24, 22 });
 		sf::Vector2f size = getSize();
 		gui.setPosition(rect.left, 0);
 	
@@ -164,6 +169,10 @@ public:
 
 		//CENTER
 		setPosition(rect.left, guiOffset);
+
+		bottomTextZone.setSize({ 500, 100 });
+		bottomTextZone.setPosition(guiOffset, guiOffsetY-100);
+		bottomTextZone.setFillColor(sf::Color{ 27, 24, 22 });
 
 		yesZone.setSize({ 100, screenSize.y });
 		noZone.setSize({ 100, screenSize.y });
@@ -182,7 +191,7 @@ class Game {
 	PlayableArea area;
 	friend class MyRenderWindow;
 public:
-	Game() : area(400, 150) {};
+	Game() : area(500, 150) {};
 	
 	bool doesIntersectWithMainCard(sf::FloatRect position);
 	bool doesIntersectWithMainCard(sf::Vector2f position);

@@ -14,8 +14,8 @@ bool MainCard::getDragging() {
 }
 void MainCard::dragHorizontally(sf::Vector2f position) {
 	sf::Vector2f startingPosition = getPosition();
-	float angle = getAngleBetween(position, { screenSize.x / 2.0f, screenSize.y * 3 });		
-	setRotation(-angle);
+	float angle = getAngleBetween(position, { screenSize.x / 2.0f, screenSize.y * 3 });	
+	setRotation(-angle+180);
 	setPosition(position.x, startingPosition.y);
 }
 void MainCard::restartDrag() {
