@@ -7,43 +7,63 @@
 extern sf::Font systemFont;
 extern sf::Vector2f screenSize;
 
-class Resource : public sf::RectangleShape {
-	int value; // please do not edit here
-	sf::Text t;
-	sf::Vector2f startingPosition;
-	friend class MyRenderWindow;
-public:
-	Resource()  {};
-	Resource(sf::Vector2f size, sf::Vector2f position, int v) : sf::RectangleShape(size), value(v) {
+//class Resource : public sf::RectangleShape {
+//	int value; // please do not edit here
+//	sf::Text t;
+//	sf::Vector2f startingPosition;
+//	friend class MyRenderWindow;
+//public:
+//	Resource()  {};
+//	Resource(sf::Vector2f size, sf::Vector2f position, int v) : sf::RectangleShape(size), value(v) {
+//
+//		/*t.setFont(systemFont);
+//		t.setString(std::to_string(v));*/
+//		startingPosition = position;
+//		setPosition(startingPosition);
+//		t.setFillColor(sf::Color::Magenta);
+//		t.setOrigin(t.getLocalBounds().width / 2, t.getLocalBounds().height / 2);
+//		t.setPosition(startingPosition.x + size.x / 2.0, startingPosition.y + size.y / 2.0);
+//	}
+//	void setValue(int newval) {
+//		value = newval;
+//		t.setString(std::to_string(value));
+//
+//	};
+//	int getValue() {
+//		return value;
+//	};
+//};
 
-		t.setFont(systemFont);
-		t.setString(std::to_string(v));
-		startingPosition = position;
-		setPosition(startingPosition);
-		t.setFillColor(sf::Color::Magenta);
-		t.setOrigin(t.getLocalBounds().width / 2, t.getLocalBounds().height / 2);
-		t.setPosition(startingPosition.x + size.x / 2.0, startingPosition.y + size.y / 2.0);
-	}
-	void setValue(int newval) {
-		value = newval;
-		t.setString(std::to_string(value));
-
-	};
-	int getValue() {
-		return value;
-	};
-};
 class ResourceCover : public sf::Sprite {
 	sf::Texture texture;
 	friend class MyRenderWindow;
 public:
-	ResourceCover();
+	ResourceCover() {};
 	ResourceCover(std::string texturePath, float nthChild) : sf::Sprite() {
 		texture.loadFromFile(texturePath);
 		setTexture(texture);
-		setPosition(212.5f+100.0f*(nthChild-1), 40.0);
-		
+		setPosition(212.5f + 100.0f * (nthChild - 1), 0);
 	}
+};
+
+class Resource : public sf::RectangleShape {
+	int value;
+	friend class MyRenderWindow;
+	friend class ResourceCover;
+public:
+	Resource() {};
+	Resource(sf::Vector2f size, sf::Vector2f position, int v, int nthChild) : sf::RectangleShape(size), value(v)
+	{
+		setSize({60, 130});
+		setPosition(212.5f + 100.0f * (nthChild), 0);
+		setFillColor(sf::Color::Green);
+	}
+	void setValue(int newval) {
+		value = newval;
+	};
+	int getValue() {
+		return value;
+	};
 };
 
 float approx_linear(float input[2], float output[2], float value);
@@ -60,11 +80,9 @@ public:
 			resources[i] = Resource(
 				{ width / resourceCount, height }, 
 				{ rect.left + i * width / resourceCount, rect.top },
-				stats[i]
+				stats[i],
+				i
 			);
-
-			if(i % 2 == 0)
-				resources[i].setFillColor(sf::Color::Yellow);
 		}
 		
 	};
@@ -163,9 +181,6 @@ public:
 		gui.setFillColor(sf::Color{ 27, 24, 22 });
 		sf::Vector2f size = getSize();
 		gui.setPosition(rect.left, 0);
-	
-		//next.setPosition(screenSize.x / 2.0, screenSize.y / 2.0 + 100.0f);
-		//next.setFillColor(sf::Color::Magenta);
 
 		//CENTER
 		setPosition(rect.left, guiOffset);

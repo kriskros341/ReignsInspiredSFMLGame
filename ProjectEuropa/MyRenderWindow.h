@@ -13,7 +13,9 @@ class Decision;
 class MyRenderWindow : public sf::RenderWindow {
 public:
 	MyRenderWindow(sf::VideoMode v, std::string t, sf::ContextSettings& c) : 
-		sf::RenderWindow(v, t, sf::Style::Close, c) {};
+		sf::RenderWindow(v, t, sf::Style::Close, c) {
+		clear(sf::Color(200, 0, 0));
+	};
 	void draw(Game& game);
 	void draw(Resource* r, const int c);
 	void draw(Resource r);

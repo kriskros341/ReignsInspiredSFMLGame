@@ -9,7 +9,7 @@ void MyRenderWindow::draw(Game& game) {
 	sf::RenderWindow::draw(game.area.bottomTextZone);
 	sf::RenderWindow::draw(game.area.next);
 	sf::RenderWindow::draw(game.area.card);
-	/*draw(game.area.gui.resources, game.area.gui.resourceCount);*/
+	draw(game.area.gui.resources, game.area.gui.resourceCount);
 	sf::RenderWindow::draw(game.area.flora);
 	sf::RenderWindow::draw(game.area.human);
 	sf::RenderWindow::draw(game.area.money);
@@ -22,7 +22,6 @@ void MyRenderWindow::draw(Resource* r, const int c) {
 }
 void MyRenderWindow::draw(Resource r) {
 	sf::RenderWindow::draw(r);
-	sf::RenderWindow::draw(r.t);
 }
 void MyRenderWindow::draw(FadeIn f) {
 	sf::RenderWindow::draw(*f.getUnderlyingPointer());
