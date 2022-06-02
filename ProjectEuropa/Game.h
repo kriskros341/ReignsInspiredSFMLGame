@@ -50,16 +50,21 @@ class Resource : public sf::RectangleShape {
 	int value;
 	friend class MyRenderWindow;
 	friend class ResourceCover;
+	sf::RectangleShape filler;
 public:
 	Resource() {};
 	Resource(sf::Vector2f size, sf::Vector2f position, int v, int nthChild) : sf::RectangleShape(size), value(v)
 	{
 		setSize({60, 130});
+		filler.setSize({60, size.y*(value/200.f)});
 		setPosition(212.5f + 100.0f * (nthChild), 0);
+		filler.setPosition(212.5f + 100.0f * (nthChild), 0);
+		filler.setFillColor(sf::Color::White);
 		setFillColor(sf::Color::Green);
 	}
 	void setValue(int newval) {
 		value = newval;
+		filler.setSize({60, getSize().y*(value/200.f)});
 	};
 	int getValue() {
 		return value;

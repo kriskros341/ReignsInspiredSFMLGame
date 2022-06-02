@@ -18,6 +18,7 @@ void MyRenderWindow::draw(Game& game) {
 void MyRenderWindow::draw(Resource* r, const int c) {
 	for (int i = 0; i < c; i++) {
 		draw(r[i]);
+		draw(r[i].filler);
 	};
 }
 void MyRenderWindow::draw(Resource r) {
