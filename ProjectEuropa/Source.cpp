@@ -58,16 +58,61 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 }
 
 void game(MyRenderWindow& window) {
+	std::shared_ptr<Decision> resChecks;
+	std::shared_ptr<Decision> rescheck1;
+	std::shared_ptr<Decision> rescheck2;
+	std::shared_ptr<Decision> rescheck3;
+	std::shared_ptr<Decision> rescheck4;
 	std::shared_ptr<Decision> current = decisionFactory(
 		"Tutorial 1",
-		connectionFactory("Tutorial L", {-10, -6, -4, -1}, nullptr),
-		connectionFactory("Tutorial R", {10, 6, 4, 1}, nullptr)
+		connectionFactory("Tutorial L", { -10, -6, -4, -1 }, nullptr),
+		connectionFactory("Tutorial R", { 10, 6, 4, 1 }, nullptr)
+	);
+	rescheck1 = decisionFactory(
+		"check 1",
+		connectionFactory("check 1 L", { 10, 0, 0, 0 }, rescheck1),
+		connectionFactory("check 1 R", { -10, 0, 0, 0 }, rescheck1)
+	);
+	rescheck2 = decisionFactory(
+		"check 2",
+		connectionFactory("check 2 L", { 0, 10, 0, 0 }, rescheck2),
+		connectionFactory("check 2 R", { 0, -10, 0, 0 }, rescheck2)
+	);
+	rescheck3 = decisionFactory(
+		"check 3",
+		connectionFactory("check 3 L", { 0, 0, 10, 0 }, rescheck3),
+		connectionFactory("check 3 R", { 0, 0, -10, 0 }, rescheck3)
+	);
+	rescheck4 = decisionFactory(
+		"check 4",
+		connectionFactory("check 4 L", { 0, 0, 0, 10 }, rescheck4),
+		connectionFactory("check 4 R", { 0, 0, 0, -10 }, rescheck4)
+	);
+
+	resChecks = decisionFactory(
+		"should enter 1?",
+		connectionFactory("entering check 1", { 0, 0, 0, 0 }, rescheck1),
+		connectionFactory("next check", { 0, 0, 0, 0 }, decisionFactory(
+			"should enter 2?",
+			connectionFactory("entering check 2", { 0, 0, 0, 0 }, rescheck2),
+			connectionFactory("next check", { 0, 0, 0, 0 }, decisionFactory(
+				"should enter 3?",
+				connectionFactory("entering check 3", { 0, 0, 0, 0 }, rescheck3),
+				connectionFactory("next check", { 0, 0, 0, 0 }, decisionFactory(
+					"should enter 4?",
+					connectionFactory("entering check 4", { 0, 0, 0, 0 }, rescheck4),
+					connectionFactory("next check", { 0, 0, 0, 0 }, nullptr
+					))
+				))
+			))
+		)
 	);
 	std::vector<std::shared_ptr<Decision>> decisions = allTheDecisions();
+	std::vector<std::shared_ptr<Decision>> checks = {resChecks};
 	Game game;
 
-	game.setStartingDecision(current);
-	game.setDecisionPool(decisions);
+	game.setStartingDecision(resChecks);
+	game.setDecisionPool(checks);
 	
 
 	/*

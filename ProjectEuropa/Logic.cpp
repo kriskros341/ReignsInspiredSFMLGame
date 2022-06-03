@@ -87,7 +87,7 @@ std::shared_ptr<Decision> decisionFactory(
 std::shared_ptr<DecisionConnector> connectionFactory(
 	const std::string& text,
 	const DecisionStats stats,
-	const std::shared_ptr<Decision> nextDecision
+	const std::shared_ptr<Decision>& nextDecision
 ) {
 	std::shared_ptr<DecisionConnector> result = 
 		std::make_shared<DecisionConnector>(text, stats, nextDecision);

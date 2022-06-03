@@ -50,21 +50,16 @@ class Resource : public sf::RectangleShape {
 	int value;
 	friend class MyRenderWindow;
 	friend class ResourceCover;
-	sf::RectangleShape filler;
 public:
 	Resource() {};
 	Resource(sf::Vector2f size, sf::Vector2f position, int v, int nthChild) : sf::RectangleShape(size), value(v)
 	{
 		setSize({60, 130});
-		filler.setSize({60, size.y*(value/200.f)});
 		setPosition(212.5f + 100.0f * (nthChild), 0);
-		filler.setPosition(212.5f + 100.0f * (nthChild), 0);
-		filler.setFillColor(sf::Color::White);
 		setFillColor(sf::Color::Green);
 	}
 	void setValue(int newval) {
 		value = newval;
-		filler.setSize({60, getSize().y*(value/200.f)});
 	};
 	int getValue() {
 		return value;
@@ -137,7 +132,17 @@ class AllDecisions {
 public:
 	std::shared_ptr<Decision> currentDecision;
 	std::vector<std::shared_ptr<Decision>> decisionPool;
-
+	void moveThroughConnector(bool route) {
+		if (route) {
+			currentDecision = currentDecision->getYesDecision()->getNextDecision();
+		}
+		else {
+			currentDecision = currentDecision->getNoDecision()->getNextDecision();
+		}
+		if (currentDecision == nullptr) {
+			currentDecision = decisionPool[rand() % decisionPool.size()];
+		}
+	};
 };
 
 class PlayableArea : public sf::RectangleShape {
@@ -155,17 +160,19 @@ public:
 	std::shared_ptr<Decision> getCurrentDecision() {
 		return decision.currentDecision;
 	}
-	void makeDecision(bool v) {
+	void makeDecision(bool whichOption) {
 		if (!decision.currentDecision) {
 			std::cout << "NO DECISION TO BE MADE" << std::endl;
 			return;
 		}
-		stats.apply(v ? 
+		stats.apply(whichOption ? 
 			getCurrentDecision()->getYesDecision()->getChangeParameters() :
 			getCurrentDecision()->getNoDecision()->getChangeParameters()
 		);
+		decision.moveThroughConnector(whichOption);
 		stats.cout();
 		updateGUI();
+		std::cout << decision.currentDecision->getText() << std::endl;
 	}
 	void updateGUI() {
 		gui.updateBars(stats);
@@ -222,6 +229,7 @@ public:
 	void makeChoice();
 	void setStartingDecision(std::shared_ptr<Decision>& o) {
 		area.decision.currentDecision = o;
+		std::cout << area.decision.currentDecision->getText() << std::endl;
 	}
 	void setDecisionPool(std::vector<std::shared_ptr<Decision>>& o) {
 		area.decision.decisionPool = o;

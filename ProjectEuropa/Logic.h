@@ -46,7 +46,7 @@ class DecisionConnector {
 	public:
 	//DecisionConnector(std::string t, const int c[4], Decision* n);
 	
-	DecisionConnector(std::string t, DecisionStats stats, const std::shared_ptr<Decision> n) {
+	DecisionConnector(std::string t, DecisionStats stats, const std::shared_ptr<Decision>& n) {
 		text = t;
 		change = stats;
 		next = std::move(n);
@@ -65,7 +65,7 @@ class DecisionConnector {
 std::shared_ptr<DecisionConnector> connectionFactory(
 	const std::string& text,
 	const DecisionStats stats,
-	const std::shared_ptr<Decision> nextDecision
+	const std::shared_ptr<Decision>& nextDecision
 );
 
 class Decision {
