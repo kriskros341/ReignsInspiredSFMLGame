@@ -172,10 +172,10 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	sf::RectangleShape options({ 200, 60 });
 	sf::RectangleShape exit({ 200, 60 });
 
-	start.setPosition(centerPoint.x-(start.getSize().x/2.0), 220.0);
-	options.setPosition(centerPoint.x-(options.getSize().x/2.0), 300.0);
+	start.setPosition(centerPoint.x-(start.getSize().x/2.0), 250.0);
+	options.setPosition(centerPoint.x-(options.getSize().x/2.0), 330.0);
 	/*exit.setFillColor(sf::Color::Blue);*/
-	exit.setPosition(centerPoint.x-(exit.getSize().x/2.0), 380.0);
+	exit.setPosition(centerPoint.x-(exit.getSize().x/2.0), 410.0);
 	/*options.setFillColor(sf::Color::Blue);*/
 
 	sf::Text startText;
@@ -240,6 +240,15 @@ void menu(MyRenderWindow& window, IsIn& state) {
 			break;
 		window.clear();
 		// bg color: sf::Color{ 48, 42, 39 }
+
+		sf::Texture texture;
+		texture.loadFromFile("./assets/background.png");
+		sf::Sprite background;
+		sf::Vector2u size = texture.getSize();
+		background.setTexture(texture);
+
+		window.draw(background);
+		//window.clear(sf::Color{ 48, 42, 39, 255 });
 		window.draw(start);
 		window.draw(options);
 		window.draw(exit);
@@ -252,10 +261,10 @@ void menu(MyRenderWindow& window, IsIn& state) {
 
 
 void working() {
-	systemFont.loadFromFile("../Arial.ttf");
+	systemFont.loadFromFile("../Sansation_Regular.ttf");
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
-	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "Space Explorers : The Game", settings);
+	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "Project: Europa", settings);
 	window.setFramerateLimit(60);
 	IsIn state = IsIn::menu;
 

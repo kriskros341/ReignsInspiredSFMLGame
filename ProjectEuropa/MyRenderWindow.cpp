@@ -32,3 +32,6 @@ void MyRenderWindow::draw(sf::Shape& f) {
 void MyRenderWindow::draw(sf::Text& t) {
 	sf::RenderWindow::draw(t);
 };
+void MyRenderWindow::draw(sf::Sprite& s) {
+	sf::RenderWindow::draw(s);
+};

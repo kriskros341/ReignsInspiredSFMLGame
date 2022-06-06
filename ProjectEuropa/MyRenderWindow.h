@@ -14,7 +14,6 @@ class MyRenderWindow : public sf::RenderWindow {
 public:
 	MyRenderWindow(sf::VideoMode v, std::string t, sf::ContextSettings& c) : 
 		sf::RenderWindow(v, t, sf::Style::Close, c) {
-		clear(sf::Color(200, 0, 0));
 	};
 	void draw(Game& game);
 	void draw(Resource* r, const int c);
@@ -22,4 +21,5 @@ public:
 	void draw(FadeIn f);
 	void draw(sf::Shape& f);
 	void draw(sf::Text& t);
+	void draw(sf::Sprite& s);
 };
