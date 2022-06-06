@@ -168,44 +168,24 @@ void game(MyRenderWindow& window) {
 
 void menu(MyRenderWindow& window, IsIn& state) {
 	sf::Vector2f centerPoint(window.getSize().x / 2.0, window.getSize().y / 2.0);
-	sf::RectangleShape start({ 200, 60 });
-	sf::RectangleShape options({ 200, 60 });
-	sf::RectangleShape exit({ 200, 60 });
 
-	start.setPosition(centerPoint.x-(start.getSize().x/2.0), 250.0);
-	options.setPosition(centerPoint.x-(options.getSize().x/2.0), 330.0);
-	/*exit.setFillColor(sf::Color::Blue);*/
-	exit.setPosition(centerPoint.x-(exit.getSize().x/2.0), 410.0);
-	/*options.setFillColor(sf::Color::Blue);*/
-
-	sf::Text startText;
-	sf::Text optionsText;
-	sf::Text exitText;
-
-
-	startText.setString("Continue");
-	sf::FloatRect startRect = startText.getLocalBounds();
-	startText.setFont(systemFont);
-
-	startText.setPosition(
-		start.getPosition().x + start.getSize().x/2.0 - startText.getLocalBounds().width / 2.f, 
-		start.getPosition().y + start.getSize().y/2.0 - startText.getLocalBounds().height / 1.f
-	);
-	startText.setFillColor(sf::Color::Black);
-
+	sf::Sprite start;
+	sf::Sprite new_game;
+	sf::Sprite exit;
 	
-	optionsText.setString("Start a new");
-	optionsText.setFont(systemFont);
-	optionsText.setPosition(options.getPosition().x+(options.getSize().x/2.0)-optionsText.getLocalBounds().width / 2.f,options.getPosition().y+(options.getSize().y/2.0)-optionsText.getLocalBounds().height / 1.f);
-	optionsText.setFillColor(sf::Color::Black);
+	sf::Texture texture1, texture2, texture3;
 
-	exitText.setString("Exit");
-	exitText.setFont(systemFont);
-	exitText.setPosition(exit.getPosition().x+(exit.getSize().x/2.0)-exitText.getLocalBounds().width / 2.f,exit.getPosition().y+(exit.getSize().y/2.0)-exitText.getLocalBounds().height / 1.f);
-		/*start.getLocalBounds().left + start.getLocalBounds().width / 2) */
-		;
-	exitText.setFillColor(sf::Color::Black);
-	
+	texture2.loadFromFile("./assets/continue-button.png");
+	new_game.setTexture(texture2);
+	texture1.loadFromFile("./assets/start-button.png");
+	start.setTexture(texture1);
+	texture3.loadFromFile("./assets/exit-button.png");
+	exit.setTexture(texture3);
+
+	start.setPosition(centerPoint.x-(start.getLocalBounds().width /2.0), 300.0);
+	new_game.setPosition(centerPoint.x-(new_game.getLocalBounds().width /2.0), 400.0);
+	exit.setPosition(centerPoint.x-(exit.getLocalBounds().width /2.0), 650.0);
+
 	while (window.isOpen()) {
 		sf::Event event;
 		sf::Vector2i position = sf::Mouse::getPosition(window);
@@ -228,7 +208,7 @@ void menu(MyRenderWindow& window, IsIn& state) {
 					{
 						state = IsIn::game;
 					}
-					if (options.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
+					if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
 						state = IsIn::editor;
 					}
@@ -239,22 +219,18 @@ void menu(MyRenderWindow& window, IsIn& state) {
 		if (state != IsIn::menu)
 			break;
 		window.clear();
-		// bg color: sf::Color{ 48, 42, 39 }
 
-		sf::Texture texture;
-		texture.loadFromFile("./assets/background.png");
+		sf::Texture BGtexture;
+		BGtexture.loadFromFile("./assets/background.png");
 		sf::Sprite background;
-		sf::Vector2u size = texture.getSize();
-		background.setTexture(texture);
+		sf::Vector2u size = BGtexture.getSize();
+		background.setTexture(BGtexture);
 
 		window.draw(background);
-		//window.clear(sf::Color{ 48, 42, 39, 255 });
+		//window.clear(sf::Color{ 48, 42, 39, 255 }); <- kolor t³a
 		window.draw(start);
-		window.draw(options);
+		window.draw(new_game);
 		window.draw(exit);
-		window.draw(startText);
-		window.draw(optionsText);
-		window.draw(exitText);
 		window.display();
 	}
 }
