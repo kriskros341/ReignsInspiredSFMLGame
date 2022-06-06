@@ -56,7 +56,7 @@ public:
 	{
 		setSize({60, 130});
 		setPosition(212.5f + 100.0f * (nthChild), 0);
-		setFillColor(sf::Color::Green);
+		setFillColor(sf::Color{210, 205, 199, 255});
 	}
 	void setValue(int newval) {
 		value = newval;
@@ -146,7 +146,7 @@ public:
 };
 
 class PlayableArea : public sf::RectangleShape {
-	DecisionStats stats{100, 100, 100, 100};
+	DecisionStats stats{50, 50, 50, 50};
 	AllDecisions decision;
 	GUI gui;
 	MainCard card;

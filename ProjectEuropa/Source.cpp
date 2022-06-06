@@ -175,11 +175,12 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	
 	sf::Texture texture1, texture2, texture3;
 
-	texture2.loadFromFile("./assets/continue-button.png");
-	new_game.setTexture(texture2);
-	texture1.loadFromFile("./assets/start-button.png");
-	start.setTexture(texture1);
+	texture1.loadFromFile("./assets/continue-button.png");
+	texture2.loadFromFile("./assets/start-button.png");
 	texture3.loadFromFile("./assets/exit-button.png");
+
+	start.setTexture(texture1);
+	new_game.setTexture(texture2);
 	exit.setTexture(texture3);
 
 	start.setPosition(centerPoint.x-(start.getLocalBounds().width /2.0), 300.0);
