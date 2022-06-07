@@ -111,10 +111,9 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	);
 	std::vector<std::shared_ptr<Decision>> decisions = allTheDecisions();
 	std::vector<std::shared_ptr<Decision>> checks = {resChecks};
-	Game game(whetherToLoad);
-
-	game.setStartingDecision(resChecks);
-	game.setDecisionPool(checks);
+	Game game(current, decisions, whetherToLoad);
+	//Game game(whetherToLoad, resChecks, checks);
+	//debug
 	
 
 	/*
@@ -259,12 +258,15 @@ void working() {
 		switch (state) {
 		case IsIn::game: {
 			game(window, gameFlag::New);
+			break;
 		};
 		case IsIn::gameL: {
 			game(window, gameFlag::Load);
+			break;
 		};
 		case IsIn::menu: {
 			menu(window, state);
+			break;
 		};
 		}
 

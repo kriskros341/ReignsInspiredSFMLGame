@@ -1,1 +1,35 @@
-﻿  ProjectEuropa.vcxproj -> C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\x64\Debug\ProjectEuropa.exe
+﻿  Game.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(113,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(113,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(129,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(129,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.cpp(9,50): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  MyRenderWindow.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(113,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(113,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(129,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(129,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Source.cpp
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(113,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(113,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(129,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Game.h(129,21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(9,9): warning C4068: unknown pragma 'setLocale'
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(13,27): warning C4091: 'extern ': ignored on left of 'gameFlag' when no variable is declared
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(166,12): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(171,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(171,46): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(187,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(188,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(189,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\ProjectEuropa\Source.cpp(290,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  ProjectEuropa.vcxproj -> C:\Users\TrybSkupienia\Desktop\theGame\ProjectEuropa\ProjectEuropa\x64\Debug\ProjectEuropa.exe

@@ -136,6 +136,7 @@ void splitTo(std::string str, const char seperator, std::vector<std::string>& co
 // Wszystkie decyzje
 class AllDecisions {
 public:
+	std::shared_ptr<Decision> starting;
 	std::shared_ptr<Decision> currentDecision;
 	std::vector<std::shared_ptr<Decision>> decisionPool;
 	int decisionId = -1;
@@ -161,12 +162,13 @@ public:
 		return data.str();
 	}
 	void loadDecisionByIndex(int i) {
-		if (i < 0 || i > decisionPool.size()) {
+		if (i > 0 && i < decisionPool.size()) {
 			currentDecision = decisionPool[i];
 			decisionId = i;
 			return;
 		}
-		std::cout << "DECISION PICK OUT OF RANGE" << std::endl;
+		std::cout << "DECISION PICK OUT OF RANGE. CHOOSING STARTING" << std::endl;
+		currentDecision = starting;
 
 	}
 	void moveThroughConnector(bool route) {
@@ -264,7 +266,9 @@ class Game {
 	PlayableArea area;
 	friend class MyRenderWindow;
 public:
-	Game(gameFlag flag = gameFlag::New) : area(500, 150) {
+	Game(std::shared_ptr<Decision> current, std::vector<std::shared_ptr<Decision>> ListOfTrees, gameFlag flag = gameFlag::New) : area(500, 150) {
+		area.decision.currentDecision = current;
+		area.decision.decisionPool = ListOfTrees;
 		if (flag == gameFlag::Load) {
 			area.loadFromFile("./saved.txt");
 		}
@@ -280,6 +284,7 @@ public:
 	void setStartingDecision(std::shared_ptr<Decision>& o) {
 		area.decision.currentDecision = o;
 		std::cout << area.decision.currentDecision->getText() << std::endl;
+		area.decision.starting = o;
 	}
 	void setDecisionPool(std::vector<std::shared_ptr<Decision>>& o) {
 		area.decision.decisionPool = o;
