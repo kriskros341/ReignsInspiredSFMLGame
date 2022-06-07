@@ -157,6 +157,7 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 			}
 		}
 
+		game.updateNotifiers();
 		//fade.animate((fadeRange[1] / 2.0) + (fadeRange[1] / 2.0) * std::sin(t));
 		window.clear();
 		window.draw(game);

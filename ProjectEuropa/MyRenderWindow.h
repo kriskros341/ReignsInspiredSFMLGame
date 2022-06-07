@@ -15,6 +15,7 @@ public:
 	MyRenderWindow(sf::VideoMode v, std::string t, sf::ContextSettings& c) : 
 		sf::RenderWindow(v, t, sf::Style::Close, c) {
 	};
+	void drawIndicators(Resource* r, const int c);
 	void draw(Game& game);
 	void draw(Resource* r, const int c);
 	void draw(Resource r);

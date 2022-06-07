@@ -52,10 +52,14 @@ public:
 	}
 };
 
+class Indicator : public sf::CircleShape {
+};
+
 class Resource : public sf::RectangleShape {
 	int value;
 	friend class MyRenderWindow;
 	friend class ResourceCover;
+	Indicator up, down;
 public:
 	Resource() {};
 	Resource(sf::Vector2f size, sf::Vector2f position, int v, int nthChild) : sf::RectangleShape(size), value(v)
@@ -63,6 +67,13 @@ public:
 		setSize({60, 130});
 		setPosition(212.5f + 100.0f * (nthChild), 0);
 		setFillColor(sf::Color{210, 205, 199, 255});
+
+		up.setRadius(5);
+		up.setOrigin(5, 5);
+		up.setPosition(212.5f + getSize().x/2 + 100.0f * (nthChild), getSize().y/2 - 25);
+		down.setOrigin(5, 5);
+		down.setRadius(5);
+		down.setPosition(212.5f + getSize().x/2 + 100.0f * (nthChild), getSize().y/2 + 50);
 	}
 	void setValue(int newval) {
 		value = newval;
@@ -100,6 +111,7 @@ public:
 };
 
 float getAngleBetween(sf::Vector2f origin, sf::Vector2f theOther);
+class MyRenderWindow;
 
 class MainCard : public sf::Sprite {
 	bool isDragging = false;
@@ -107,7 +119,7 @@ class MainCard : public sf::Sprite {
 	sf::FloatRect starting;
 	sf::Texture texture;
 public:
-
+	float getAngle();
 	// width, height, left, top
 	MainCard(sf::FloatRect s, std::string texturePath) : sf::Sprite() {
 		setOrigin(s.width / 2.0, s.height / 2.0);
@@ -257,6 +269,9 @@ public:
 		noZone.setFillColor(sf::Color{ 48, 42, 39 });
 		setFillColor(sf::Color{160, 148, 133});
 	}
+	float getAngle() {
+		return card.getAngle();
+	}
 
 };
 
@@ -281,6 +296,19 @@ public:
 	bool getDragging();
 	void dragCard(sf::Vector2f position);
 	void makeChoice();
+	void coutAngle() {
+		std::cout << area.getAngle() << std::endl;
+	}
+
+	int notificationTreshold = 3;
+	void updateNotifiers() {
+		if (area.getAngle() < 0 && area.getAngle() > -180 + notificationTreshold) {
+			std::cout << "-" << std::endl;
+		}
+		if (area.getAngle() > 0 && area.getAngle() < 180 - notificationTreshold) {
+			std::cout << "+" << std::endl;
+		}
+	}
 	void setStartingDecision(std::shared_ptr<Decision>& o) {
 		area.decision.currentDecision = o;
 		std::cout << area.decision.currentDecision->getText() << std::endl;

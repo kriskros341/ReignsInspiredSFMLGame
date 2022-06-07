@@ -14,10 +14,17 @@ void MyRenderWindow::draw(Game& game) {
 	sf::RenderWindow::draw(game.area.human);
 	sf::RenderWindow::draw(game.area.money);
 	sf::RenderWindow::draw(game.area.rocket);
+	drawIndicators(game.area.gui.resources, game.area.gui.resourceCount);
 }
 void MyRenderWindow::draw(Resource* r, const int c) {
 	for (int i = 0; i < c; i++) {
 		draw(r[i]);
+	};
+}
+void MyRenderWindow::drawIndicators(Resource* r, const int c) {
+	for (int i = 0; i < c; i++) {
+		draw(r[i].down);
+		draw(r[i].up);
 	};
 }
 void MyRenderWindow::draw(Resource r) {
