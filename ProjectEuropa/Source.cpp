@@ -10,10 +10,12 @@
 #define papiez 2137420;
 
 extern sf::Vector2f screenSize;
+extern enum class gameFlag;
 enum class IsIn {
 	menu = 1,
 	editor,
-	game
+	game,
+	gameL
 };
 
 std::vector<std::shared_ptr<Decision>> allTheDecisions() {
@@ -57,7 +59,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	return decisions;
 }
 
-void game(MyRenderWindow& window) {
+void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	std::shared_ptr<Decision> resChecks;
 	std::shared_ptr<Decision> rescheck1;
 	std::shared_ptr<Decision> rescheck2;
@@ -109,7 +111,7 @@ void game(MyRenderWindow& window) {
 	);
 	std::vector<std::shared_ptr<Decision>> decisions = allTheDecisions();
 	std::vector<std::shared_ptr<Decision>> checks = {resChecks};
-	Game game;
+	Game game(whetherToLoad);
 
 	game.setStartingDecision(resChecks);
 	game.setDecisionPool(checks);
@@ -207,11 +209,11 @@ void menu(MyRenderWindow& window, IsIn& state) {
 				if (event.key.code == sf::Mouse::Left) {
 					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
-						state = IsIn::game;
+						state = IsIn::gameL;
 					}
 					if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
-						state = IsIn::editor;
+						state = IsIn::game;
 					}
 				}
 			}
@@ -256,7 +258,10 @@ void working() {
 		}
 		switch (state) {
 		case IsIn::game: {
-			game(window);
+			game(window, gameFlag::New);
+		};
+		case IsIn::gameL: {
+			game(window, gameFlag::Load);
 		};
 		case IsIn::menu: {
 			menu(window, state);

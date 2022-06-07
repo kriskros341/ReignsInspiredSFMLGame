@@ -63,4 +63,22 @@ void Game::makeChoice() {
 	setDragging(false);
 	restartDrag();
 }
-
+void splitTo(std::string str, const char seperator, std::vector<std::string>& cont)
+{
+	cont.clear();
+	int currIndex = 0, i = 0;
+	int startIndex = 0, endIndex = 0;
+	while (i <= str.size())
+	{
+		if (str[i] == seperator || i == str.size())
+		{
+			endIndex = i;
+			std::string subStr = "";
+			subStr.append(str, startIndex, endIndex - startIndex);
+			cont.push_back(subStr);
+			currIndex += 1;
+			startIndex = endIndex + 1;
+		}
+		i++;
+	}
+}

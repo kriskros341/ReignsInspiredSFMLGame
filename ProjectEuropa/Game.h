@@ -2,11 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <sstream>
 #include "MyRenderWindow.h"
 
 extern sf::Font systemFont;
 extern sf::Vector2f screenSize;
 
+enum class gameFlag {
+	New = 1,
+	Load
+};
 //class Resource : public sf::RectangleShape {
 //	int value; // please do not edit here
 //	sf::Text t;
@@ -126,12 +132,43 @@ public:
 		setTexture(texture);
 	}
 };
-
+void splitTo(std::string str, const char seperator, std::vector<std::string>& cont);
 // Wszystkie decyzje
 class AllDecisions {
 public:
 	std::shared_ptr<Decision> currentDecision;
 	std::vector<std::shared_ptr<Decision>> decisionPool;
+	int decisionId = -1;
+	DecisionStats stats{50, 50, 50, 50};
+	void loadFromFile(const std::string path = "./saved.txt") {
+		std::ifstream file(path);
+		std::stringstream content;
+		std::vector<std::string> data;
+		content << file.rdbuf();
+		splitTo(content.str(), ' ', data);
+		for (int i{}; i < 4; i++) {
+			stats[i] = std::atoi(data[i].c_str());
+		}
+		int idx = std::atoi(data[4].c_str());
+		loadDecisionByIndex(idx);
+		std::cout << "LOADED WITH STATS ";
+		stats.cout();
+
+	};
+	std::string serializeData() {
+		std::stringstream data;
+		data << stats[0] << " " << stats[1] << " " << stats[2] << " " << stats[3] << " " << decisionId;
+		return data.str();
+	}
+	void loadDecisionByIndex(int i) {
+		if (i < 0 || i > decisionPool.size()) {
+			currentDecision = decisionPool[i];
+			decisionId = i;
+			return;
+		}
+		std::cout << "DECISION PICK OUT OF RANGE" << std::endl;
+
+	}
 	void moveThroughConnector(bool route) {
 		if (route) {
 			currentDecision = currentDecision->getYesDecision()->getNextDecision();
@@ -140,13 +177,18 @@ public:
 			currentDecision = currentDecision->getNoDecision()->getNextDecision();
 		}
 		if (currentDecision == nullptr) {
-			currentDecision = decisionPool[rand() % decisionPool.size()];
+			decisionId = rand() % decisionPool.size();
+			currentDecision = decisionPool[decisionId];
+			saveProgress();
 		}
 	};
+	void saveProgress() {
+		std::ofstream file{ "./saved.txt" };
+		file << serializeData();
+	}
 };
 
 class PlayableArea : public sf::RectangleShape {
-	DecisionStats stats{50, 50, 50, 50};
 	AllDecisions decision;
 	GUI gui;
 	MainCard card;
@@ -160,28 +202,31 @@ public:
 	std::shared_ptr<Decision> getCurrentDecision() {
 		return decision.currentDecision;
 	}
-	void makeDecision(bool whichOption) {
+	void loadFromFile(const std::string path) {
+		decision.loadFromFile(path);
+	}
+	void makeDecision(const bool whichOption) {
 		if (!decision.currentDecision) {
 			std::cout << "NO DECISION TO BE MADE" << std::endl;
 			return;
 		}
-		stats.apply(whichOption ? 
+		decision.stats.apply(whichOption ? 
 			getCurrentDecision()->getYesDecision()->getChangeParameters() :
 			getCurrentDecision()->getNoDecision()->getChangeParameters()
 		);
 		decision.moveThroughConnector(whichOption);
-		stats.cout();
+		decision.stats.cout();
 		updateGUI();
 		std::cout << decision.currentDecision->getText() << std::endl;
 	}
 	void updateGUI() {
-		gui.updateBars(stats);
+		gui.updateBars(decision.stats);
 		//gui.
 	}
 	//PlayableArea(sf::FloatRect rect) :
 	PlayableArea(float width, float guiOffset) :
 		sf::RectangleShape({ width, screenSize.y - guiOffset }),
-		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, stats),
+		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, decision.stats),
 		next({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/backCard300x300.png"),
 		flora("./assets/flora.png", 1),
 		human("./assets/human.png", 2),
@@ -213,12 +258,17 @@ public:
 
 };
 
+
 //Obiekt z którym gracz wchodzi w kontakt
 class Game {
 	PlayableArea area;
 	friend class MyRenderWindow;
 public:
-	Game() : area(500, 150) {};
+	Game(gameFlag flag = gameFlag::New) : area(500, 150) {
+		if (flag == gameFlag::Load) {
+			area.loadFromFile("./saved.txt");
+		}
+	};
 	
 	bool doesIntersectWithMainCard(sf::FloatRect position);
 	bool doesIntersectWithMainCard(sf::Vector2f position);
