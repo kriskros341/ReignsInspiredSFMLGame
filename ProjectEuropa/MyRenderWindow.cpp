@@ -23,7 +23,6 @@ void MyRenderWindow::draw(Resource* r, const int c) {
 }
 void MyRenderWindow::drawIndicators(Resource* r, const int c) {
 	for (int i = 0; i < c; i++) {
-		draw(r[i].down);
 		draw(r[i].up);
 	};
 }
