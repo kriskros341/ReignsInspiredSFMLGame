@@ -158,9 +158,16 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		}
 
 		game.updateNotifiers();
+		
 		//fade.animate((fadeRange[1] / 2.0) + (fadeRange[1] / 2.0) * std::sin(t));
 		window.clear();
 		window.draw(game);
+		if (game.getSideNotifier() == -1) {
+			window.draw((game.getArea()->getChoiceText(false)));
+		}
+		if (game.getSideNotifier() == 1) {
+			window.draw((game.getArea()->getChoiceText(true)));
+		}
 		//window.draw(toCompare);
 		//window.draw(fade);
 		window.display();

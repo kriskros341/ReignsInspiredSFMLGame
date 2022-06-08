@@ -210,6 +210,7 @@ class PlayableArea : public sf::RectangleShape {
 	ResourceCover flora, human, money, rocket;
 	float guiOffset = 150, guiOffsetY = 800;
 	sf::RectangleShape yesZone, noZone, bottomTextZone;
+	sf::Text decisionText, yesText, noText;
 	friend class Game;
 	friend class MyRenderWindow;
 public:
@@ -231,11 +232,23 @@ public:
 		decision.moveThroughConnector(whichOption);
 		decision.stats.cout();
 		updateGUI();
+		updateText();
 		std::cout << decision.currentDecision->getText() << std::endl;
+		
 	}
 	void updateGUI() {
 		gui.updateBars(decision.stats);
 		//gui.
+	}
+	sf::Text* getChoiceText(bool choice) {
+		if (choice)
+			return &yesText;
+		return &noText;
+	}
+	void updateText() {
+		decisionText.setString(decision.currentDecision->getText());
+		yesText.setString(decision.currentDecision->getYesDecision()->getConnectorText());
+		noText.setString(decision.currentDecision->getNoDecision()->getConnectorText());
 	}
 	//PlayableArea(sf::FloatRect rect) :
 	PlayableArea(float width, float guiOffset) :
@@ -268,6 +281,18 @@ public:
 		yesZone.setFillColor(sf::Color{ 48, 42, 39 });
 		noZone.setFillColor(sf::Color{ 48, 42, 39 });
 		setFillColor(sf::Color{160, 148, 133});
+		decisionText.setFont(systemFont);
+		decisionText.setPosition(290, 185); //ustawiæ 
+		decisionText.setCharacterSize(20);
+		decisionText.setFillColor(sf::Color::Black);
+		yesText.setFont(systemFont);
+		yesText.setPosition(525, 450); //ustawiæ 
+		yesText.setCharacterSize(20);
+		yesText.setFillColor(sf::Color::Black);
+		noText.setFont(systemFont);
+		noText.setPosition(150, 450); //ustawiæ 
+		noText.setCharacterSize(20);
+		noText.setFillColor(sf::Color::Black);
 	}
 	float getAngle() {
 		return card.getAngle();
@@ -294,6 +319,9 @@ public:
 	void setDragging(bool n);
 	void restartDrag();
 	bool getDragging();
+	PlayableArea* getArea() {
+		return &area;
+	};
 	void dragCard(sf::Vector2f position);
 	void makeChoice();
 	void coutAngle() {
@@ -304,10 +332,21 @@ public:
 	void updateNotifiers() {
 		if (area.getAngle() < 0 && area.getAngle() > -180 + notificationTreshold) {
 			std::cout << "-" << std::endl;
+			
 		}
 		if (area.getAngle() > 0 && area.getAngle() < 180 - notificationTreshold) {
 			std::cout << "+" << std::endl;
 		}
+	}
+	int getSideNotifier() {
+		if (area.getAngle() < 0 && area.getAngle() > -180 + notificationTreshold) {
+			return -1;
+
+		}
+		if (area.getAngle() > 0 && area.getAngle() < 180 - notificationTreshold) {
+			return 1;
+		}
+		return 0;
 	}
 	void setStartingDecision(std::shared_ptr<Decision>& o) {
 		area.decision.currentDecision = o;

@@ -14,6 +14,7 @@ void MyRenderWindow::draw(Game& game) {
 	sf::RenderWindow::draw(game.area.human);
 	sf::RenderWindow::draw(game.area.money);
 	sf::RenderWindow::draw(game.area.rocket);
+	sf::RenderWindow::draw(game.area.decisionText);
 	drawIndicators(game.area.gui.resources, game.area.gui.resourceCount);
 }
 void MyRenderWindow::draw(Resource* r, const int c) {
@@ -35,8 +36,8 @@ void MyRenderWindow::draw(FadeIn f) {
 void MyRenderWindow::draw(sf::Shape& f) {
 	sf::RenderWindow::draw(f);
 }
-void MyRenderWindow::draw(sf::Text& t) {
-	sf::RenderWindow::draw(t);
+void MyRenderWindow::draw(sf::Text* t) {
+	sf::RenderWindow::draw(*t);
 };
 void MyRenderWindow::draw(sf::Sprite& s) {
 	sf::RenderWindow::draw(s);
