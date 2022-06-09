@@ -22,22 +22,22 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	std::vector<std::shared_ptr<Decision>> decisions;
 	
 	// Pojedyncza decyzja (losowana) ze wskaünikiem nullptr:
-	std::shared_ptr<Decision> przykladowaPojedyncaDecyzja = decisionFactory(
-		"drzewo",
-		connectionFactory("wybor1", { 0, 0, 0, 0 }, nullptr), // najpierw tak
-		connectionFactory("wybor2", { -50, -50, -50, -50 }, nullptr) // potem nie
-	);
-	decisions.push_back(przykladowaPojedyncaDecyzja);
+	//std::shared_ptr<Decision> przykladowaPojedyncaDecyzja = decisionFactory(
+	//	"drzewo",
+	//	connectionFactory("wybor1", { 0, 0, 0, 0 }, nullptr), // najpierw tak
+	//	connectionFactory("wybor2", { -50, -50, -50, -50 }, nullptr) // potem nie
+	//);
+	//decisions.push_back(przykladowaPojedyncaDecyzja);
 
 	// Drzewo decyzji (event):
 	std::shared_ptr<Decision> u1 = decisionFactory(
-		"Drzewo1", 
+		"My King...", 
 		connectionFactory(
-			"Drzewo1 L", {4, 4, 4, 4},
+			"Yes?", {4, 4, 4, 4},
 			decisionFactory(
-				"Drzewo1 go L", 
-				connectionFactory("Drzewo1 L go L", {4, 4, 4, 4}, nullptr),
-				connectionFactory("Drzewo1 L go R", {4, 4, 4, 4}, nullptr)
+				"Please help me.\nI'm dying!!!", 
+				connectionFactory("Of course", {4, 4, 4, 4}, nullptr),
+				connectionFactory("Die already!!!", {4, 4, 4, 4}, nullptr)
 				)),
 		connectionFactory("Drzewo1 go R", {4, 4, 4, 4}, nullptr)
 	);

@@ -53,6 +53,11 @@ public:
 };
 
 class Indicator : public sf::CircleShape {
+public:
+	Indicator()
+	{
+		setFillColor(sf::Color{ 160, 148, 133 });
+	}
 };
 
 class Resource : public sf::RectangleShape {
@@ -70,10 +75,7 @@ public:
 
 		up.setRadius(5);
 		up.setOrigin(5, 5);
-		up.setPosition(212.5f + getSize().x/2 + 100.0f * (nthChild), getSize().y/2 - 25);
-		down.setOrigin(5, 5);
-		down.setRadius(5);
-		down.setPosition(212.5f + getSize().x/2 + 100.0f * (nthChild), getSize().y/2 + 50);
+		up.setPosition(212.5f + getSize().x/2 + 100.0f * (nthChild) + 1.0f, getSize().y/2 - 30);
 	}
 	void setValue(int newval) {
 		value = newval;
@@ -249,6 +251,24 @@ public:
 		decisionText.setString(decision.currentDecision->getText());
 		yesText.setString(decision.currentDecision->getYesDecision()->getConnectorText());
 		noText.setString(decision.currentDecision->getNoDecision()->getConnectorText());
+
+		decisionText.setFont(systemFont);
+		decisionText.setOrigin(decisionText.getLocalBounds().width / 2.0f, decisionText.getLocalBounds().height / 2.0f);
+		decisionText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f - 200.0f);
+		decisionText.setCharacterSize(20);
+		decisionText.setFillColor(sf::Color{ 27, 24, 22 });
+
+		yesText.setFont(systemFont);
+		yesText.setOrigin(yesText.getLocalBounds().width / 2.0f, yesText.getLocalBounds().height / 2.0f);
+		yesText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 340.0f);
+		yesText.setCharacterSize(20);
+		yesText.setFillColor(sf::Color{ 160, 148, 133 });
+
+		noText.setFont(systemFont);
+		noText.setOrigin(noText.getLocalBounds().width / 2.0f, noText.getLocalBounds().height / 2.0f);
+		noText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 340.0f);
+		noText.setCharacterSize(20);
+		noText.setFillColor(sf::Color{ 160, 148, 133 });
 	}
 	//PlayableArea(sf::FloatRect rect) :
 	PlayableArea(float width, float guiOffset) :
@@ -281,18 +301,6 @@ public:
 		yesZone.setFillColor(sf::Color{ 48, 42, 39 });
 		noZone.setFillColor(sf::Color{ 48, 42, 39 });
 		setFillColor(sf::Color{160, 148, 133});
-		decisionText.setFont(systemFont);
-		decisionText.setPosition(290, 185); //ustawiæ 
-		decisionText.setCharacterSize(20);
-		decisionText.setFillColor(sf::Color::Black);
-		yesText.setFont(systemFont);
-		yesText.setPosition(525, 450); //ustawiæ 
-		yesText.setCharacterSize(20);
-		yesText.setFillColor(sf::Color::Black);
-		noText.setFont(systemFont);
-		noText.setPosition(150, 450); //ustawiæ 
-		noText.setCharacterSize(20);
-		noText.setFillColor(sf::Color::Black);
 	}
 	float getAngle() {
 		return card.getAngle();
