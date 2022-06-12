@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <vector>
 #include "Logic.h"
@@ -15,7 +16,8 @@ enum class IsIn {
 	menu = 1,
 	editor,
 	game,
-	gameL
+	gameL,
+	exit
 };
 
 std::vector<std::shared_ptr<Decision>> allTheDecisions() {
@@ -39,7 +41,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 				connectionFactory("Of course", {4, 4, 4, 4}, nullptr),
 				connectionFactory("Die already!!!", {4, 4, 4, 4}, nullptr)
 				)),
-		connectionFactory("Drzewo1 go R", {4, 4, 4, 4}, nullptr)
+		connectionFactory("Hello", {4, 4, 4, 4}, nullptr)
 	);
 	decisions.push_back(u1);
 
@@ -181,7 +183,15 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	sf::Sprite start;
 	sf::Sprite new_game;
 	sf::Sprite exit;
+
+	sf::Music music;
+	music.openFromFile("./assets/ProjectEuropa-menu-Song.wav");
 	
+	sf::SoundBuffer buffer;
+	sf::Sound buttonClickSound;
+	buffer.loadFromFile("./assets/button-click.wav");
+	buttonClickSound.setBuffer(buffer);
+
 	sf::Texture texture1, texture2, texture3;
 
 	texture1.loadFromFile("./assets/continue-button.png");
@@ -196,7 +206,10 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	new_game.setPosition(centerPoint.x-(new_game.getLocalBounds().width /2.0), 400.0);
 	exit.setPosition(centerPoint.x-(exit.getLocalBounds().width /2.0), 650.0);
 
+	sf::Clock clock;
+
 	while (window.isOpen()) {
+		//music.play();
 		sf::Event event;
 		sf::Vector2i position = sf::Mouse::getPosition(window);
 
@@ -214,13 +227,18 @@ void menu(MyRenderWindow& window, IsIn& state) {
 			}
 			case sf::Event::MouseButtonReleased: {
 				if (event.key.code == sf::Mouse::Left) {
-					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
+					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)) && clock.getElapsedTime() > sf::seconds(.25))
 					{
+						buttonClickSound.play();
 						state = IsIn::gameL;
 					}
 					if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
 						state = IsIn::game;
+					}
+					if (exit.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
+					{
+						state = IsIn::exit;
 					}
 				}
 			}
@@ -272,6 +290,9 @@ void working() {
 			game(window, gameFlag::Load);
 			break;
 		};
+		case IsIn::exit: {
+			window.close();
+		}
 		case IsIn::menu: {
 			menu(window, state);
 			break;
