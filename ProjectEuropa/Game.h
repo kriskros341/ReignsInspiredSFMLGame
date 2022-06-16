@@ -130,6 +130,10 @@ public:
 		texture.loadFromFile(texturePath);
 		setTexture(texture);
 	}
+	void setImage(const std::string& path) {
+		texture.loadFromFile(path);
+		setTexture(texture);
+	};
 	bool getDragging();
 	void dragHorizontally(sf::Vector2f position);
 	void restartDrag();
@@ -233,6 +237,7 @@ public:
 		);
 		decision.moveThroughConnector(whichOption);
 		decision.stats.cout();
+		card.setImage(decision.currentDecision->getImagePath());
 		updateGUI();
 		updateText();
 		std::cout << decision.currentDecision->getText() << std::endl;
@@ -279,7 +284,7 @@ public:
 		human("./assets/human.png", 2),
 		money("./assets/money.png", 3),
 		rocket("./assets/rocket.png", 4),
-		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/captainRed300x300.png")
+		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, defaultImage)
 	{
 		sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
 		gui.setFillColor(sf::Color{ 27, 24, 22 });
@@ -315,8 +320,8 @@ class Game {
 	friend class MyRenderWindow;
 public:
 	Game(std::shared_ptr<Decision> current, std::vector<std::shared_ptr<Decision>> ListOfTrees, gameFlag flag = gameFlag::New) : area(500, 150) {
-		area.decision.currentDecision = current;
-		area.decision.decisionPool = ListOfTrees;
+		setStartingDecision(current);
+		setDecisionPool(ListOfTrees);
 		if (flag == gameFlag::Load) {
 			area.loadFromFile("./saved.txt");
 		}
@@ -358,10 +363,14 @@ public:
 	}
 	void setStartingDecision(std::shared_ptr<Decision>& o) {
 		area.decision.currentDecision = o;
+		area.card.setImage(o->getImagePath());
 		std::cout << area.decision.currentDecision->getText() << std::endl;
 		area.decision.starting = o;
+		area.updateGUI();
+		area.updateText();
 	}
 	void setDecisionPool(std::vector<std::shared_ptr<Decision>>& o) {
+		std::cout << "Decision Tree set" << std::endl;
 		area.decision.decisionPool = o;
 	}
 };

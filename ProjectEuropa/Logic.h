@@ -68,12 +68,15 @@ std::shared_ptr<DecisionConnector> connectionFactory(
 	const std::shared_ptr<Decision>& nextDecision
 );
 
+const std::string defaultImage = "./assets/captainRed300x300.png";
 class Decision {
 private:
+	
 	int id = -1;
 	std::string text = "default";
 	std::shared_ptr<DecisionConnector> yes;
 	std::shared_ptr<DecisionConnector> no;
+	std::string imagePath;
 	friend std::shared_ptr<Decision> decisionFactory(
 		const std::string& text,
 		std::shared_ptr<DecisionConnector>& c1,
@@ -82,11 +85,15 @@ private:
 public:
 	//Decision(const std::string& t="defau");
 	//Decision(std::string s, DecisionConnector* y, DecisionConnector* n);
-	Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n);
+	Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n, std::string path = defaultImage);
 	Decision(const Decision& d) {
 		text = d.text;
 		yes = d.yes;
 		no = d.no;
+		imagePath = d.imagePath;
+	}
+	std::string getImagePath() {
+		return imagePath;
 	}
 	void setID();
 	void setText(std::string s);
@@ -102,7 +109,8 @@ public:
 std::shared_ptr<Decision> decisionFactory(
 	const std::string& text,
 	std::shared_ptr<DecisionConnector> c1,
-	std::shared_ptr<DecisionConnector> c2
+	std::shared_ptr<DecisionConnector> c2,
+	std::string imagePath = defaultImage
 );
 
 

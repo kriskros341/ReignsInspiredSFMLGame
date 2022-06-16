@@ -41,7 +41,8 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 				connectionFactory("Of course", {4, 4, 4, 4}, nullptr),
 				connectionFactory("Die already!!!", {4, 4, 4, 4}, nullptr)
 				)),
-		connectionFactory("Hello", {4, 4, 4, 4}, nullptr)
+		connectionFactory("Hello", {4, 4, 4, 4}, nullptr),
+		"./assets/purple.png"
 	);
 	decisions.push_back(u1);
 
@@ -75,22 +76,26 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	rescheck1 = decisionFactory(
 		"check 1",
 		connectionFactory("check 1 L", { 10, 0, 0, 0 }, rescheck1),
-		connectionFactory("check 1 R", { -10, 0, 0, 0 }, rescheck1)
+		connectionFactory("check 1 R", { -10, 0, 0, 0 }, rescheck1),
+		"./assets/black.png"
 	);
 	rescheck2 = decisionFactory(
 		"check 2",
 		connectionFactory("check 2 L", { 0, 10, 0, 0 }, rescheck2),
-		connectionFactory("check 2 R", { 0, -10, 0, 0 }, rescheck2)
+		connectionFactory("check 2 R", { 0, -10, 0, 0 }, rescheck2),
+		"./assets/blue.png"
 	);
 	rescheck3 = decisionFactory(
 		"check 3",
 		connectionFactory("check 3 L", { 0, 0, 10, 0 }, rescheck3),
-		connectionFactory("check 3 R", { 0, 0, -10, 0 }, rescheck3)
+		connectionFactory("check 3 R", { 0, 0, -10, 0 }, rescheck3),
+		"./assets/purple.png"
 	);
 	rescheck4 = decisionFactory(
 		"check 4",
 		connectionFactory("check 4 L", { 0, 0, 0, 10 }, rescheck4),
-		connectionFactory("check 4 R", { 0, 0, 0, -10 }, rescheck4)
+		connectionFactory("check 4 R", { 0, 0, 0, -10 }, rescheck4),
+		"./assets/white.png"
 	);
 
 	resChecks = decisionFactory(

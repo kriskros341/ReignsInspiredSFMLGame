@@ -45,10 +45,11 @@ Decision::Decision(std::string s, DecisionConnector* y=nullptr, DecisionConnecto
 */
 
 
-Decision::Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n) {
+Decision::Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n, std::string path) {
 	text = s;
 	yes = y;
 	no = n;
+	imagePath = path;
 };
 
 
@@ -78,9 +79,10 @@ Decision::~Decision() {
 std::shared_ptr<Decision> decisionFactory(
 	const std::string& text,
 	std::shared_ptr<DecisionConnector> c1,
-	std::shared_ptr<DecisionConnector> c2
+	std::shared_ptr<DecisionConnector> c2,
+	std::string imagePath
 ) {
-	std::shared_ptr<Decision> result = std::make_shared<Decision>(text, c1, c2);
+	std::shared_ptr<Decision> result = std::make_shared<Decision>(text, c1, c2, imagePath);
 	return result;
 }
 
