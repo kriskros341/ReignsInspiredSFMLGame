@@ -206,8 +206,6 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	new_game.setPosition(centerPoint.x-(new_game.getLocalBounds().width /2.0), 400.0);
 	exit.setPosition(centerPoint.x-(exit.getLocalBounds().width /2.0), 650.0);
 
-	sf::Clock clock;
-
 	while (window.isOpen()) {
 		//music.play();
 		sf::Event event;
@@ -227,9 +225,8 @@ void menu(MyRenderWindow& window, IsIn& state) {
 			}
 			case sf::Event::MouseButtonReleased: {
 				if (event.key.code == sf::Mouse::Left) {
-					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)) && clock.getElapsedTime() > sf::seconds(.25))
+					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
-						buttonClickSound.play();
 						state = IsIn::gameL;
 					}
 					if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
