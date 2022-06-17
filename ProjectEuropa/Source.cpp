@@ -22,26 +22,106 @@ enum class IsIn {
 
 std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	std::vector<std::shared_ptr<Decision>> decisions;
-	
-	// Pojedyncza decyzja (losowana) ze wskaŸnikiem nullptr:
-	//std::shared_ptr<Decision> przykladowaPojedyncaDecyzja = decisionFactory(
-	//	"drzewo",
-	//	connectionFactory("wybor1", { 0, 0, 0, 0 }, nullptr), // najpierw tak
-	//	connectionFactory("wybor2", { -50, -50, -50, -50 }, nullptr) // potem nie
-	//);
-	//decisions.push_back(przykladowaPojedyncaDecyzja);
+	std::shared_ptr<Decision> randomD1;
+	std::shared_ptr<Decision> randomD2;
+	std::shared_ptr<Decision> randomD3;
+	std::shared_ptr<Decision> randomD4;
+	std::shared_ptr<Decision> randomD5;
+	std::shared_ptr<Decision> randomD6;
+	std::shared_ptr<Decision> randomD7;
+	std::shared_ptr<Decision> randomD8;
+	std::shared_ptr<Decision> randomD9;
+	std::shared_ptr<Decision> randomD10;
+	std::shared_ptr<Decision> randomD11;
+	randomD11 = decisionFactory(
+		"Cap'n, automatic health checks' program\n was a success! The engine will\n run them automatically and keep itself working!",
+		connectionFactory("Yay!!", { 0,0,0,25 }, nullptr),
+		connectionFactory("Yay...", { 0,0,0,25 }, nullptr), false,
+		"./assets/orange.png"
+	);
+	randomD10 = decisionFactory(
+		"Cap'n, I screwed up, the program turns\n out to be a virus, it caused\n disarray in the greenhouses!!!",
+		connectionFactory("Shut it down!!", { -20,0,0,0 }, nullptr),
+		connectionFactory("IT people nowadays...", { -20,0,0,0 }, nullptr), false,
+		"./assets/orange.png"
+	);
+	randomD9=decisionFactory(
+		" Eureka! By the use of corpse fertilizer,\n our crops have doubled in amount,\n size and growth speed!",
+		connectionFactory("Yay!!", {50,0,0,0}, nullptr),
+		connectionFactory("Yay...", {50,0,0,0}, nullptr), false,
+		"./assets/yellow.png"
+	);
+	randomD8 = decisionFactory(
+		"Captain, we cannot allow to desecrate our fallen people,\n it will decrease our people's morale drastically!",
+		connectionFactory("You are right, I will overturn my decision", { 0,20,0,0 }, nullptr),
+		connectionFactory("No, we have to get more crops", {0,-20,0,0 }, randomD9), false,
+		"./assets/pink.png"
+	);
+	randomD7 = decisionFactory(
+		"I found out that there is a way\n to use corpses to make the crops\n grow faster and stronger. Do you\n give me permission to reuse the bodies of our fallen ones?",
+		connectionFactory("Yes, whatever to have more food", { 0,-20,0,0 }, randomD8),
+		connectionFactory("No, it is immoral", { 0,0,0,0 }, nullptr), true,
+		"./assets/yellow.png"
+	);
+	randomD6 = decisionFactory(
+		"I recently saw a program which \nallows automatic plant maintenance. Should we trust it?",
+		connectionFactory("Yeah, let's use it!", { 0,0,0,0 }, randomD10),
+		connectionFactory("It's kinda sus…", { 0,0,0,0 }, nullptr), true,
+		"./assets/orange.png"
+	);
+	randomD5 = decisionFactory(
+		"I have found a program for running automatic\n health checks for the engines. Can we use it? ",
+		connectionFactory("Of course!", { 0,0,0,0 }, randomD11),
+		connectionFactory("We can't be sure if it's safe", { 0,0,0,0 }, nullptr), true,
+		"./assets/orange.png"
+	);
+	randomD4 = decisionFactory(
+		"Our lamps and water sprinklers aren't working\n properly, we need more electricity!",
+		connectionFactory("Divert more power to farms and greenhouses!", { 15,0,0,-20 }, nullptr),
+		connectionFactory("Sorry, we cannot risk losing stability…", { -20,0,0,0 }, nullptr), true,
+		"./assets/yellow.png"
+	);
+	randomD3 = decisionFactory(
+		"Our plants haven't grown yet, we need a special fertilizer. ",
+		connectionFactory("For sure, let's buy it", { 15,0,-15,0 }, nullptr),
+		connectionFactory("Can't afford it…", { -15,0,0,0 }, nullptr), true,
+		"./assets/yellow.png"
+	);
+	randomD2 = decisionFactory(
+		"We need money for the engine \ncheck-up, it was making strange noises recently… ",
+		connectionFactory("Yes, better be safe", { 0,0,-20,20 }, nullptr),
+		connectionFactory("We can't afford it..", { 0,0,0,-20 }, nullptr), true,
+		"./assets/blue.png"
+	);
+	randomD1 = decisionFactory(
+		"People are rioting and demanding\n stress relieving. Let's throw a party!",
+		connectionFactory("Yeah, let's do it!", { -10,30,-10,0 }, nullptr),
+		connectionFactory("We are short on food…", { 0,-20,0,0 }, nullptr), true,
+		"./assets/pink.png"
+	);
+	decisions.push_back(randomD1);
+	decisions.push_back(randomD2);
+	decisions.push_back(randomD3);
+	decisions.push_back(randomD4);
+	decisions.push_back(randomD5);
+	decisions.push_back(randomD6);
+	decisions.push_back(randomD7);
+	decisions.push_back(randomD8);
+	decisions.push_back(randomD9);
+	decisions.push_back(randomD10);
+	decisions.push_back(randomD11);
 
 	// Drzewo decyzji (event):
-	std::shared_ptr<Decision> u1 = decisionFactory(
+	/*std::shared_ptr<Decision> u1 = decisionFactory(
 		"My King...", 
 		connectionFactory(
-			"Yes?", {4, 4, 4, 4},
+			"Yes?", {-4, -4, -4, -4},
 			decisionFactory(
 				"Please help me.\nI'm dying!!!", 
-				connectionFactory("Of course", {4, 4, 4, 4}, nullptr),
-				connectionFactory("Die already!!!", {4, 4, 4, 4}, nullptr)
+				connectionFactory("Of course", {-4, -4, -4, -4}, nullptr),
+				connectionFactory("Die already!!!", {-4, -4, -4, -4}, nullptr)
 				)),
-		connectionFactory("Hello", {4, 4, 4, 4}, nullptr),
+		connectionFactory("Hello", {-4, -4, -4, -4}, nullptr),
 		"./assets/purple.png"
 	);
 	decisions.push_back(u1);
@@ -58,47 +138,101 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 				)),
 		connectionFactory("Drzewo2 R", {4, 4, 4, 4}, nullptr)
 	);
-	decisions.push_back(u2);
+	decisions.push_back(u2);*/
 	return decisions;
 }
 
 void game(MyRenderWindow& window, gameFlag whetherToLoad) {
-	std::shared_ptr<Decision> resChecks;
-	std::shared_ptr<Decision> rescheck1;
-	std::shared_ptr<Decision> rescheck2;
-	std::shared_ptr<Decision> rescheck3;
-	std::shared_ptr<Decision> rescheck4;
-	std::shared_ptr<Decision> current = decisionFactory(
-		"Tutorial 1",
-		connectionFactory("Tutorial L", { -10, -6, -4, -1 }, nullptr),
-		connectionFactory("Tutorial R", { 10, 6, 4, 1 }, nullptr)
+	std::shared_ptr<Decision> tutorialD1;
+	std::shared_ptr<Decision> tutorialD2;
+	std::shared_ptr<Decision> tutorialD3;
+	std::shared_ptr<Decision> beginD1;
+	std::shared_ptr<Decision> beginD2;
+	std::shared_ptr<Decision> beginD3;
+	std::shared_ptr<Decision> beginD4;
+	std::shared_ptr<Decision> beginD5;
+	std::shared_ptr<Decision> beginD6;
+	std::shared_ptr<Decision> beginD7;
+	std::shared_ptr<Decision> beginD8;
+	std::shared_ptr<Decision> beginD9;
+	beginD9 = decisionFactory(
+		"Our mission is to explore the moon\n and survive at the orbit until backup\n arrives and we will make sure\n we can make a colony here.\n Good luck with the management!",
+		connectionFactory("Ok, let's get to work!", { 0, 0, 0, 0 }, nullptr),
+		connectionFactory("I have mixed feelings about that...", { 0, 0, 0, 0 }, nullptr), true
+		, "./assets/captainRed300x300.png"
 	);
-	rescheck1 = decisionFactory(
-		"check 1",
-		connectionFactory("check 1 L", { 10, 0, 0, 0 }, rescheck1),
-		connectionFactory("check 1 R", { -10, 0, 0, 0 }, rescheck1),
-		"./assets/black.png"
+	beginD8 = decisionFactory(
+		"I am the Minister of Society Pink, I will\n report to you about the crew's \nmorale and living conditions.",
+		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD9),
+		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD9), true
+		, "./assets/pink.png"
 	);
-	rescheck2 = decisionFactory(
-		"check 2",
-		connectionFactory("check 2 L", { 0, 10, 0, 0 }, rescheck2),
-		connectionFactory("check 2 R", { 0, -10, 0, 0 }, rescheck2),
-		"./assets/blue.png"
+	beginD7 = decisionFactory(
+		"I am IT Specialist Orange, software\n is my field, keeping you updated\n with the newest technologies.",
+		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD8),
+		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD8), true
+		, "./assets/orange.png"
 	);
-	rescheck3 = decisionFactory(
-		"check 3",
-		connectionFactory("check 3 L", { 0, 0, 10, 0 }, rescheck3),
-		connectionFactory("check 3 R", { 0, 0, -10, 0 }, rescheck3),
-		"./assets/purple.png"
+	beginD6 = decisionFactory(
+		"I am Mechanic Blue,\n keeping the ship running and\n in good condition.",
+		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD7),
+		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD7), true
+		, "./assets/blue.png"
 	);
-	rescheck4 = decisionFactory(
-		"check 4",
-		connectionFactory("check 4 L", { 0, 0, 0, 10 }, rescheck4),
-		connectionFactory("check 4 R", { 0, 0, 0, -10 }, rescheck4),
-		"./assets/white.png"
+	beginD5 = decisionFactory(
+		"I am Farmer Yellow,\n I am the caretaker of the greenhouses,\n crops are my specialty.",
+		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD6),
+		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD6), true
+		, "./assets/yellow.png"
 	);
+	beginD4 = decisionFactory(
+		"I am Doctor Purple,\n I am the person responsible for\n the healthcare aboard.",
+		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD5),
+		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD5), true
+		, "./assets/purple.png"
+	);
+	beginD3 = decisionFactory(
+		"I am General Green, I will\n be informing you about the\n status of the expedition .",
+		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD4),
+		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD4), true
+		, "./assets/green.png"
+	);
+	beginD2 = decisionFactory(
+		"Captain, we have arrived at \nthe destination. Would you like\n to do a roll call?",
+		connectionFactory("Yes, let's do a rollcall", { 0, 0, 0, 0 }, beginD3),
+		connectionFactory("No, let's go on with the mission overview", { 0, 0, 0, 0 }, beginD9), true
+		, "./assets/captainRed300x300.png"
+	);
+	beginD1 = decisionFactory(
+		" You finally arrive at\n the moon. You decide\n to take a walk on the surface",
+		connectionFactory("Let's go!", { 0, 0, 0, 0 }, beginD2),
+		connectionFactory("I am kind of seasick..", { 0, 0, 0, 0 }, beginD2), true
+		, "./assets/background.png"
+	);
+	tutorialD3 = decisionFactory(
+		"Do not drop any of\n the resources to 0.",
+		connectionFactory("It won't end well...", {50 , 50, 50, 50 }, beginD1),
+		connectionFactory("...for you and the crew.", { 50, 50, 50, 50 }, beginD1), true
+		, "./assets/black.png"
+	);
+	tutorialD2 = decisionFactory(
+		"You have to balance\n your 4 resources: Plants\n and Food, People and Morale,\n Money and Ship's State.",
+		connectionFactory("Your decisions influence the resources.", { -100, -100, -100, -100 }, tutorialD3),
+		connectionFactory("Your decisions influence the resources.", { -100, -100, -100, -100 }, tutorialD3), true
+		, "./assets/black.png"
+	);
+	tutorialD1 = decisionFactory(
+		"Welcome to Project:\n Europa! Swipe left or right\n to pick an answer",
+		connectionFactory("Release the card now to pick this answer", { 100, 100, 100, 100 }, tutorialD2),
+		connectionFactory("Release the card now to pick this answer", { 100, 100, 100, 100 }, tutorialD2), true
+		, "./assets/black.png"
+	);
+	
 
-	resChecks = decisionFactory(
+
+
+	std::shared_ptr<Decision> current = tutorialD1;
+	/*resChecks = decisionFactory(
 		"should enter 1?",
 		connectionFactory("entering check 1", { 0, 0, 0, 0 }, rescheck1),
 		connectionFactory("next check", { 0, 0, 0, 0 }, decisionFactory(
@@ -115,9 +249,9 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 				))
 			))
 		)
-	);
+	);*/
 	std::vector<std::shared_ptr<Decision>> decisions = allTheDecisions();
-	std::vector<std::shared_ptr<Decision>> checks = {resChecks};
+	/*std::vector<std::shared_ptr<Decision>> checks = {resChecks};*/
 	Game game(current, decisions, whetherToLoad);
 	//Game game(whetherToLoad, resChecks, checks);
 	//debug
@@ -189,13 +323,13 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	sf::Sprite new_game;
 	sf::Sprite exit;
 
-	sf::Music music;
-	music.openFromFile("./assets/ProjectEuropa-menu-Song.wav");
-	
-	sf::SoundBuffer buffer;
-	sf::Sound buttonClickSound;
-	buffer.loadFromFile("./assets/button-click.wav");
-	buttonClickSound.setBuffer(buffer);
+	//sf::Music music;
+	//music.openFromFile("./assets/ProjectEuropa-menu-Song.wav");
+	//
+	//sf::SoundBuffer buffer;
+	//sf::Sound buttonClickSound;
+	//buffer.loadFromFile("./assets/button-click.wav");
+	//buttonClickSound.setBuffer(buffer);
 
 	sf::Texture texture1, texture2, texture3;
 
@@ -345,71 +479,7 @@ void prototype(std::shared_ptr<Decision> starterCard, std::vector<std::shared_pt
 
 
 int main() {
-	std::cout << "Sprawdzamy gre? 1/cokolwiek innego" << std::endl;
-	int in;
-	std::cin >> in;
-	if (in == 1) {
-		working();
-	}
-	else {
-		/*
-		chcê mieæ
-			Decision* d0 = DF(
-				"Text", 
-				CF("text", change, DF() | null), 
-				CF("text", change, DF() | null)
-			)
-		*/
-/*
-		Decision* currentDecision;
-		int change[4] = { 0,0,0,0 };
-		Decision d0("Tutorial");
-		Decision d1("Base Decision");
-		Decision d2("Yes of Base");
-		Decision d3("No of Base");
-		Decision d4("Yes of First Yes");
-		Decision d5("No of First Yes");
-		Decision d6("Yes of First No");
-		Decision d7("No of First No");
-		Decision d8("Random Roll 1");
-		Decision d9("Random Roll 2");
-		std::vector<Decision*> randomDecisions = { &d1,&d8,&d9 };
-		d0.setYes("Use this option to agree", change, &d1);
-		d0.setNo("Use this option to disagree", change, &d1);
-		d1.setYes("Go to base of Yes", change, &d2);
-		d1.setNo("Go to base of No", change, &d3);
-		d2.setYes("Go to Yes of first Yes", change, &d4);
-		d2.setNo("Go to No of first Yes", change, &d5);
-		d3.setYes("Go to Yes of first No", change, &d6);
-		d3.setNo("Go to No of first No", change, &d7);
-		d4.setYes("Route taken:Yes->Yes", change, nullptr);
-		d4.setNo("Route taken:Yes->Yes", change, nullptr);
-		d5.setYes("Route taken:Yes->No", change, nullptr);
-		d5.setNo("Route taken:Yes->No", change, nullptr);
-		d6.setYes("Route taken:No->Yes", change, nullptr);
-		d6.setNo("Route taken:No->Yes", change, nullptr);
-		d7.setYes("Route taken:No->No", change, nullptr);
-		d7.setNo("Route taken:No->No", change, nullptr);
-		d8.setYes("Go to base of Yes", change, &d2);
-		d8.setNo("Go to base of No", change, &d3);
-		d9.setYes("Go to base of Yes", change, &d2);
-		d9.setNo("Go to base of No", change, &d3);
-		prototype(&d0, randomDecisions);
-*/
-		/*Decision d("JDJDJDJ"); \\test 1
-		Decision y("ggggg");
-		const int changeD[4] = { 4, 1, 0, 1 };
-		Decision n = Decision("neneenenennene");
-		d.setYes("te", changeD, &y);
-		d.setNo("sus", changeD, &n);
-		std::cout << "oryginalna " << d.getText() << std::endl;
-		currentDecision = &d;
-		makeDecision(currentDecision, false);
-		std::cout << "Zmieniona decyzja " << (currentDecision->getText()) << std::endl;*/
-		/*if (currentDecision->getYesDecision() != nullptr) {
-			std::cout << currentDecision->getYesDecision()->getConnectorText() << std::endl;
-		std::cout << currentDecision->getNoDecision()->getConnectorText() << "\n";}*/
-		/*}*/
-	}
+	std::cout << "Project: Europa (cmd)" << std::endl;
+		working();	
 	return 1;
 }

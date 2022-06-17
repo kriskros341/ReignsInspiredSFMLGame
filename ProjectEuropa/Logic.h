@@ -32,6 +32,8 @@ public:
 	void apply(DecisionStats other) {
 		for (int i = 0; i < 4; i++) {
 			stats[i] += other.stats[i];
+			if (stats[i] > 100)
+				stats[i] = 100;
 		}
 	}
 
@@ -71,9 +73,11 @@ std::shared_ptr<DecisionConnector> connectionFactory(
 const std::string defaultImage = "./assets/captainRed300x300.png";
 class Decision {
 private:
-	
+
 	int id = -1;
 	std::string text = "default";
+	bool wasUsed = false;
+	bool tobeUsed;
 	std::shared_ptr<DecisionConnector> yes;
 	std::shared_ptr<DecisionConnector> no;
 	std::string imagePath;
@@ -85,17 +89,23 @@ private:
 public:
 	//Decision(const std::string& t="defau");
 	//Decision(std::string s, DecisionConnector* y, DecisionConnector* n);
-	Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n, std::string path = defaultImage);
+	Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n, bool toBeRolled = true, std::string path = defaultImage);
 	Decision(const Decision& d) {
 		text = d.text;
 		yes = d.yes;
 		no = d.no;
 		imagePath = d.imagePath;
+		tobeUsed = d.tobeUsed;
 	}
 	std::string getImagePath() {
 		return imagePath;
 	}
 	void setID();
+	bool getToBeUsed()
+	{
+		return tobeUsed;
+	};
+	void setToBeUsed(bool b) { tobeUsed = b; };
 	void setText(std::string s);
 	void setYes(std::string t, const int c[4], std::shared_ptr<Decision>& d );
 	void setNo(std::string t, const int c[4], std::shared_ptr<Decision>& d );
@@ -110,6 +120,7 @@ std::shared_ptr<Decision> decisionFactory(
 	const std::string& text,
 	std::shared_ptr<DecisionConnector> c1,
 	std::shared_ptr<DecisionConnector> c2,
+	bool isRolled,
 	std::string imagePath = defaultImage
 );
 

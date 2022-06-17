@@ -105,6 +105,11 @@ public:
 		}
 		
 	};
+	Resource* getResources(int a) {
+		if (a >= 0 && a <= 3)
+			return resources + a - 1;
+		else std::cout << "Couldn't get resource" << std::endl;
+	}
 	void updateBars(DecisionStats& s) {
 		for (int i{}; i < 4; i++) {
 			resources[i].setValue(s[i]);
@@ -157,6 +162,31 @@ public:
 	std::shared_ptr<Decision> starting;
 	std::shared_ptr<Decision> currentDecision;
 	std::vector<std::shared_ptr<Decision>> decisionPool;
+	std::shared_ptr<Decision> deathDecisions[4] = { decisionFactory(
+		"Your food banks has been depleted\n and soon you will all die of hunger.\n Game Over.",
+		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
+		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
+		, "./assets/dead-card-1.png"
+	),
+		decisionFactory(
+		"Because of your harsh management, the crew \ndecided to riot against you and throw \nyou out of the airlock in your sleep.\n Game Over.",
+		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
+		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
+		, "./assets/dead-card-1.png" //teraz nie dzia³a
+	),
+		decisionFactory(
+		"You have become broke and cannot pay \nspace taxes. Your ship was confiscated \nand you became stranded on the moon.\n Game Over.",
+		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
+		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
+		, "./assets/dead-card-1.png"
+	),
+		decisionFactory(
+		"Because of the ship's drastic state,\n it exploded into millions of pieces, \nkilling you and the whole crew on the ship. \nGame Over.",
+		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
+		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
+		, "./assets/dead-card-1.png"
+	) };
+	bool deathEnabled = false;
 	int decisionId = -1;
 	DecisionStats stats{50, 50, 50, 50};
 	void loadFromFile(const std::string path = "./saved.txt") {
@@ -197,8 +227,12 @@ public:
 			currentDecision = currentDecision->getNoDecision()->getNextDecision();
 		}
 		if (currentDecision == nullptr) {
-			decisionId = rand() % decisionPool.size();
-			currentDecision = decisionPool[decisionId];
+			deathEnabled = true;
+			do{
+				decisionId = rand() % decisionPool.size();
+				currentDecision = decisionPool[decisionId];
+			} while (currentDecision->getToBeUsed()==false);
+			
 			saveProgress();
 		}
 	};
@@ -235,7 +269,18 @@ public:
 			getCurrentDecision()->getYesDecision()->getChangeParameters() :
 			getCurrentDecision()->getNoDecision()->getChangeParameters()
 		);
-		decision.moveThroughConnector(whichOption);
+		bool wasDied=false;
+		for (int i = 0; i < 4; i++)
+		{
+			if (decision.stats[i] <= 0/*&&decision.deathEnabled*/)
+			{
+				decision.currentDecision = decision.deathDecisions[i];
+				wasDied = true;
+			}
+			
+		}
+		if(!wasDied)
+			decision.moveThroughConnector(whichOption);
 		decision.stats.cout();
 		card.setImage(decision.currentDecision->getImagePath());
 		updateGUI();
@@ -306,6 +351,7 @@ public:
 		yesZone.setFillColor(sf::Color{ 48, 42, 39 });
 		noZone.setFillColor(sf::Color{ 48, 42, 39 });
 		setFillColor(sf::Color{160, 148, 133});
+		
 	}
 	float getAngle() {
 		return card.getAngle();
@@ -322,6 +368,12 @@ public:
 	Game(std::shared_ptr<Decision> current, std::vector<std::shared_ptr<Decision>> ListOfTrees, gameFlag flag = gameFlag::New) : area(500, 150) {
 		setStartingDecision(current);
 		setDecisionPool(ListOfTrees);
+		area.decisionText.setOrigin(area.decisionText.getLocalBounds().width / 2.0f, area.decisionText.getLocalBounds().height / 2.0f);
+		area.decisionText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f - 200.0f);
+		area.yesText.setOrigin(area.yesText.getLocalBounds().width / 2.0f, area.yesText.getLocalBounds().height / 2.0f);
+		area.yesText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 340.0f);
+		area.noText.setOrigin(area.noText.getLocalBounds().width / 2.0f, area.noText.getLocalBounds().height / 2.0f);
+		area.noText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 340.0f);
 		if (flag == gameFlag::Load) {
 			area.loadFromFile("./saved.txt");
 		}
