@@ -272,7 +272,7 @@ public:
 		bool wasDied=false;
 		for (int i = 0; i < 4; i++)
 		{
-			if (decision.stats[i] <= 0/*&&decision.deathEnabled*/)
+			if (decision.stats[i] <= 0&&decision.deathEnabled)
 			{
 				decision.currentDecision = decision.deathDecisions[i];
 				wasDied = true;
