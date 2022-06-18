@@ -9,7 +9,7 @@ class Resource;
 class FadeIn;
 class TextField;
 class Decision;
-
+//-----------KLASA RENDERUJ¥CA WSZYSTKIE ELEMENTY POJAWIAJ¥CE SIÊ NA EKRANIE-------
 class MyRenderWindow : public sf::RenderWindow {
 public:
 	MyRenderWindow(sf::VideoMode v, std::string t, sf::ContextSettings& c) : 

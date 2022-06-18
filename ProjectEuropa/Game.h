@@ -13,33 +13,7 @@ enum class gameFlag {
 	New = 1,
 	Load
 };
-//class Resource : public sf::RectangleShape {
-//	int value; // please do not edit here
-//	sf::Text t;
-//	sf::Vector2f startingPosition;
-//	friend class MyRenderWindow;
-//public:
-//	Resource()  {};
-//	Resource(sf::Vector2f size, sf::Vector2f position, int v) : sf::RectangleShape(size), value(v) {
-//
-//		/*t.setFont(systemFont);
-//		t.setString(std::to_string(v));*/
-//		startingPosition = position;
-//		setPosition(startingPosition);
-//		t.setFillColor(sf::Color::Magenta);
-//		t.setOrigin(t.getLocalBounds().width / 2, t.getLocalBounds().height / 2);
-//		t.setPosition(startingPosition.x + size.x / 2.0, startingPosition.y + size.y / 2.0);
-//	}
-//	void setValue(int newval) {
-//		value = newval;
-//		t.setString(std::to_string(value));
-//
-//	};
-//	int getValue() {
-//		return value;
-//	};
-//};
-
+//-----------IKONKI ZASOBÓW----------------
 class ResourceCover : public sf::Sprite {
 	sf::Texture texture;
 	friend class MyRenderWindow;
@@ -51,7 +25,7 @@ public:
 		setPosition(212.5f + 100.0f * (nthChild - 1), 0);
 	}
 };
-
+//---------ZNACZNIKI ZWIÊKSZANIA/ZMNIEJSZANIA SIÊ STATÓW----------
 class Indicator : public sf::CircleShape {
 public:
 	Indicator()
@@ -59,12 +33,12 @@ public:
 		setFillColor(sf::Color{ 160, 148, 133 });
 	}
 };
-
+//------------POLE ZWIÊKSZAJ¥CE/ZMNIEJSZAJ¥CE SIÊ POD WP£YWEM DECYZJI----------
 class Resource : public sf::RectangleShape {
 	int value;
 	friend class MyRenderWindow;
 	friend class ResourceCover;
-	Indicator up, down;
+	Indicator up;
 public:
 	Resource() {};
 	Resource(sf::Vector2f size, sf::Vector2f position, int v, int nthChild) : sf::RectangleShape(size), value(v)
@@ -86,7 +60,7 @@ public:
 };
 
 float approx_linear(float input[2], float output[2], float value);
-
+//--------------------------------STATY----------------------------------
 class GUI : public sf::RectangleShape {
 	friend class MyRenderWindow;
 	Resource* resources;
@@ -119,7 +93,7 @@ public:
 
 float getAngleBetween(sf::Vector2f origin, sf::Vector2f theOther);
 class MyRenderWindow;
-
+//----------------------KARTA G£ÓWNA-------------------
 class MainCard : public sf::Sprite {
 	bool isDragging = false;
 	sf::FloatRect rect;
@@ -144,7 +118,7 @@ public:
 	void restartDrag();
 	void setDragging(bool n);
 };
-
+//--------------NASTÊPNA KARTA----------------------
 class NextCard : public sf::Sprite {
 	sf::Texture texture;
 public:
@@ -155,6 +129,7 @@ public:
 		setTexture(texture);
 	}
 };
+//-------------PRZYCISK POWROTU DO MENU--------------
 class Button : public sf::Sprite {
 private:
 	sf::Texture buttonTex;
@@ -167,7 +142,7 @@ public:
 	}
 };
 void splitTo(std::string str, const char seperator, std::vector<std::string>& cont);
-// Wszystkie decyzje
+//------------------------------DECYZJE-------------------------------
 class AllDecisions {
 public:
 	std::shared_ptr<Decision> starting;
@@ -252,6 +227,8 @@ public:
 		file << serializeData();
 	}
 };
+
+//--------------WSZYSTKO CO WIDZI GRACZ W EKRANIE GRY-------------
 
 class PlayableArea : public sf::RectangleShape {
 	AllDecisions decision;

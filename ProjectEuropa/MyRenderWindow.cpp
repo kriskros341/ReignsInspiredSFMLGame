@@ -1,5 +1,6 @@
 #include "./MyRenderWindow.h"
 
+//-------------FUNKCJE RYSUJ¥CE ELEMENTY NA EKRANIE-------------
 
 void MyRenderWindow::draw(Game& game) {
 	sf::RenderWindow::draw(game.area);

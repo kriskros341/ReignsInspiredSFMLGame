@@ -8,7 +8,6 @@
 #include "Animation.h"
 
 #pragma setLocale("utf-8");
-#define papiez 2137420;
 
 extern sf::Vector2f screenSize;
 extern enum class gameFlag;
@@ -19,6 +18,10 @@ enum class IsIn {
 	gameL,
 	exit
 };
+
+//-----------------------FABU£A GRY---------------------------
+
+//-----decyzje losowe------
 
 std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	std::vector<std::shared_ptr<Decision>> decisions;
@@ -142,6 +145,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	return decisions;
 }
 
+//-------eventy------------
 void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	std::shared_ptr<Decision> tutorialD1;
 	std::shared_ptr<Decision> tutorialD2;
@@ -228,33 +232,13 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		, "./assets/black.png"
 	);
 
-
 	std::shared_ptr<Decision> current = tutorialD1;
-	/*resChecks = decisionFactory(
-		"should enter 1?",
-		connectionFactory("entering check 1", { 0, 0, 0, 0 }, rescheck1),
-		connectionFactory("next check", { 0, 0, 0, 0 }, decisionFactory(
-			"should enter 2?",
-			connectionFactory("entering check 2", { 0, 0, 0, 0 }, rescheck2),
-			connectionFactory("next check", { 0, 0, 0, 0 }, decisionFactory(
-				"should enter 3?",
-				connectionFactory("entering check 3", { 0, 0, 0, 0 }, rescheck3),
-				connectionFactory("next check", { 0, 0, 0, 0 }, decisionFactory(
-					"should enter 4?",
-					connectionFactory("entering check 4", { 0, 0, 0, 0 }, rescheck4),
-					connectionFactory("next check", { 0, 0, 0, 0 }, nullptr
-					))
-				))
-			))
-		)
-	);*/
 	std::vector<std::shared_ptr<Decision>> decisions = allTheDecisions();
 	/*std::vector<std::shared_ptr<Decision>> checks = {resChecks};*/
 	Game game(current, decisions, whetherToLoad);
 	//Game game(whetherToLoad, resChecks, checks);
 	//debug
 	
-
 	/*
 	sf::CircleShape toCompare(4, 40);
 	toCompare.setPosition(400, 400);
@@ -313,6 +297,8 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		t += 0.05;
 	}
 }
+
+//----------FUNKCJA RYSUJ¥CA MENU I WSZYSTKIE PRZYCISKI------------
 
 void menu(MyRenderWindow& window, IsIn& state) {
 	sf::Vector2f centerPoint(window.getSize().x / 2.0, window.getSize().y / 2.0);
@@ -397,6 +383,7 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	}
 }
 
+//---------FUNKCJA SPRAWDZAJ¥CA W JAKIM STANIE ZNAJDUJE SIÊ GRA-------------
 
 void working() {
 	systemFont.loadFromFile("../Sansation_Regular.ttf");
@@ -432,10 +419,8 @@ void working() {
 			break;
 		};
 		}
-
 	}
 }
-
 
 void makeDecision(std::shared_ptr<Decision> currentDecision, bool switcher) {
 	if (switcher == true)
@@ -473,9 +458,7 @@ void prototype(std::shared_ptr<Decision> starterCard, std::vector<std::shared_pt
 	}
 }
 ;
-
-
-
+//----------POCZ¥TEK - KONSOLA------------------
 int main() {
 	std::cout << "Project: Europa (cmd)" << std::endl;
 		working();	
