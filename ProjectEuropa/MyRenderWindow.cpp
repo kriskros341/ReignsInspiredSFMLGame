@@ -15,6 +15,7 @@ void MyRenderWindow::draw(Game& game) {
 	sf::RenderWindow::draw(game.area.money);
 	sf::RenderWindow::draw(game.area.rocket);
 	sf::RenderWindow::draw(game.area.decisionText);
+	sf::RenderWindow::draw(game.area.backButton);
 	drawIndicators(game.area.gui.resources, game.area.gui.resourceCount);
 }
 void MyRenderWindow::draw(Resource* r, const int c) {

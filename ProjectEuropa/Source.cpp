@@ -64,13 +64,13 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		"./assets/yellow.png"
 	);
 	randomD6 = decisionFactory(
-		"I recently saw a program which \nallows automatic plant maintenance. Should we trust it?",
+		"I recently saw a program which \nallows automatic plant maintenance. \nShould we trust it?",
 		connectionFactory("Yeah, let's use it!", { 0,0,0,0 }, randomD10),
 		connectionFactory("It's kinda sus…", { 0,0,0,0 }, nullptr), true,
 		"./assets/orange.png"
 	);
 	randomD5 = decisionFactory(
-		"I have found a program for running automatic\n health checks for the engines. Can we use it? ",
+		"I have found a program for running \nautomatic health checks for the engines. \nCan we use it? ",
 		connectionFactory("Of course!", { 0,0,0,0 }, randomD11),
 		connectionFactory("We can't be sure if it's safe", { 0,0,0,0 }, nullptr), true,
 		"./assets/orange.png"
@@ -162,19 +162,19 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		, "./assets/captainRed300x300.png"
 	);
 	beginD8 = decisionFactory(
-		"I am the Minister of Society Pink, I will\n report to you about the crew's \nmorale and living conditions.",
+		"I am the Minister of Society Pink,\nI will report to you\nabout the crew's \nmorale and living conditions.",
 		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD9),
 		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD9), true
 		, "./assets/pink.png"
 	);
 	beginD7 = decisionFactory(
-		"I am IT Specialist Orange, software\n is my field, keeping you updated\n with the newest technologies.",
+		"I am IT Specialist Orange,\nsoftware is my field,\nI keep you updated with the\n newest technologies.",
 		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD8),
 		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD8), true
 		, "./assets/orange.png"
 	);
 	beginD6 = decisionFactory(
-		"I am Mechanic Blue,\n keeping the ship running and\n in good condition.",
+		"I am Mechanic Blue,\nkeeping the ship running and\n in good condition.",
 		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD7),
 		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD7), true
 		, "./assets/blue.png"
@@ -207,7 +207,7 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		" You finally arrive at\n the moon. You decide\n to take a walk on the surface",
 		connectionFactory("Let's go!", { 0, 0, 0, 0 }, beginD2),
 		connectionFactory("I am kind of seasick..", { 0, 0, 0, 0 }, beginD2), true
-		, "./assets/background.png"
+		, "./assets/moon-arrival-card.png"
 	);
 	tutorialD3 = decisionFactory(
 		"Do not drop any of\n the resources to 0.",
@@ -227,8 +227,6 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		connectionFactory("Release the card now to pick this answer", { 100, 100, 100, 100 }, tutorialD2), true
 		, "./assets/black.png"
 	);
-	
-
 
 
 	std::shared_ptr<Decision> current = tutorialD1;

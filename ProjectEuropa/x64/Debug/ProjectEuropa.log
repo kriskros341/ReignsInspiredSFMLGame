@@ -1,35 +1,23 @@
-﻿  Game.cpp
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(132,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(132,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(152,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(152,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.cpp(9,50): warning C4244: "return": konwersja z "double" do "float", możliwa utrata danych
-  MyRenderWindow.cpp
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(132,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(132,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(152,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(152,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-  Source.cpp
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(132,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(132,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(152,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Game.h(152,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(10,9): warning C4068: nieznana pragma „setLocale”
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(14,27): warning C4091: "extern ": zignorowano na lewo od "gameFlag" podczas gdy brak deklaracji zmiennej
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(315,12): warning C4305: "+=": obcięcie z "double" do "float"
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(320,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+﻿  Source.cpp
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(132,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(132,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(152,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(152,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(10,9): warning C4068: nieznana pragma „setLocale”
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(14,27): warning C4091: "extern ": zignorowano na lewo od "gameFlag" podczas gdy brak deklaracji zmiennej
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(313,12): warning C4305: "+=": obcięcie z "double" do "float"
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(318,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
           with
           [
               T=float
           ]
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(320,46): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(318,46): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
           with
           [
               T=float
           ]
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(344,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(345,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(346,32): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\ProjectEuropa\Source.cpp(455,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  Generowanie kodu...
-  ProjectEuropa.vcxproj -> C:\Users\maz2g\OneDrive\Desktop\Prog Stuf\Sem 2\Projekt\x64\Debug\ProjectEuropa.exe
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(342,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(343,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(344,32): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(453,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  ProjectEuropa.vcxproj -> C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\x64\Debug\ProjectEuropa.exe

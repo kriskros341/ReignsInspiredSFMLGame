@@ -155,6 +155,17 @@ public:
 		setTexture(texture);
 	}
 };
+class Button : public sf::Sprite {
+private:
+	sf::Texture buttonTex;
+public:
+	Button() : sf::Sprite()
+	{
+		buttonTex.loadFromFile("./assets/exit-to-menu-button.png");
+		setTexture(buttonTex);
+		setPosition(100.0, 10.0);
+	}
+};
 void splitTo(std::string str, const char seperator, std::vector<std::string>& cont);
 // Wszystkie decyzje
 class AllDecisions {
@@ -248,6 +259,7 @@ class PlayableArea : public sf::RectangleShape {
 	MainCard card;
 	NextCard next;
 	ResourceCover flora, human, money, rocket;
+	Button backButton;
 	float guiOffset = 150, guiOffsetY = 800;
 	sf::RectangleShape yesZone, noZone, bottomTextZone;
 	sf::Text decisionText, yesText, noText;
@@ -329,7 +341,8 @@ public:
 		human("./assets/human.png", 2),
 		money("./assets/money.png", 3),
 		rocket("./assets/rocket.png", 4),
-		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, defaultImage)
+		backButton(),
+		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, defaultImage) 
 	{
 		sf::FloatRect rect = { screenSize.x / 2.0f - width / 2.0f, 0, width, screenSize.y };
 		gui.setFillColor(sf::Color{ 27, 24, 22 });
@@ -351,7 +364,7 @@ public:
 		yesZone.setFillColor(sf::Color{ 48, 42, 39 });
 		noZone.setFillColor(sf::Color{ 48, 42, 39 });
 		setFillColor(sf::Color{160, 148, 133});
-		
+
 	}
 	float getAngle() {
 		return card.getAngle();
@@ -396,11 +409,11 @@ public:
 	int notificationTreshold = 3;
 	void updateNotifiers() {
 		if (area.getAngle() < 0 && area.getAngle() > -180 + notificationTreshold) {
-			std::cout << "-" << std::endl;
+			//std::cout << "-" << std::endl;
 			
 		}
 		if (area.getAngle() > 0 && area.getAngle() < 180 - notificationTreshold) {
-			std::cout << "+" << std::endl;
+			//std::cout << "+" << std::endl;
 		}
 	}
 	int getSideNotifier() {
