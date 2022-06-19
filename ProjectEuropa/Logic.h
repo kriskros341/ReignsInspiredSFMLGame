@@ -8,7 +8,6 @@
 class DecisionConnector;
 
 class DecisionStats {
-	
 	friend class DecisionConnector;
 public:
 	//this should ve been an array all along
@@ -34,6 +33,8 @@ public:
 			stats[i] += other.stats[i];
 			if (stats[i] > 100)
 				stats[i] = 100;
+			else if (stats[i] <= 100)
+				std::cout << "Game over";
 		}
 	}
 

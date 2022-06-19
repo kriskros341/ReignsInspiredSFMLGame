@@ -16,6 +16,7 @@ enum class gameFlag {
 //-----------IKONKI ZASOBÓW----------------
 class ResourceCover : public sf::Sprite {
 	sf::Texture texture;
+	friend class Resource;
 	friend class MyRenderWindow;
 public:
 	ResourceCover() {};
@@ -24,6 +25,7 @@ public:
 		setTexture(texture);
 		setPosition(212.5f + 100.0f * (nthChild - 1), 0);
 	}
+	
 };
 //---------ZNACZNIKI ZWIÊKSZANIA/ZMNIEJSZANIA SIÊ STATÓW----------
 class Indicator : public sf::CircleShape {
@@ -36,6 +38,7 @@ public:
 //------------POLE ZWIÊKSZAJ¥CE/ZMNIEJSZAJ¥CE SIÊ POD WP£YWEM DECYZJI----------
 class Resource : public sf::RectangleShape {
 	int value;
+	int currentSize;
 	friend class MyRenderWindow;
 	friend class ResourceCover;
 	Indicator up;
@@ -56,6 +59,10 @@ public:
 	};
 	int getValue() {
 		return value;
+	};
+	void changeHeight(int val)
+	{
+		setSize({ 60.0f, (currentSize)*1.0f });
 	};
 };
 
@@ -87,6 +94,7 @@ public:
 	void updateBars(DecisionStats& s) {
 		for (int i{}; i < 4; i++) {
 			resources[i].setValue(s[i]);
+			resources[i].changeHeight(s[i]);
 		}
 	}
 };
@@ -346,7 +354,6 @@ public:
 	float getAngle() {
 		return card.getAngle();
 	}
-
 };
 
 
@@ -387,6 +394,7 @@ public:
 	void updateNotifiers() {
 		if (area.getAngle() < 0 && area.getAngle() > -180 + notificationTreshold) {
 			//std::cout << "-" << std::endl;
+			//dodaæ tu rysowanie siê kropki nad zasobem
 			
 		}
 		if (area.getAngle() > 0 && area.getAngle() < 180 - notificationTreshold) {

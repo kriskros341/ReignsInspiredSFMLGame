@@ -33,7 +33,6 @@ void MainCard::setDragging(bool n) {
 bool Game::doesIntersectWithMainCard(sf::FloatRect position) {
 	sf::FloatRect cardPosition = area.card.getGlobalBounds();
 	return cardPosition.intersects(position);
-
 }
 bool Game::doesIntersectWithMainCard(sf::Vector2f position) {
 	sf::FloatRect cardPosition = area.card.getGlobalBounds();
