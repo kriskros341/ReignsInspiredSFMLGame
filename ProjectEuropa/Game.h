@@ -38,17 +38,24 @@ public:
 //------------POLE ZWIÊKSZAJ¥CE/ZMNIEJSZAJ¥CE SIÊ POD WP£YWEM DECYZJI----------
 class Resource : public sf::RectangleShape {
 	int value;
-	int currentSize;
+	int currentSize = 100;
 	friend class MyRenderWindow;
 	friend class ResourceCover;
 	Indicator up;
+	sf::RectangleShape underlayingCover;
 public:
 	Resource() {};
 	Resource(sf::Vector2f size, sf::Vector2f position, int v, int nthChild) : sf::RectangleShape(size), value(v)
 	{
+		//setFillColor(sf::Color{210, 205, 199, 255});
 		setSize({60, 130});
 		setPosition(212.5f + 100.0f * (nthChild), 0);
-		setFillColor(sf::Color{210, 205, 199, 255});
+		setFillColor(sf::Color::Red);
+		
+		underlayingCover.setFillColor(sf::Color{210, 205, 199, 255});
+		//underlayingCover.setFillColor(sf::Color::Red);
+		underlayingCover.setSize({60, 130});
+		underlayingCover.setPosition(212.5f + 100.0f * (nthChild), 0);
 
 		up.setRadius(5);
 		up.setOrigin(5, 5);
@@ -62,7 +69,7 @@ public:
 	};
 	void changeHeight(int val)
 	{
-		setSize({ 60.0f, (currentSize)*1.0f });
+		underlayingCover.setSize({ 60.0f, 130.0f - 130.0f / 100.0f * value });
 	};
 };
 
@@ -72,8 +79,14 @@ class GUI : public sf::RectangleShape {
 	friend class MyRenderWindow;
 	Resource* resources;
 	const int resourceCount = 4;
+	ResourceCover flora, human, money, rocket;
 public:
-	GUI(sf::FloatRect rect, DecisionStats& stats) : sf::RectangleShape({rect.width, rect.height}) {
+	GUI(sf::FloatRect rect, DecisionStats& stats) : sf::RectangleShape({ rect.width, rect.height }),
+		flora("./assets/flora.png", 1),
+		human("./assets/human.png", 2),
+		money("./assets/money.png", 3),
+		rocket("./assets/rocket.png", 4)
+	{
 		float width = rect.width, height = rect.height;
 		resources = new Resource[resourceCount];
 		for (int i = 0; i < resourceCount; i++) {
@@ -84,7 +97,6 @@ public:
 				i
 			);
 		}
-		
 	};
 	Resource* getResources(int a) {
 		if (a >= 0 && a <= 3)
@@ -243,7 +255,6 @@ class PlayableArea : public sf::RectangleShape {
 	GUI gui;
 	MainCard card;
 	NextCard next;
-	ResourceCover flora, human, money, rocket;
 	Button backButton;
 	float guiOffset = 150, guiOffsetY = 800;
 	sf::RectangleShape yesZone, noZone, bottomTextZone;
@@ -286,6 +297,7 @@ public:
 		
 	}
 	void updateGUI() {
+		std::cout << decision.stats[0] << " " <<  decision.stats[1] << " "<< decision.stats[2] << " " << decision.stats[3] << " " <<std::endl;
 		gui.updateBars(decision.stats);
 		//gui.
 	}
@@ -317,15 +329,10 @@ public:
 		noText.setCharacterSize(20);
 		noText.setFillColor(sf::Color{ 160, 148, 133 });
 	}
-	//PlayableArea(sf::FloatRect rect) :
 	PlayableArea(float width, float guiOffset) :
 		sf::RectangleShape({ width, screenSize.y - guiOffset }),
 		gui({ screenSize.x / 2.0f - width / 2.0f, 0, width, guiOffset }, decision.stats),
 		next({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, "./assets/backCard300x300.png"),
-		flora("./assets/flora.png", 1),
-		human("./assets/human.png", 2),
-		money("./assets/money.png", 3),
-		rocket("./assets/rocket.png", 4),
 		backButton(),
 		card({ screenSize.x / 2.0f, screenSize.y / 2.0f + 100.0f, 300, 300 }, defaultImage) 
 	{

@@ -11,10 +11,10 @@ void MyRenderWindow::draw(Game& game) {
 	sf::RenderWindow::draw(game.area.next);
 	sf::RenderWindow::draw(game.area.card);
 	draw(game.area.gui.resources, game.area.gui.resourceCount);
-	sf::RenderWindow::draw(game.area.flora);
-	sf::RenderWindow::draw(game.area.human);
-	sf::RenderWindow::draw(game.area.money);
-	sf::RenderWindow::draw(game.area.rocket);
+	sf::RenderWindow::draw(game.area.gui.flora);
+	sf::RenderWindow::draw(game.area.gui.human);
+	sf::RenderWindow::draw(game.area.gui.money);
+	sf::RenderWindow::draw(game.area.gui.rocket);
 	sf::RenderWindow::draw(game.area.decisionText);
 	sf::RenderWindow::draw(game.area.backButton);
 	drawIndicators(game.area.gui.resources, game.area.gui.resourceCount);
@@ -22,6 +22,7 @@ void MyRenderWindow::draw(Game& game) {
 void MyRenderWindow::draw(Resource* r, const int c) {
 	for (int i = 0; i < c; i++) {
 		draw(r[i]);
+		draw(r[i].underlayingCover);
 	};
 }
 void MyRenderWindow::drawIndicators(Resource* r, const int c) {
