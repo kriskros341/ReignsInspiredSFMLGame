@@ -17,7 +17,7 @@ void MyRenderWindow::draw(Game& game) {
 	sf::RenderWindow::draw(game.area.gui.rocket);
 	sf::RenderWindow::draw(game.area.decisionText);
 	sf::RenderWindow::draw(game.area.backButton);
-	drawIndicators(game.area.gui.resources, game.area.gui.resourceCount);
+	//drawIndicators(game.area.gui.resources, game.area.gui.resourceCount);
 }
 void MyRenderWindow::draw(Resource* r, const int c) {
 	for (int i = 0; i < c; i++) {
@@ -25,10 +25,24 @@ void MyRenderWindow::draw(Resource* r, const int c) {
 		draw(r[i].underlayingCover);
 	};
 }
-void MyRenderWindow::drawIndicators(Resource* r, const int c) {
+void MyRenderWindow::drawIndicators(Resource* r, const int c, std::shared_ptr<Decision> d, bool left) {
 	for (int i = 0; i < c; i++) {
+		
+		if (left) {
+			int roar = d->getNoDecision()->getChangeParameter(i);
+			if (roar == 0) r[i].up.setRadius(0);
+			if (abs(roar) > 0 && abs(roar) <= 15) r[i].up.setRadius(2);
+			if (abs(roar) > 15) r[i].up.setRadius(5);
+		}
+		else {
+			int roar = d->getYesDecision()->getChangeParameter(i);
+			if (roar == 0) r[i].up.setRadius(0);
+			if (abs(roar) > 0 && abs(roar) <= 15) r[i].up.setRadius(2);
+			if (abs(roar) > 15) r[i].up.setRadius(5);
+		}
+
 		draw(r[i].up);
-	};
+	}; 
 }
 void MyRenderWindow::draw(Resource r) {
 	sf::RenderWindow::draw(r);

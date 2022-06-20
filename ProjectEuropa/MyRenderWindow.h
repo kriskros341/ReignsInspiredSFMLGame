@@ -16,7 +16,7 @@ public:
 	MyRenderWindow(sf::VideoMode v, std::string t, sf::ContextSettings& c) : 
 		sf::RenderWindow(v, t, sf::Style::Close, c) {
 	};
-	void drawIndicators(Resource* r, const int c);
+	void drawIndicators(Resource* r, const int c, std::shared_ptr<Decision> d, bool left);
 	void draw(Game& game);
 	IsIn stateFlag;
 	void draw(Resource* r, const int c);

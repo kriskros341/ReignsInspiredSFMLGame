@@ -68,7 +68,7 @@ public:
 	};
 	void changeHeight(int val)
 	{
-		underlayingCover.setSize({ 60.0f, 130.0f - 130.0f / 100.0f * value });
+		underlayingCover.setSize({ 60.0f, 110.0f - 110.0f / 150.0f * value });
 	};
 };
 
@@ -167,29 +167,33 @@ public:
 	std::shared_ptr<Decision> starting;
 	std::shared_ptr<Decision> currentDecision;
 	std::vector<std::shared_ptr<Decision>> decisionPool;
+	std::shared_ptr<Decision> winDecision = { decisionFactory("Captain, help has arrived, we are saved!!(You Win!)",
+		connectionFactory("Wooooooo!!", { 0, 0, 0, 0 }, nullptr),
+		connectionFactory("Nice", { 0, 0, 0, 0 }, nullptr)
+		, "./assets/captainRed300x300.png",true) };
 	std::shared_ptr<Decision> deathDecisions[4] = { decisionFactory(
 		"Your food banks has been depleted\n and soon you will all die of hunger.\n Game Over.",
 		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
 		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
-		, "./assets/dead-card-1.png"
+		, "./assets/dead-card-1.png",true
 	),
 		decisionFactory(
 		"Because of your harsh management, the crew \ndecided to riot against you and throw \nyou out of the airlock in your sleep.\n Game Over.",
 		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
 		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
-		, "./assets/dead-card-1.png" //teraz nie dzia³a
+		, "./assets/dead-card-1.png",true 
 	),
 		decisionFactory(
 		"You have become broke and cannot pay \nspace taxes. Your ship was confiscated \nand you became stranded on the moon.\n Game Over.",
 		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
 		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
-		, "./assets/dead-card-1.png"
+		, "./assets/dead-card-1.png",true
 	),
 		decisionFactory(
 		"Because of the ship's drastic state,\n it exploded into millions of pieces, \nkilling you and the whole crew on the ship. \nGame Over.",
 		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
 		connectionFactory("Oh shi--!", { 0, 0, 0, 0 }, nullptr)
-		, "./assets/dead-card-1.png"
+		, "./assets/dead-card-1.png",true
 	) };
 	bool deathEnabled = false;
 	int decisionId = -1;
@@ -233,11 +237,18 @@ public:
 		}
 		if (currentDecision == nullptr) {
 			deathEnabled = true;
+			bool isWin = true;
 			do{
-				decisionId = rand() % decisionPool.size();
-				currentDecision = decisionPool[decisionId];
+				srand(time(NULL));
+			/*	for (int i = 0; i < decisionPool.size(); i++) {
+					if (decisionPool[decisionId]->getToBeUsed() == true) isWin = false;
+				}*///nie dzia³a bo vector subscript out of range
+					decisionId = rand() % decisionPool.size();
+					currentDecision = decisionPool[decisionId];
 			} while (currentDecision->getToBeUsed()==false);
-			
+		/*	if (isWin == true) {
+				currentDecision = winDecision;
+			}*/
 			saveProgress();
 		}
 	};
