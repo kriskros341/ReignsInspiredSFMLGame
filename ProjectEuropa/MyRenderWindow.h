@@ -9,6 +9,7 @@ class Resource;
 class FadeIn;
 class TextField;
 class Decision;
+enum class IsIn;
 //-----------KLASA RENDERUJ¥CA WSZYSTKIE ELEMENTY POJAWIAJ¥CE SIÊ NA EKRANIE-------
 class MyRenderWindow : public sf::RenderWindow {
 public:
@@ -17,6 +18,7 @@ public:
 	};
 	void drawIndicators(Resource* r, const int c);
 	void draw(Game& game);
+	IsIn stateFlag;
 	void draw(Resource* r, const int c);
 	void draw(Resource r);
 	void draw(FadeIn f);

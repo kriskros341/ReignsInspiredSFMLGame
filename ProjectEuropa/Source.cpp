@@ -269,8 +269,16 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 			}
 			case sf::Event::MouseButtonReleased: {
 				game.makeChoice();
+				if (game.getBackButton().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
+					std::cout << "JDJDJDJDJDJ" << std::endl;
+					if (event.key.code == sf::Mouse::Left)
+						{
+						std::cout << "DJDJDJDJ" << std::endl;
+						window.stateFlag = IsIn::menu;
+						}
+					}
 				break;
-			}
+				}
 			case sf::Event::MouseMoved: {
 				if (game.getDragging()) {
 					game.dragCard(sf::Vector2f(position));
@@ -280,7 +288,11 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 			}
 		}
 
+		if (!(window.stateFlag == IsIn::game || window.stateFlag == IsIn::gameL)) {
+			break;
+		}
 		game.updateNotifiers();
+
 		
 		//fade.animate((fadeRange[1] / 2.0) + (fadeRange[1] / 2.0) * std::sin(t));
 		window.clear();
@@ -302,7 +314,7 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 
 //----------FUNKCJA RYSUJ¥CA MENU I WSZYSTKIE PRZYCISKI------------
 
-void menu(MyRenderWindow& window, IsIn& state) {
+void menu(MyRenderWindow& window) {
 	sf::Vector2f centerPoint(window.getSize().x / 2.0, window.getSize().y / 2.0);
 
 	sf::Sprite start;
@@ -331,6 +343,11 @@ void menu(MyRenderWindow& window, IsIn& state) {
 	new_game.setPosition(centerPoint.x-(new_game.getLocalBounds().width /2.0), 400.0);
 	exit.setPosition(centerPoint.x-(exit.getLocalBounds().width /2.0), 650.0);
 
+	sf::Texture BGtexture;
+	BGtexture.loadFromFile("./assets/background.png");
+	sf::Sprite background;
+	sf::Vector2u size = BGtexture.getSize();
+	background.setTexture(BGtexture);
 	while (window.isOpen()) {
 		//music.play();
 		sf::Event event;
@@ -345,36 +362,31 @@ void menu(MyRenderWindow& window, IsIn& state) {
 			}
 			case sf::Event::KeyPressed: {
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
-					state = IsIn::game;
+					window.stateFlag = IsIn::game;
 				}
 			}
 			case sf::Event::MouseButtonReleased: {
 				if (event.key.code == sf::Mouse::Left) {
 					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
-						state = IsIn::gameL;
+						window.stateFlag = IsIn::gameL;
 					}
 					if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
-						state = IsIn::game;
+						window.stateFlag = IsIn::game;
 					}
 					if (exit.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
-						state = IsIn::exit;
+						window.stateFlag = IsIn::exit;
 					}
 				}
 			}
 			}
 		}
-		if (state != IsIn::menu)
+		if (window.stateFlag != IsIn::menu)
 			break;
 		window.clear();
 
-		sf::Texture BGtexture;
-		BGtexture.loadFromFile("./assets/background.png");
-		sf::Sprite background;
-		sf::Vector2u size = BGtexture.getSize();
-		background.setTexture(BGtexture);
 
 		window.draw(background);
 		//window.clear(sf::Color{ 48, 42, 39, 255 }); <- kolor t³a
@@ -393,7 +405,7 @@ void working() {
 	settings.antialiasingLevel = 8;
 	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "Project: Europa", settings);
 	window.setFramerateLimit(60);
-	IsIn state = IsIn::menu;
+	window.stateFlag = IsIn::menu;
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -404,7 +416,7 @@ void working() {
 			}
 			}
 		}
-		switch (state) {
+		switch (window.stateFlag) {
 		case IsIn::game: {
 			game(window, gameFlag::New);
 			break;
@@ -417,7 +429,7 @@ void working() {
 			window.close();
 		}
 		case IsIn::menu: {
-			menu(window, state);
+			menu(window);
 			break;
 		};
 		}

@@ -387,6 +387,9 @@ public:
 			area.loadFromFile("./saved.txt");
 		}
 	};
+	Button& getBackButton() {
+		return area.backButton;
+	}
 	
 	bool doesIntersectWithMainCard(sf::FloatRect position);
 	bool doesIntersectWithMainCard(sf::Vector2f position);
