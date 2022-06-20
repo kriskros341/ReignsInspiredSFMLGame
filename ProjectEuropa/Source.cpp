@@ -44,26 +44,26 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	);
 	randomD10 = decisionFactory(
 		"Cap'n, I screwed up, the program turns\n out to be a virus, it caused\n disarray in the greenhouses!!!",
-		connectionFactory("Shut it down!!", { -20,0,0,0 }, nullptr),
-		connectionFactory("IT people nowadays...", { -20,0,0,0 }, nullptr), false,
+		connectionFactory("Shut it down!!", { -10,0,-10,0 }, nullptr),
+		connectionFactory("IT people nowadays...", { -10,-5,0,0 }, nullptr), false,
 		"./assets/orange.png"
 	);
 	randomD9=decisionFactory(
 		" Eureka! By the use of corpse fertilizer,\n our crops have doubled in amount,\n size and growth speed!",
-		connectionFactory("Yay!!", {50,0,0,0}, nullptr),
-		connectionFactory("Yay...", {50,0,0,0}, nullptr), false,
+		connectionFactory("Yay!!", {20,0,0,0}, nullptr),
+		connectionFactory("Yay...", {20,0,0,0}, nullptr), false,
 		"./assets/yellow.png"
 	);
 	randomD8 = decisionFactory(
 		"Captain, we cannot allow to desecrate our fallen people,\n it will decrease our people's morale drastically!",
-		connectionFactory("You are right, I will overturn my decision", { 0,20,0,0 }, nullptr),
-		connectionFactory("No, we have to get more crops", {0,-20,0,0 }, randomD9), false,
+		connectionFactory("You are right, I will overturn my decision", { -5,10,0,0 }, nullptr),
+		connectionFactory("No, we have to get more crops", {10,-15,0,0 }, randomD9), false,
 		"./assets/pink.png"
 	);
 	randomD7 = decisionFactory(
 		"I found out that there is a way\n to use corpses to make the crops\n grow faster and stronger. Do you\n give me permission to reuse the bodies of our fallen ones?",
-		connectionFactory("Yes, whatever to have more food", { 0,-20,0,0 }, randomD8),
-		connectionFactory("No, it is immoral", { 0,0,0,0 }, nullptr), true,
+		connectionFactory("Yes, whatever to have more food", { 10,-10,0,0 }, randomD8),
+		connectionFactory("No, it is immoral", { -10,10,0,0 }, nullptr), true,
 		"./assets/yellow.png"
 	);
 	randomD6 = decisionFactory(
@@ -74,32 +74,32 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	);
 	randomD5 = decisionFactory(
 		"I have found a program for running \nautomatic health checks for the engines. \nCan we use it? ",
-		connectionFactory("Of course!", { 0,0,0,0 }, randomD11),
-		connectionFactory("We can't be sure if it's safe", { 0,0,0,0 }, nullptr), true,
+		connectionFactory("Of course!", { 0,0,-10,10 }, randomD11),
+		connectionFactory("We can't be sure if it's safe", { 0,0,10,-10 }, nullptr), true,
 		"./assets/orange.png"
 	);
 	randomD4 = decisionFactory(
 		"Our lamps and water sprinklers aren't working\n properly, we need more electricity!",
-		connectionFactory("Divert more power to farms and greenhouses!", { 15,0,0,-20 }, nullptr),
-		connectionFactory("Sorry, we cannot risk losing stability…", { -20,0,0,0 }, nullptr), true,
+		connectionFactory("Divert more power to farms and greenhouses!", { 5,0,0,-10 }, nullptr),
+		connectionFactory("Sorry, we cannot risk losing stability…", { -10,0,0,0 }, nullptr), true,
 		"./assets/yellow.png"
 	);
 	randomD3 = decisionFactory(
 		"Our plants haven't grown yet, we need a special fertilizer. ",
-		connectionFactory("For sure, let's buy it", { 15,0,-15,0 }, nullptr),
-		connectionFactory("Can't afford it…", { -15,0,0,0 }, nullptr), true,
+		connectionFactory("For sure, let's buy it", { 5,0,-5,0 }, nullptr),
+		connectionFactory("Can't afford it…", { -5,0,0,0 }, nullptr), true,
 		"./assets/yellow.png"
 	);
 	randomD2 = decisionFactory(
 		"We need money for the engine \ncheck-up, it was making strange noises recently… ",
-		connectionFactory("Yes, better be safe", { 0,0,-20,20 }, nullptr),
-		connectionFactory("We can't afford it..", { 0,0,0,-20 }, nullptr), true,
+		connectionFactory("Yes, better be safe", { 0,0,-10,10 }, nullptr),
+		connectionFactory("We can't afford it..", { 0,0,0,-10 }, nullptr), true,
 		"./assets/blue.png"
 	);
 	randomD1 = decisionFactory(
 		"People are rioting and demanding\n stress relieving. Let's throw a party!",
-		connectionFactory("Yeah, let's do it!", { -10,30,-10,0 }, nullptr),
-		connectionFactory("We are short on food…", { 0,-20,0,0 }, nullptr), true,
+		connectionFactory("Yeah, let's do it!", { -5,15,-5,0 }, nullptr),
+		connectionFactory("We are short on food…", { 0,-10,0,0 }, nullptr), true,
 		"./assets/pink.png"
 	);
 	decisions.push_back(randomD1);
@@ -221,8 +221,8 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	);
 	tutorialD2 = decisionFactory(
 		"You have to balance\n your 4 resources: Plants\n and Food, People and Morale,\n Money and Ship's State.",
-		connectionFactory("Your decisions influence the resources.", { -100, -100, -100, -100 }, tutorialD3),
-		connectionFactory("Your decisions influence the resources.", { -100, -100, -100, -100 }, tutorialD3), true
+		connectionFactory("Your decisions influence the resources.", { -50, -70, -20, -10 }, tutorialD3),
+		connectionFactory("Your decisions influence the resources.", { -50, -70, -20, -10 }, tutorialD3), true
 		, "./assets/black.png"
 	);
 	tutorialD1 = decisionFactory(
@@ -287,9 +287,11 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		window.draw(game);
 		if (game.getSideNotifier() == -1) {
 			window.draw((game.getArea()->getChoiceText(false)));
+			//window.drawIndicators(game.getArea()->getChoiceIndicators(false), 4);
 		}
 		if (game.getSideNotifier() == 1) {
 			window.draw((game.getArea()->getChoiceText(true)));
+			//window.drawIndicators(game.getArea()->getChoiceIndicators(true), 4);
 		}
 		//window.draw(toCompare);
 		//window.draw(fade);

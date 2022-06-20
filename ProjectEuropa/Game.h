@@ -33,6 +33,8 @@ public:
 	Indicator()
 	{
 		setFillColor(sf::Color{ 160, 148, 133 });
+		setRadius(5);
+		setOrigin(5, 5);
 	}
 };
 //------------POLE ZWIÊKSZAJ¥CE/ZMNIEJSZAJ¥CE SIÊ POD WP£YWEM DECYZJI----------
@@ -56,10 +58,7 @@ public:
 		//underlayingCover.setFillColor(sf::Color::Red);
 		underlayingCover.setSize({60, 130});
 		underlayingCover.setPosition(212.5f + 100.0f * (nthChild), 0);
-
-		up.setRadius(5);
-		up.setOrigin(5, 5);
-		up.setPosition(212.5f + getSize().x/2 + 100.0f * (nthChild) + 1.0f, getSize().y/2 - 30);
+		up.setPosition(212.5f + getSize().x / 2 + 100.0f * (nthChild)+1.0f, getSize().y / 2 - 30);
 	}
 	void setValue(int newval) {
 		value = newval;
@@ -300,6 +299,12 @@ public:
 		std::cout << decision.stats[0] << " " <<  decision.stats[1] << " "<< decision.stats[2] << " " << decision.stats[3] << " " <<std::endl;
 		gui.updateBars(decision.stats);
 		//gui.
+	}
+	int* getChoiceIndicators(bool choice) {
+		//if (choice)
+				//potrzebujê tu tablicy ze zmian¹ statów dla decyzji w prawo
+		//potrzebujê tu tablicy ze zmian¹ statów dla decyzji w lewo
+
 	}
 	sf::Text* getChoiceText(bool choice) {
 		if (choice)
