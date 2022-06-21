@@ -171,10 +171,12 @@ public:
 	std::shared_ptr<Decision> starting;
 	std::shared_ptr<Decision> currentDecision;
 	std::vector<std::shared_ptr<Decision>> decisionPool;
-	std::shared_ptr<Decision> winDecision = { decisionFactory("Captain, help has arrived, we are saved!!(You Win!)",
+	//----------------wygrana-------------------
+	std::shared_ptr<Decision> winDecision = { decisionFactory("Captain, help has arrived, \nwe are saved!!(You Win!)",
 		connectionFactory("Wooooooo!!", { 0, 0, 0, 0 }, nullptr),
 		connectionFactory("Nice", { 0, 0, 0, 0 }, nullptr)
-		, "./assets/captainRed300x300.png",true) };
+		, "./assets/win-card.png",true) };
+	//-----------------œmieræ-------------------
 	std::shared_ptr<Decision> deathDecisions[4] = { decisionFactory(
 		"Your food banks has been depleted\n and soon you will all die of hunger.\n Game Over.",
 		connectionFactory("Nooooooooooooooooo!!!", { 0, 0, 0, 0 }, nullptr),
@@ -310,39 +312,39 @@ public:
 		std::cout << decision.currentDecision->getText() << std::endl;
 		
 	}
-	sf::Text justifyText(sf::Text text)
-	{
-		int textBoxWidth = 200;
-		std::string textString = text.getString();
-		int characterSize = text.getCharacterSize();
-		int howManyLetters = textBoxWidth / characterSize;
-		int spacePosition = -1;
-		int i;
-		//int spacesCounter = 0;
+	//sf::Text justifyText(sf::Text text)
+	//{
+	//	int textBoxWidth = 200;
+	//	std::string textString = text.getString();
+	//	int characterSize = text.getCharacterSize();
+	//	int howManyLetters = textBoxWidth / characterSize;
+	//	int spacePosition = -1;
+	//	int i;
+	//	//int spacesCounter = 0;
 
-		do
-		{
-			for (i = spacePosition+1; i <= howManyLetters; i++)
-			{
-				if (isspace(textString[i]))
-				{
-					spacePosition = i;
-					//spacesCounter++;
-				}
-			}
-			textString[spacePosition] = '\n';
-			
-			/*for (int j = spacePosition + 1; j < howManyLetters; j++)
-			{
-				if (isspace(textString[j]) && !isspace(textString[j-1]))
-				{
-					textString.insert(j, " ");
-				}
-			}*/
-		} while (i != textString.length());
-		text.setString(textString);
-		return text;
-	}
+	//	do
+	//	{
+	//		for (i = spacePosition+1; i <= howManyLetters; i++)
+	//		{
+	//			if (isspace(textString[i]))
+	//			{
+	//				spacePosition = i;
+	//				//spacesCounter++;
+	//			}
+	//		}
+	//		textString[spacePosition] = '\n';
+	//		
+	//		/*for (int j = spacePosition + 1; j < howManyLetters; j++)
+	//		{
+	//			if (isspace(textString[j]) && !isspace(textString[j-1]))
+	//			{
+	//				textString.insert(j, " ");
+	//			}
+	//		}*/
+	//	} while (i != textString.length());
+	//	text.setString(textString);
+	//	return text;
+	//}
 	void updateGUI() {
 		std::cout << decision.stats[0] << " " <<  decision.stats[1] << " "<< decision.stats[2] << " " << decision.stats[3] << " " <<std::endl;
 		gui.updateBars(decision.stats);
@@ -366,7 +368,7 @@ public:
 
 		decisionText.setFont(systemFont);
 		decisionText.setOrigin(decisionText.getLocalBounds().width / 2.0f, decisionText.getLocalBounds().height / 2.0f);
-		decisionText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f - 200.0f);
+		decisionText.setPosition(screenSize.x / 2.0f, 200);
 		decisionText.setCharacterSize(20);
 		decisionText.setFillColor(sf::Color{ 27, 24, 22 });
 
@@ -427,12 +429,16 @@ public:
 	Game(std::shared_ptr<Decision> current, std::vector<std::shared_ptr<Decision>> ListOfTrees, gameFlag flag = gameFlag::New) : area(500, 150) {
 		setStartingDecision(current);
 		setDecisionPool(ListOfTrees);
+
 		area.decisionText.setOrigin(area.decisionText.getLocalBounds().width / 2.0f, area.decisionText.getLocalBounds().height / 2.0f);
-		area.decisionText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f - 200.0f);
+		area.decisionText.setPosition(screenSize.x / 2.0f, 200);
+
 		area.yesText.setOrigin(area.yesText.getLocalBounds().width / 2.0f, area.yesText.getLocalBounds().height / 2.0f);
 		area.yesText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 340.0f);
+
 		area.noText.setOrigin(area.noText.getLocalBounds().width / 2.0f, area.noText.getLocalBounds().height / 2.0f);
 		area.noText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f + 340.0f);
+
 		if (flag == gameFlag::Load) {
 			area.loadFromFile("./saved.txt");
 		}

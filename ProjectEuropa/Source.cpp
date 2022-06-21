@@ -56,25 +56,25 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	std::shared_ptr<Decision> randomD29;
 	std::shared_ptr<Decision> randomD30;
 	randomD23 = decisionFactory(
-		"Give me some money, I'll give you more money",
+		"Give me some money, \nI'll give you more money",
 		connectionFactory("Weird, but Ok", { 0,0,20,0 }, nullptr),
 		connectionFactory("What?", { 0,0,0,0 }, nullptr),
 		"./assets/black.png", true
 	);
 	randomD22 = decisionFactory(
-		"Give me some ship power, I'll give you money",
+		"Give me some ship power, \nI'll give you money",
 		connectionFactory("Ok", { 0,0,20,-20 }, nullptr),
 		connectionFactory("Nah", { 0,0,0,0 }, nullptr),
 		"./assets/black.png", true
 	);
 	randomD21 = decisionFactory(
-		"Give me some plants, I'll give you money",
+		"Give me some plants, \nI'll give you money",
 		connectionFactory("Ok", { -20,0,20,0 }, nullptr),
 		connectionFactory("Nah", { 0,0,0,0 }, nullptr),
 		"./assets/black.png", true
 	);
 	randomD20 = decisionFactory(
-		"Give me some people, I'll give you money",
+		"Give me some people, \nI'll give you money",
 		connectionFactory("Ok", { 0,-20,20,0 }, nullptr),
 		connectionFactory("Nah", { 0,0,0,0 }, nullptr),
 		"./assets/black.png", true
@@ -86,13 +86,13 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		"./assets/orange.png", true
 	);
 	randomD18 = decisionFactory(
-		"Captain, we should sell our hypercharge unit,\n we won't be jumping into hyperspace anytime soon",
+		"Captain, we should sell our \nhypercharge unit, we won't be jumping \ninto hyperspace anytime soon",
 		connectionFactory("Ok", { 0,0,20,-20 }, nullptr),
 		connectionFactory("What if we will", { 0,0,0,0 }, nullptr),
 		"./assets/green.png", true
 	);
 	randomD17 = decisionFactory(
-		"We need to replenish our seed bank, starting to run out of seeds...",
+		"We need to replenish our seed bank, \nstarting to run out of seeds...",
 		connectionFactory("Let's get seeds", { 10,0,-10,0 }, nullptr),
 		connectionFactory("Money is too low to waste it on seeds.", { -10,0,0,0 }, nullptr),
 		"./assets/yellow.png", true
@@ -117,7 +117,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	);
 
 	randomD13 = decisionFactory(
-		"We need to plant some herbs for herbal\n treatments, it will help people feel better!",
+		"We need to plant some herbs \nfor herbal treatments, it will \nhelp people feel better!",
 		connectionFactory("Ok, let's make an herb farm", { -10,10,0,0 }, nullptr),
 		connectionFactory("We need food to survive, not some herbs", { 0,-10,0,0 }, nullptr),
 		"./assets/purple.png", false
@@ -135,7 +135,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		"./assets/orange.png", false
 	);
 	randomD10 = decisionFactory(
-		"Cap'n, I screwed up, the program turns\n out to be a virus, it caused\n disarray in the greenhouses!!!",
+		"Cap'n, I screwed up, the program\n turns out to be a virus, it caused\n disarray in the greenhouses!!!",
 		connectionFactory("Shut it down!!", { -10,0,-10,0 }, nullptr),
 		connectionFactory("IT people nowadays...", { -10,-5,0,0 }, nullptr), 
 		"./assets/orange.png", false
@@ -147,7 +147,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		"./assets/yellow.png", false
 	);
 	randomD8 = decisionFactory(
-		"Captain, we cannot allow to desecrate our fallen people,\n it will decrease our people's morale drastically!",
+		"Captain, we cannot allow to desecrate\n our fallen people, it will decrease\n our people's morale drastically!",
 		connectionFactory("You are right, I will overturn my decision", { -5,10,0,0 }, nullptr),
 		connectionFactory("No, we have to get more crops", {10,-15,0,0 }, randomD9), 
 		"./assets/pink.png", false
@@ -171,19 +171,19 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		"./assets/orange.png",true
 	);
 	randomD4 = decisionFactory(
-		"Our lamps and water sprinklers aren't working\n properly, we need more electricity!",
+		"Our lamps and water sprinklers\n aren't working properly,\n we need more electricity!",
 		connectionFactory("Divert more power to farms and greenhouses!", { 5,0,0,-10 }, nullptr),
 		connectionFactory("Sorry, we cannot risk losing stability…", { -10,0,0,0 }, nullptr), 
 		"./assets/yellow.png", true
 	);
 	randomD3 = decisionFactory(
-		"Our plants haven't grown yet, we need a special fertilizer. ",
+		"Our plants haven't grown yet,\n we need a special fertilizer. ",
 		connectionFactory("For sure, let's buy it", { 5,0,-5,0 }, nullptr),
 		connectionFactory("Can't afford it…", { -5,0,0,0 }, nullptr), 
 		"./assets/yellow.png", true
 	);
 	randomD2 = decisionFactory(
-		"We need money for the engine \ncheck-up, it was making strange noises recently… ",
+		"We need money for the engine \ncheck-up, it was making strange\n noises recently… ",
 		connectionFactory("Yes, better be safe", { 0,0,-10,10 }, nullptr),
 		connectionFactory("We can't afford it..", { 0,0,0,-10 }, nullptr),
 		"./assets/blue.png", true
@@ -194,6 +194,49 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		connectionFactory("We are short on food…", { 0,-10,0,0 }, nullptr),
 		"./assets/pink.png", true
 	);
+	randomD30 = decisionFactory(
+		"The crater had just some spacedust... \nThere was nothing of worth to be salvaged..",
+		connectionFactory("Welp..", { 0,0,0,0 }, nullptr),
+		connectionFactory("Ehh..", { 0,0,0,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD29 = decisionFactory(
+		"The crater had some kind\n of seeds, we can use them\n to get more plants!!",
+		connectionFactory("Cool!", { 20,0,0,0 }, nullptr),
+		connectionFactory("Hmmm...", { 20,0,0,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD28 = decisionFactory(
+		"Captain, there was a monster\n in that cave!! It ate some of \nour mission crew!!",
+		connectionFactory("Oh no!!", { 0,-20,0,0 }, nullptr),
+		connectionFactory("What?!", { 0,-20,0,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD27 = decisionFactory(
+		"Captain, we have found a crate\n full of gold. We are rich!",
+		connectionFactory("Yay!!", { 0,0,20,0 }, nullptr),
+		connectionFactory("Nice!", { 0,0,20,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD26 = decisionFactory(
+		"We can see two craters in the distance.\n Should we pick the nearer or \nthe further one?",
+		connectionFactory("Nearer one", { 0,0, 0,0 }, randomD29),
+		connectionFactory("Further on", { 0,0,0,0 }, randomD30),
+		"./assets/green.png", false
+	);
+	randomD25 = decisionFactory(
+		"The tunnel forks off to left and\n right, which tunnel should we pick?",
+		connectionFactory("Left one", { 0,0,0,0 }, randomD27),
+		connectionFactory("Right one", { 0,0,0,0 }, randomD28),
+		"./assets/green.png", false
+	);
+	randomD24 = decisionFactory(
+		"Captain, I am at an expedition now,\n talking to you via transmitter.\n There is a cave, should we take a look at it?",
+		connectionFactory("Yes, but be careful", { 0,0,0,0 }, randomD25),
+		connectionFactory("No, don't risk it", { 0,0,0,0 }, randomD26),
+		"./assets/green.png", true
+	);
+	
 	decisions.push_back(randomD1);
 	decisions.push_back(randomD2);
 	decisions.push_back(randomD3);
@@ -217,6 +260,13 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	decisions.push_back(randomD21);
 	decisions.push_back(randomD22);
 	decisions.push_back(randomD23);
+	decisions.push_back(randomD24);
+	decisions.push_back(randomD25);
+	decisions.push_back(randomD26);
+	decisions.push_back(randomD27);
+	decisions.push_back(randomD28);
+	decisions.push_back(randomD29);
+	decisions.push_back(randomD30);
 	// Drzewo decyzji (event):
 	/*std::shared_ptr<Decision> u1 = decisionFactory(
 		"My King...", 
@@ -262,20 +312,28 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	std::shared_ptr<Decision> beginD7;
 	std::shared_ptr<Decision> beginD8;
 	std::shared_ptr<Decision> beginD9;
-	beginD9 = decisionFactory(
-		"Our mission is to explore the moon\n and survive at the orbit until backup\n arrives and we will make sure\n we can make a colony here.\n Good luck with the management!",
+	std::shared_ptr<Decision> beginD10;
+
+	beginD10 = decisionFactory(
+		"We will make sure we can make a colony here. \nGood luck with the management!",
 		connectionFactory("Ok, let's get to work!", { 0, 0, 0, 0 }, nullptr),
 		connectionFactory("I have mixed feelings about that...", { 0, 0, 0, 0 }, nullptr)
 		, "./assets/captainRed300x300.png", true
 	);
+	beginD9 = decisionFactory(
+		"Our mission is to explore the moon\n and survive at the orbit until backup arrives.",
+		connectionFactory("Ok, let's get to work!", { 0, 0, 0, 0 }, beginD10),
+		connectionFactory("I have mixed feelings about that...", { 0, 0, 0, 0 }, beginD10)
+		, "./assets/captainRed300x300.png", true
+	);
 	beginD8 = decisionFactory(
-		"I am the Minister of Society Pink,\nI will report to you\nabout the crew's \nmorale and living conditions.",
+		"I am the Minister of Society Pink,\nI will report to you about the crew's \nmorale and living conditions.",
 		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD9),
 		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD9)
 		, "./assets/pink.png", true
 	);
 	beginD7 = decisionFactory(
-		"I am IT Specialist Orange,\nsoftware is my field,\nI keep you updated with the\n newest technologies.",
+		"I am IT Specialist Orange,\nsoftware is my field, I keep you updated with the\n newest technologies.",
 		connectionFactory("Hi!", { 0, 0, 0, 0 }, beginD8),
 		connectionFactory("Ok, thank you", { 0, 0, 0, 0 }, beginD8)
 		, "./assets/orange.png", true

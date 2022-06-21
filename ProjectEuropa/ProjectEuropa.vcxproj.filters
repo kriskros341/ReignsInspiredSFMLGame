@@ -24,13 +24,13 @@
     <ClCompile Include="MyRenderWindow.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="AllTheThingsThatImTooLazyToMakeFilesFor.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllTheThingsThatImTooLazyToMakeFilesFor.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,13 +41,13 @@
     <ClInclude Include="MyRenderWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AllTheThingsThatImTooLazyToMakeFilesFor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllTheThingsThatImTooLazyToMakeFilesFor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
