@@ -130,7 +130,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		"./assets/purple.png", true
 	);
 	randomD11 = decisionFactory(
-		"Cap'n, automatic health checks' program was a success! \nThe engine will run them automatically and keep itself working!",
+		"Cap'n, automatic health checks' program \nwas a success! The engine will run them automatically \nand keep itself working!",
 		connectionFactory("Yay!!", { 0,0,0,25 }, nullptr),
 		connectionFactory("Yay...", { 0,0,0,25 }, nullptr),
 		"./assets/orange.png", false
@@ -180,7 +180,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	randomD4 = decisionFactory(
 		"Our lamps and water sprinklers aren't \nworking properly, we need more electricity!",
 		connectionFactory("Divert more power to farms and greenhouses!", { 5,0,0,-10 }, nullptr),
-		connectionFactory("Sorry, we cannot risk losing stability…", { -10,0,0,0 }, nullptr), 
+		connectionFactory("Sorry, we cannot risk losing stability...", { -10,0,0,0 }, nullptr), 
 		"./assets/yellow.png", true
 	);
 	randomD3 = decisionFactory(
@@ -190,7 +190,7 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 		"./assets/yellow.png", true
 	);
 	randomD2 = decisionFactory(
-		"We need money for the engine check-up, \nit was making strange noises recently… ",
+		"We need money for the engine check-up, \nit was making strange noises recently... ",
 		connectionFactory("Yes, better be safe", { 0,0,-10,10 }, nullptr),
 		connectionFactory("We can't afford it...", { 0,0,0,-10 }, nullptr),
 		"./assets/blue.png", true
@@ -329,8 +329,8 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	);
 	beginD9 = decisionFactory(
 		"Our mission is to explore the moon\n and survive at the orbit until backup arrives.",
-		connectionFactory("Ok, let's get to work!", { 0, 0, 0, 0 }, beginD10),
-		connectionFactory("I have mixed feelings about that...", { 0, 0, 0, 0 }, beginD10)
+		connectionFactory("I'm listening...", { 0, 0, 0, 0 }, beginD10),
+		connectionFactory("Go on...", { 0, 0, 0, 0 }, beginD10)
 		, "./assets/captainRed300x300.png", true
 	);
 	beginD8 = decisionFactory(
@@ -383,8 +383,8 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	);
 	tutorialD3 = decisionFactory(
 		"Do not drop any of the resources to 0.",
-		connectionFactory("It won't end well...", {50 , 50, 50, 50 }, beginD1),
-		connectionFactory("...for you and the crew.", { 50, 50, 50, 50 }, beginD1)
+		connectionFactory("...for you and the crew.", {50 , 50, 50, 50 }, beginD1),
+		connectionFactory("It won't end well...", { 50, 50, 50, 50 }, beginD1)
 		, "./assets/black.png", true
 	);
 	tutorialD2 = decisionFactory(
