@@ -270,10 +270,8 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 			case sf::Event::MouseButtonReleased: {
 				game.makeChoice();
 				if (game.getBackButton().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
-					std::cout << "JDJDJDJDJDJ" << std::endl;
 					if (event.key.code == sf::Mouse::Left)
 						{
-						std::cout << "DJDJDJDJ" << std::endl;
 						window.stateFlag = IsIn::menu;
 						}
 					}
