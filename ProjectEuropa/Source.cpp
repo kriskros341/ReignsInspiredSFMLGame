@@ -317,7 +317,7 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 		, "./assets/moon-arrival-card.png", true
 	);
 	tutorialD3 = decisionFactory(
-		"Do not drop any of\n the resources to 0.",
+		"Do not drop any of the resources to 0.",
 		connectionFactory("It won't end well...", {50 , 50, 50, 50 }, beginD1),
 		connectionFactory("...for you and the crew.", { 50, 50, 50, 50 }, beginD1)
 		, "./assets/black.png", true
@@ -352,6 +352,7 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	*/
 
 	float t{};
+
 	while (window.isOpen()) {
 		sf::Event event;
 		sf::Vector2i position = sf::Mouse::getPosition(window);
@@ -371,11 +372,10 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 			}
 			case sf::Event::MouseButtonReleased: {
 				game.makeChoice();
-				if (game.getBackButton().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
-					std::cout << "JDJDJDJDJDJ" << std::endl;
+				if (game.getBackButton().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window)))) 
+				{
 					if (event.key.code == sf::Mouse::Left)
 						{
-						std::cout << "DJDJDJDJ" << std::endl;
 						window.stateFlag = IsIn::menu;
 						}
 					}
@@ -414,6 +414,11 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	}
 }
 
+//-----------DWIÊK KLIKNIÊCIA------------
+
+sf::SoundBuffer buffer;
+sf::Sound buttonClickSound;
+
 //----------FUNKCJA RYSUJ¥CA MENU I WSZYSTKIE PRZYCISKI------------
 
 void menu(MyRenderWindow& window) {
@@ -423,19 +428,14 @@ void menu(MyRenderWindow& window) {
 	sf::Sprite new_game;
 	sf::Sprite exit;
 
-	//sf::Music music;
-	//music.openFromFile("./assets/ProjectEuropa-menu-Song.wav");
-	//
-	//sf::SoundBuffer buffer;
-	//sf::Sound buttonClickSound;
-	//buffer.loadFromFile("./assets/button-click.wav");
-	//buttonClickSound.setBuffer(buffer);
-
 	sf::Texture texture1, texture2, texture3;
 
 	texture1.loadFromFile("./assets/continue-button.png");
 	texture2.loadFromFile("./assets/start-button.png");
 	texture3.loadFromFile("./assets/exit-button.png");
+
+	buffer.loadFromFile("./assets/button-click.wav");
+	buttonClickSound.setBuffer(buffer);
 
 	start.setTexture(texture1);
 	new_game.setTexture(texture2);
@@ -450,8 +450,8 @@ void menu(MyRenderWindow& window) {
 	sf::Sprite background;
 	sf::Vector2u size = BGtexture.getSize();
 	background.setTexture(BGtexture);
+
 	while (window.isOpen()) {
-		//music.play();
 		sf::Event event;
 		sf::Vector2i position = sf::Mouse::getPosition(window);
 
@@ -468,6 +468,7 @@ void menu(MyRenderWindow& window) {
 				}
 			}
 			case sf::Event::MouseButtonReleased: {
+				buttonClickSound.play();
 				if (event.key.code == sf::Mouse::Left) {
 					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
@@ -501,6 +502,9 @@ void menu(MyRenderWindow& window) {
 
 //---------FUNKCJA SPRAWDZAJ¥CA W JAKIM STANIE ZNAJDUJE SIÊ GRA-------------
 
+sf::Music music;
+sf::Music theme;
+
 void working() {
 	systemFont.loadFromFile("../Sansation_Regular.ttf");
 	sf::ContextSettings settings;
@@ -508,7 +512,11 @@ void working() {
 	MyRenderWindow window(sf::VideoMode((int)screenSize.x, (int)screenSize.y), "Project: Europa", settings);
 	window.setFramerateLimit(60);
 	window.stateFlag = IsIn::menu;
+	
+	music.openFromFile("./assets/ProjectEuropa-menu-Song.wav");
+	theme.openFromFile("./assets/main-theme.wav");
 
+	music.play();
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -520,10 +528,14 @@ void working() {
 		}
 		switch (window.stateFlag) {
 		case IsIn::game: {
+			music.stop();
+			theme.play();
 			game(window, gameFlag::New);
 			break;
 		};
 		case IsIn::gameL: {
+			music.stop();
+			theme.play();
 			game(window, gameFlag::Load);
 			break;
 		};

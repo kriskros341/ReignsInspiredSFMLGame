@@ -52,7 +52,7 @@ public:
 		//setFillColor(sf::Color{210, 205, 199, 255});
 		setSize({60, 130});
 		setPosition(212.5f + 100.0f * (nthChild), 0);
-		setFillColor(sf::Color::Red);
+		//setFillColor(sf::Color::Red);
 		
 		underlayingCover.setFillColor(sf::Color{210, 205, 199, 255});
 		//underlayingCover.setFillColor(sf::Color::Red);
@@ -69,6 +69,10 @@ public:
 	void changeHeight(int val)
 	{
 		underlayingCover.setSize({ 60.0f, 110.0f - 110.0f / 150.0f * value });
+		if (value < 50)
+			setFillColor(sf::Color{ 205, 37, 37, 255 });
+		else
+			setFillColor(sf::Color{ 22, 133, 47, 255 });
 	};
 };
 
@@ -306,6 +310,39 @@ public:
 		std::cout << decision.currentDecision->getText() << std::endl;
 		
 	}
+	sf::Text justifyText(sf::Text text)
+	{
+		int textBoxWidth = 200;
+		std::string textString = text.getString();
+		int characterSize = text.getCharacterSize();
+		int howManyLetters = textBoxWidth / characterSize;
+		int spacePosition = -1;
+		int i;
+		//int spacesCounter = 0;
+
+		do
+		{
+			for (i = spacePosition+1; i <= howManyLetters; i++)
+			{
+				if (isspace(textString[i]))
+				{
+					spacePosition = i;
+					//spacesCounter++;
+				}
+			}
+			textString[spacePosition] = '\n';
+			
+			/*for (int j = spacePosition + 1; j < howManyLetters; j++)
+			{
+				if (isspace(textString[j]) && !isspace(textString[j-1]))
+				{
+					textString.insert(j, " ");
+				}
+			}*/
+		} while (i != textString.length());
+		text.setString(textString);
+		return text;
+	}
 	void updateGUI() {
 		std::cout << decision.stats[0] << " " <<  decision.stats[1] << " "<< decision.stats[2] << " " << decision.stats[3] << " " <<std::endl;
 		gui.updateBars(decision.stats);
@@ -332,6 +369,8 @@ public:
 		decisionText.setPosition(screenSize.x / 2.0f, screenSize.y / 2.0f - 200.0f);
 		decisionText.setCharacterSize(20);
 		decisionText.setFillColor(sf::Color{ 27, 24, 22 });
+
+		//decisionText = justifyText(decisionText);
 
 		yesText.setFont(systemFont);
 		yesText.setOrigin(yesText.getLocalBounds().width / 2.0f, yesText.getLocalBounds().height / 2.0f);
