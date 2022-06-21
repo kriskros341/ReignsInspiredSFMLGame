@@ -55,6 +55,48 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	std::shared_ptr<Decision> randomD28;
 	std::shared_ptr<Decision> randomD29;
 	std::shared_ptr<Decision> randomD30;
+	randomD30 = decisionFactory(
+		"The crater had just some spacedust... \nThere was nothing of worth to be salvaged..",
+		connectionFactory("Welp..", { 0,0,0,0 }, nullptr),
+		connectionFactory("Ehh..", { 0,0,0,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD29 = decisionFactory(
+		"The crater had some kind\n of seeds, we can use them\n to get more plants!!",
+		connectionFactory("Cool!", { 20,0,0,0 }, nullptr),
+		connectionFactory("Hmmm...", { 20,0,0,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD28 = decisionFactory(
+		"Captain, there was a monster\n in that cave!! It ate some of \nour mission crew!!",
+		connectionFactory("Oh no!!", { 0,-20,0,0 }, nullptr),
+		connectionFactory("What?!", { 0,-20,0,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD27 = decisionFactory(
+		"Captain, we have found a crate\n full of gold. We are rich!",
+		connectionFactory("Yay!!", { 0,0,20,0 }, nullptr),
+		connectionFactory("Nice!", { 0,0,20,0 }, nullptr),
+		"./assets/green.png", false
+	);
+	randomD26 = decisionFactory(
+		"We can see two craters in the distance.\n Should we pick the nearer or \nthe further one?",
+		connectionFactory("Nearer one", { 0,0, 0,0 }, randomD29),
+		connectionFactory("Further on", { 0,0,0,0 }, randomD30),
+		"./assets/green.png", false
+	);
+	randomD25 = decisionFactory(
+		"The tunnel forks off to left and\n right, which tunnel should we pick?",
+		connectionFactory("Left one", { 0,0,0,0 }, randomD27),
+		connectionFactory("Right one", { 0,0,0,0 }, randomD28),
+		"./assets/green.png", false
+	);
+	randomD24 = decisionFactory(
+		"Captain, I am at an expedition now,\n talking to you via transmitter.\n There is a cave, should we take a look at it?",
+		connectionFactory("Yes, but be careful", { 0,0,0,0 }, randomD25),
+		connectionFactory("No, don't risk it", { 0,0,0,0 }, randomD26),
+		"./assets/green.png", true
+	);
 	randomD23 = decisionFactory(
 		"Give me some money, I'll give you more money",
 		connectionFactory("Weird, but Ok", { 0,0,20,0 }, nullptr),
@@ -217,6 +259,13 @@ std::vector<std::shared_ptr<Decision>> allTheDecisions() {
 	decisions.push_back(randomD21);
 	decisions.push_back(randomD22);
 	decisions.push_back(randomD23);
+	decisions.push_back(randomD24);
+	decisions.push_back(randomD25);
+	decisions.push_back(randomD26);
+	decisions.push_back(randomD27);
+	decisions.push_back(randomD28);
+	decisions.push_back(randomD29);
+	decisions.push_back(randomD30);
 	// Drzewo decyzji (event):
 	/*std::shared_ptr<Decision> u1 = decisionFactory(
 		"My King...", 
@@ -318,7 +367,7 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	);
 	tutorialD3 = decisionFactory(
 		"Do not drop any of the resources to 0.",
-		connectionFactory("It won't end well...", {50 , 50, 50, 50 }, beginD1),
+		connectionFactory("It won't end well...", { 50 , 50, 50, 50 }, beginD1),
 		connectionFactory("...for you and the crew.", { 50, 50, 50, 50 }, beginD1)
 		, "./assets/black.png", true
 	);
@@ -340,7 +389,7 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 	Game game(current, decisions, whetherToLoad);
 	//Game game(whetherToLoad, resChecks, checks);
 	//debug
-	
+
 	/*
 	sf::CircleShape toCompare(4, 40);
 	toCompare.setPosition(400, 400);
@@ -372,18 +421,18 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 			}
 			case sf::Event::MouseButtonReleased: {
 				game.makeChoice();
-<<<<<<< HEAD
+				//<<<<<<< HEAD
 				if (game.getBackButton().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window)))) {
-=======
-				if (game.getBackButton().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window)))) 
-				{
->>>>>>> 22385b66483bd42269e91e823fe61124c3baab90
-					if (event.key.code == sf::Mouse::Left)
+					//=======
+					if (game.getBackButton().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window))))
+					{
+						//>>>>>>> 22385b66483bd42269e91e823fe61124c3baab90
+						if (event.key.code == sf::Mouse::Left)
 						{
-						window.stateFlag = IsIn::menu;
+							window.stateFlag = IsIn::menu;
 						}
 					}
-				break;
+					break;
 				}
 			case sf::Event::MouseMoved: {
 				if (game.getDragging()) {
@@ -392,117 +441,121 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 				break;
 			}
 			}
-		}
+			}
 
-		if (!(window.stateFlag == IsIn::game || window.stateFlag == IsIn::gameL)) {
-			break;
-		}
-		game.updateNotifiers();
-
-		
-		//fade.animate((fadeRange[1] / 2.0) + (fadeRange[1] / 2.0) * std::sin(t));
-		window.clear();
-		window.draw(game);
-		if (game.getSideNotifier() == -1) {
-			window.draw((game.getArea()->getChoiceText(false)));
-			//window.drawIndicators(game.getArea()->getChoiceIndicators(false), 4);
-		}
-		if (game.getSideNotifier() == 1) {
-			window.draw((game.getArea()->getChoiceText(true)));
-			//window.drawIndicators(game.getArea()->getChoiceIndicators(true), 4);
-		}
-		//window.draw(toCompare);
-		//window.draw(fade);
-		window.display();
-		t += 0.05;
-	}
-}
-
-//-----------DWIÊK KLIKNIÊCIA------------
-
-sf::SoundBuffer buffer;
-sf::Sound buttonClickSound;
-
-//----------FUNKCJA RYSUJ¥CA MENU I WSZYSTKIE PRZYCISKI------------
-
-void menu(MyRenderWindow& window) {
-	sf::Vector2f centerPoint(window.getSize().x / 2.0, window.getSize().y / 2.0);
-
-	sf::Sprite start;
-	sf::Sprite new_game;
-	sf::Sprite exit;
-
-	sf::Texture texture1, texture2, texture3;
-
-	texture1.loadFromFile("./assets/continue-button.png");
-	texture2.loadFromFile("./assets/start-button.png");
-	texture3.loadFromFile("./assets/exit-button.png");
-
-	buffer.loadFromFile("./assets/button-click.wav");
-	buttonClickSound.setBuffer(buffer);
-
-	start.setTexture(texture1);
-	new_game.setTexture(texture2);
-	exit.setTexture(texture3);
-
-	start.setPosition(centerPoint.x-(start.getLocalBounds().width /2.0), 300.0);
-	new_game.setPosition(centerPoint.x-(new_game.getLocalBounds().width /2.0), 400.0);
-	exit.setPosition(centerPoint.x-(exit.getLocalBounds().width /2.0), 650.0);
-
-	sf::Texture BGtexture;
-	BGtexture.loadFromFile("./assets/background.png");
-	sf::Sprite background;
-	sf::Vector2u size = BGtexture.getSize();
-	background.setTexture(BGtexture);
-
-	while (window.isOpen()) {
-		sf::Event event;
-		sf::Vector2i position = sf::Mouse::getPosition(window);
-
-		while (window.pollEvent(event)) {
-			sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-			switch (event.type) {
-			case sf::Event::Closed: {
-				window.close();
+			if (!(window.stateFlag == IsIn::game || window.stateFlag == IsIn::gameL)) {
 				break;
 			}
-			case sf::Event::KeyPressed: {
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
-					window.stateFlag = IsIn::game;
-				}
+			game.updateNotifiers();
+
+
+			//fade.animate((fadeRange[1] / 2.0) + (fadeRange[1] / 2.0) * std::sin(t));
+			window.clear();
+			window.draw(game);
+			if (game.getSideNotifier() == -1) {
+				window.draw((game.getArea()->getChoiceText(false)));
+				window.drawIndicators(game.getArea()->getGui()->getResources(),4,game.getArea()->getCurrentDecision(),true);
+				//window.drawIndicators(game.getArea()->getChoiceIndicators(false), 4);
 			}
-			case sf::Event::MouseButtonReleased: {
-				buttonClickSound.play();
-				if (event.key.code == sf::Mouse::Left) {
-					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
-					{
-						window.stateFlag = IsIn::gameL;
-					}
-					if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
-					{
-						window.stateFlag = IsIn::game;
-					}
-					if (exit.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
-					{
-						window.stateFlag = IsIn::exit;
-					}
-				}
+			if (game.getSideNotifier() == 1) {
+				window.draw((game.getArea()->getChoiceText(true)));
+				window.drawIndicators(game.getArea()->getGui()->getResources(), 4, game.getArea()->getCurrentDecision(), false);
+				//window.drawIndicators(game.getArea()->getChoiceIndicators(true), 4);
 			}
-			}
+			//window.draw(toCompare);
+			//window.draw(fade);
+			window.display();
+			t += 0.05;
 		}
-		if (window.stateFlag != IsIn::menu)
-			break;
-		window.clear();
-
-
-		window.draw(background);
-		//window.clear(sf::Color{ 48, 42, 39, 255 }); <- kolor t³a
-		window.draw(start);
-		window.draw(new_game);
-		window.draw(exit);
-		window.display();
 	}
 }
+	//-----------DWIÊK KLIKNIÊCIA------------
+
+	sf::SoundBuffer buffer;
+	sf::Sound buttonClickSound;
+
+	//----------FUNKCJA RYSUJ¥CA MENU I WSZYSTKIE PRZYCISKI------------
+
+	void menu(MyRenderWindow& window) {
+		sf::Vector2f centerPoint(window.getSize().x / 2.0, window.getSize().y / 2.0);
+
+		sf::Sprite start;
+		sf::Sprite new_game;
+		sf::Sprite exit;
+
+		sf::Texture texture1, texture2, texture3;
+
+		texture1.loadFromFile("./assets/continue-button.png");
+		texture2.loadFromFile("./assets/start-button.png");
+		texture3.loadFromFile("./assets/exit-button.png");
+
+		buffer.loadFromFile("./assets/button-click.wav");
+		buttonClickSound.setBuffer(buffer);
+
+		start.setTexture(texture1);
+		new_game.setTexture(texture2);
+		exit.setTexture(texture3);
+
+		start.setPosition(centerPoint.x - (start.getLocalBounds().width / 2.0), 300.0);
+		new_game.setPosition(centerPoint.x - (new_game.getLocalBounds().width / 2.0), 400.0);
+		exit.setPosition(centerPoint.x - (exit.getLocalBounds().width / 2.0), 650.0);
+
+		sf::Texture BGtexture;
+		BGtexture.loadFromFile("./assets/background.png");
+		sf::Sprite background;
+		sf::Vector2u size = BGtexture.getSize();
+		background.setTexture(BGtexture);
+
+		while (window.isOpen()) {
+			sf::Event event;
+			sf::Vector2i position = sf::Mouse::getPosition(window);
+
+			while (window.pollEvent(event)) {
+				sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+				switch (event.type) {
+				case sf::Event::Closed: {
+					window.close();
+					break;
+				}
+				case sf::Event::KeyPressed: {
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
+						window.stateFlag = IsIn::game;
+					}
+				}
+				case sf::Event::MouseButtonReleased: {
+					buttonClickSound.play();
+					if (event.key.code == sf::Mouse::Left) {
+						if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
+						{
+							window.stateFlag = IsIn::gameL;
+						}
+						if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
+						{
+							window.stateFlag = IsIn::game;
+						}
+						if (exit.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
+						{
+							window.stateFlag = IsIn::exit;
+						}
+					}
+				}
+				}
+			}
+			if (window.stateFlag != IsIn::menu)
+				break;
+			window.clear();
+
+
+			window.draw(background);
+			//window.clear(sf::Color{ 48, 42, 39, 255 }); <- kolor t³a
+			window.draw(start);
+			window.draw(new_game);
+			window.draw(exit);
+			window.display();
+		}
+	}
+
+
 
 //---------FUNKCJA SPRAWDZAJ¥CA W JAKIM STANIE ZNAJDUJE SIÊ GRA-------------
 

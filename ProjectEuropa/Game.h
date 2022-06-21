@@ -101,6 +101,7 @@ public:
 			);
 		}
 	};
+	Resource* getResources() { return resources; }
 	Resource* getResources(int a) {
 		if (a >= 0 && a <= 3)
 			return resources + a - 1;
@@ -353,6 +354,9 @@ public:
 				//potrzebujê tu tablicy ze zmian¹ statów dla decyzji w prawo
 		//potrzebujê tu tablicy ze zmian¹ statów dla decyzji w lewo
 
+	}
+	GUI* getGui() {
+		return &gui;
 	}
 	sf::Text* getChoiceText(bool choice) {
 		if (choice)
