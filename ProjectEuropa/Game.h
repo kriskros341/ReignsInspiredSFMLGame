@@ -311,39 +311,39 @@ public:
 		std::cout << decision.currentDecision->getText() << std::endl;
 		
 	}
-	sf::Text justifyText(sf::Text text)
-	{
-		int textBoxWidth = 200;
-		std::string textString = text.getString();
-		int characterSize = text.getCharacterSize();
-		int howManyLetters = textBoxWidth / characterSize;
-		int spacePosition = -1;
-		int i;
-		//int spacesCounter = 0;
+	//sf::Text justifyText(sf::Text text)
+	//{
+	//	int textBoxWidth = 200;
+	//	std::string textString = text.getString();
+	//	int characterSize = text.getCharacterSize();
+	//	int howManyLetters = textBoxWidth / characterSize;
+	//	int spacePosition = -1;
+	//	int i;
+	//	//int spacesCounter = 0;
 
-		do
-		{
-			for (i = spacePosition+1; i <= howManyLetters; i++)
-			{
-				if (isspace(textString[i]))
-				{
-					spacePosition = i;
-					//spacesCounter++;
-				}
-			}
-			textString[spacePosition] = '\n';
-			
-			/*for (int j = spacePosition + 1; j < howManyLetters; j++)
-			{
-				if (isspace(textString[j]) && !isspace(textString[j-1]))
-				{
-					textString.insert(j, " ");
-				}
-			}*/
-		} while (i != textString.length());
-		text.setString(textString);
-		return text;
-	}
+	//	do
+	//	{
+	//		for (i = spacePosition+1; i <= howManyLetters; i++)
+	//		{
+	//			if (isspace(textString[i]))
+	//			{
+	//				spacePosition = i;
+	//				//spacesCounter++;
+	//			}
+	//		}
+	//		textString[spacePosition] = '\n';
+	//		
+	//		/*for (int j = spacePosition + 1; j < howManyLetters; j++)
+	//		{
+	//			if (isspace(textString[j]) && !isspace(textString[j-1]))
+	//			{
+	//				textString.insert(j, " ");
+	//			}
+	//		}*/
+	//	} while (i != textString.length());
+	//	text.setString(textString);
+	//	return text;
+	//}
 	void updateGUI() {
 		std::cout << decision.stats[0] << " " <<  decision.stats[1] << " "<< decision.stats[2] << " " << decision.stats[3] << " " <<std::endl;
 		gui.updateBars(decision.stats);

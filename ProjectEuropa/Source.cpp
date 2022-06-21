@@ -454,12 +454,12 @@ void game(MyRenderWindow& window, gameFlag whetherToLoad) {
 			window.draw(game);
 			if (game.getSideNotifier() == -1) {
 				window.draw((game.getArea()->getChoiceText(false)));
-				window.drawIndicators(game.getArea()->getGui()->getResources(),4,game.getArea()->getCurrentDecision(),true);
-				//window.drawIndicators(game.getArea()->getChoiceIndicators(false), 4);
+				//window.drawIndicators(game.getArea()->getGui()->getResources(1), 4, game.getArea()->getCurrentDecision(), true);
+				//window.drawIndicators(game.getArea()->getGui()->getResources(1), 4, game.getArea()->getCurrentDecision(), false);
 			}
 			if (game.getSideNotifier() == 1) {
 				window.draw((game.getArea()->getChoiceText(true)));
-				window.drawIndicators(game.getArea()->getGui()->getResources(), 4, game.getArea()->getCurrentDecision(), false);
+				//window.drawIndicators(game.getArea()->getGui()->getResources(), 4, game.getArea()->getCurrentDecision(), false);
 				//window.drawIndicators(game.getArea()->getChoiceIndicators(true), 4);
 			}
 			//window.draw(toCompare);
