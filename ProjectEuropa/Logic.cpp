@@ -45,7 +45,7 @@ Decision::Decision(std::string s, DecisionConnector* y=nullptr, DecisionConnecto
 */
 
 
-Decision::Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n,bool toBeRolled, std::string path) {
+Decision::Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n, std::string path, bool toBeRolled) {
 	text = s;
 	tobeUsed = toBeRolled;
 	yes = y;
@@ -81,11 +81,11 @@ std::shared_ptr<Decision> decisionFactory(
 	const std::string& text,
 	std::shared_ptr<DecisionConnector> c1,
 	std::shared_ptr<DecisionConnector> c2,
-	bool isRolled,
-	std::string imagePath
+	std::string imagePath,
+	bool isRolled
 	
 ) {
-	std::shared_ptr<Decision> result = std::make_shared<Decision>(text, c1, c2, isRolled, imagePath);
+	std::shared_ptr<Decision> result = std::make_shared<Decision>(text, c1, c2, imagePath, isRolled);
 	return result;
 }
 

@@ -90,7 +90,7 @@ private:
 public:
 	//Decision(const std::string& t="defau");
 	//Decision(std::string s, DecisionConnector* y, DecisionConnector* n);
-	Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n, bool toBeRolled = true, std::string path = defaultImage);
+	Decision(const std::string& s, std::shared_ptr<DecisionConnector> y, std::shared_ptr<DecisionConnector> n, std::string path = defaultImage, bool toBeRolled = true);
 	Decision(const Decision& d) {
 		text = d.text;
 		yes = d.yes;
@@ -121,8 +121,8 @@ std::shared_ptr<Decision> decisionFactory(
 	const std::string& text,
 	std::shared_ptr<DecisionConnector> c1,
 	std::shared_ptr<DecisionConnector> c2,
-	bool isRolled,
-	std::string imagePath = defaultImage
+	std::string imagePath = defaultImage,
+	bool isRolled = true
 );
 
 
