@@ -30,7 +30,7 @@
     <ClCompile Include="Animation.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="AllTheThingsThatImTooLazyToMakeFilesFor.cpp">
+    <ClCompile Include="globalVariables.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AllTheThingsThatImTooLazyToMakeFilesFor.h">
+    <ClInclude Include="globalVariables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,24 +1,2 @@
-﻿  Source.cpp
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(129,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(129,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,37): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(149,21): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Game.h(248,15): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(10,9): warning C4068: nieznana pragma „setLocale”
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(13,27): warning C4091: "extern ": zignorowano na lewo od "gameFlag" podczas gdy brak deklaracji zmiennej
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(478,12): warning C4305: "+=": obcięcie z "double" do "float"
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(490,72): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(490,46): warning C4244: "argument": konwersja z "double" do "T", możliwa utrata danych
-          with
-          [
-              T=float
-          ]
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(509,33): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(510,36): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(511,32): warning C4244: "argument": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\ProjectEuropa\Source.cpp(636,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+﻿  globalVariables.cpp
   ProjectEuropa.vcxproj -> C:\Users\KiniG\OneDrive\Pulpit\Studia\Programowanie II\Projekt\ReignsInspiredSFMLGame\x64\Debug\ProjectEuropa.exe
