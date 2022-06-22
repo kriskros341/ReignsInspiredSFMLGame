@@ -533,18 +533,21 @@ void menu(MyRenderWindow& window) {
 				}
 			}
 			case sf::Event::MouseButtonReleased: {
-				buttonClickSound.play();
+				
 				if (event.key.code == sf::Mouse::Left) {
 					if (start.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
+						buttonClickSound.play();
 						window.stateFlag = IsIn::gameL;
 					}
 					if (new_game.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
+						buttonClickSound.play();
 						window.stateFlag = IsIn::game;
 					}
 					if (exit.getGlobalBounds().contains(sf::Vector2f(mousePosition)))
 					{
+						buttonClickSound.play();
 						window.stateFlag = IsIn::exit;
 					}
 				}
